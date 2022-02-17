@@ -1,0 +1,17 @@
+GIT techniques, tricks, and tips
+1.	Grabbing Just 1 commit
+2.	Git rebase -i
+3.	Git cherry-pick
+
+Juggling commits 1
+Git branch -f main caption~0
+Git rebase -i
+Git commit –amend
+
+Juggling commits 2
+git cherry-pick C2 C5
+GIT TAGS
+git tag v1 C2
+
+GIT DESCRIBE
+Git branch -f bugfix HEAD~0
