@@ -1,1 +1,2 @@
 17 Februarie: Git pull --rebase being a combination of fetch and a rebase and git pull is fetch + merge equivalent.
+18 Februarie: OOO
