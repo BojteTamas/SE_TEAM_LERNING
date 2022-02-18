@@ -1,1 +1,237 @@
 First commit on second repo
+din urma==================================================================
+14feb2022
+
+$ git pull
+
+-- did not manage anything at sandbox level
+--go to
+https://learngitbranching.js.org/
+
+
+-show commands at terminal
+-main instead of master ( GitHub default branch )
+
+
+Introduction to Git Commits:
+1.
+Care-i scopul a da 2 commituri far add?
+"I want to include the work of this commit and all parent commits"
+
+$git switch instead of git checkout
+$git checkout -b [yourbranhcname]
+$git merge  - special commit that has two unique parents
+
+--combining work rebasing
+
+15feb2022
+
+So you move the HEAD with git checkout {commit name}
+
+Use git log to see the hashes
+
+GIT has relative refs for looong hashes
+
+Moving upwards one commit at a time with ^
+Moving upwards a number of times with ~<num>
+
+
+
+So saying main^ is equivalent to "the first parent of main".
+
+main^^ is the grandparent (second-generation ancestor) of main
+
+
+Easy! We can travel backwards in time with HEAD^
+
+
+
+To complete this level, check out the parent commit of bugFix. This will detach HEAD.
+You can specify the hash if you want, but try using relative refs instead!
+
+$git checkout C4^
+
+
+
+===========================================
+16feb2022
+
+Git checkout HEAD~4
+
+"You're an expert on relative refs now" :))))
+
+
+You can directly reassign a branch to a commit with the -f option. So something like:
+$git branch -f main HEAD~3
+moves (by force) the main branch to three parents behind HEAD.
+
+
+To complete this level, move HEAD, main, and bugFix to their goal destinations shown.
+
+---reverse changes in git
+
+There are many ways to reverse changes in Git. And just like committing, reversing changes in Git has both a low-level component (staging individual files or chunks) and a high-level component (how the changes are actually reversed). Our application will focus on the latter.
+
+There are two primary ways to undo changes in Git -- one is using git reset and the other is using git revert. We will look at each of these in the next dialog
+
+git reset reverses changes by moving a branch reference backwards in time to an older commit. In this sense you can think of it as "rewriting history;" git reset will move a branch backwards as if the commit had never been made in the first place.
+$git reset HEAD~1
+
+While resetting works great for local branches on your own machine, its method of "rewriting history" doesn't work for remote branches that others are using.
+In order to reverse changes and share those reversed changes with others, we need to use git revert. Let's see it in action.
+$git revert HEAD
+
+To complete this level, reverse the most recent commit on both local and pushed. You will revert two commits total (one per branch).
+
+Keep in mind that pushed is a remote branch and local is a local branch -- that should help you choose your methods.
+
+Understood much much better branching and moving all around
+----------
+$git cherry-pick
+git cherry-pick <Commit1> <Commit2> <...>
+
+$git cherry-pick C2 C4
+
+This takes the commits you want to your ??what
+To complete this level, simply copy some work from the three branches shown into main. You can see which commits we want by looking at the goal visualization.
+
+------------
+rebase -I
+
+$git rebase -I HEAD~4
+
+To finish this level, do an interactive rebase and achieve the order shown in the goal visualization. Remember you can always undo or reset to fix mistakes :D
+
+You can rearrange those and omit those. Understood now what Dragos asked and Bojte showed
+
+================================================================
+17feb2022
+Locally stacked commits
+
+
+Here's a development situation that often happens: I'm trying to track down a bug but it is quite elusive. In order to aid in my detective work, I put in a few debug commands and a few print statements.
+
+All of these debugging / print statements are in their own commits. Finally I track down the bug, fix it, and rejoice!
+
+Only problem is that I now need to get my bugFix back into the main branch. If I simply fast-forwarded main, then main would get all my debug statements which is undesirable. There has to be another way...
+
+git rebase -i
+git cherry-pick
+
+This is a later level so we will leave it up to you to decide which command you want to use, but in order to complete the level, make sure main receives the commit that bugFix references.
+
+$git rebase -I HEAD~3
+$git branch -f main HEAD
+----------
+Part 2 today
+Juggling Commits
+Here's another situation that happens quite commonly. You have some changes (newImage) and another set of changes (caption) that are related, so they are stacked on top of each other in your repository (aka one after another).
+
+The tricky thing is that sometimes you need to make a small modification to an earlier commit. In this case, design wants us to change the dimensions of newImage slightly, even though that commit is way back in our history!!
+
+We will overcome this difficulty by doing the following:
+
+We will re-order the commits so the one we want to change is on top with git rebase -i
+We will git commit --amend to make the slight modification
+Then we will re-order the commits back to how they were previously with git rebase -i
+Finally, we will move main to this updated part of the tree to finish the level (via the method of your choosing)
+There are many ways to accomplish this overall goal (I see you eye-ing cherry-pick), and we will see more of them later, but for now let's focus on this technique. Lastly, pay attention to the goal state here -- since we move the commits twice, they both get an apostrophe appended. One more apostrophe is added for the commit we amend, which gives us the final form of the tree
+
+That being said, I can compare levels now based on structure and relative apostrophe differences. As long as your tree's main branch has the same structure and relative apostrophe differences, I'll give full credit.
+
+git rebase -i main
+git commit --amend
+git rebase -i main
+git branch -f main HEAD
+din urma=================================================================
+
+
+18feb2022
+https://learngitbranching.js.org/
+
+----------------------------------------------------------------------------
+A Mixed Bag
+4
+
+description:
+As you have learned from previous lessons, branches are easy to move around and often refer to different commits
+as work is completed on them. Branches are easily mutated, often temporary, and always changing.
+
+If that's the case, you may be wondering if there's a way to permanently mark historical points in your project's history.
+For things like major releases and big merges, is there any way to mark these commits with something more permanent than a branch?
+
+You bet there is! Git tags support this exact use case -- they (somewhat)
+permanently mark certain commits as "milestones" that you can then reference like a branch.
+
+More importantly though, they never move as more commits are created.
+You can't "check out" a tag and then complete work on that tag -- tags exist as anchors in the commit tree that designate certain spots.
+
+Let's see what tags look like in practice.
+
+Let's try making a tag at C1 which is our version 1 prototype.
+$git tag v1 C1
+There! Quite easy. We named the tag v1 and referenced the commit C1 explicitly. If you leave the commit off, git will just use whatever HEAD is at.
+
+For this level just create the tags in the goal visualization and then check v1 out. Notice how you go into detached HEAD state -- this is because you can't commit directly onto the v1 tag.
+In the next level we'll examine a more interesting use case for tags.
+
+solution:
+$ git tag v1 C2
+$ git tag v0 C1
+$ git checkout C2
+
+----------------------------------------------------------------------------
+A Mixed Bag
+5
+
+Git Describe
+Because tags serve as such great "anchors" in the codebase,
+git has a command to describe where you are relative to the closest "anchor" (aka tag). And that command is called git describe!
+Git describe can help you get your bearings after you've moved many commits backwards or forwards in history;
+this can happen after you've completed a git bisect (a debugging search) or when sitting down at a coworkers computer who just got back from vacation.
+
+Git describe takes the form of:
+git describe <ref>
+Where <ref> is anything git can resolve into a commit. If you don't specify a ref, git just uses where you're checked out right now (HEAD).
+The output of the command looks like:
+<tag>_<numCommits>_g<hash>
+Where tag is the closest ancestor tag in history, numCommits is how many commits away that tag is, and <hash> is the hash of the commit being described.
+
+Let's look at a quick example. For this tree below:
+$ git tag v2 C3
+
+The command git describe main would output:
+v1_2_gC2
+Whereas git describe side would output:
+v2_1_gC4
+That's pretty much all there is to git describe! Try describing a few of the locations in this level to get a feel for the command.
+Once you're ready, just go ahead and commit once to finish the level. We're giving you a freebie :P
+
+solution:
+freestyle with git describe <commit>
+to end git commit
+
+----------------------------------------------------------------------------
+Advanced Topics
+Rebasing over 9000 times
+1
+
+Rebasing Multiple Branches
+Man, we have a lot of branches going on here! Let's rebase all the work from these branches onto main.
+Upper management is making this a bit trickier though -- they want the commits to all be in sequential order.
+So this means that our final tree should have C7' at the bottom, C6' above that, and so on, all in order.
+If you mess up along the way, feel free to use reset to start over again. Be sure to check out our solution and see if you can do it in fewer commands!
+
+
+
+solution:
+$ git checkout bugFix
+$ git rebase -i main
+$ git checkout side
+$ git rebase -i bugFix
+$ git checkout another
+$ git rebase -i c6'
+$git branch -f main HEAD
+
+
+
