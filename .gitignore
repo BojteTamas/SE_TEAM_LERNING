@@ -34,3 +34,4 @@ hs_err_pid*
 
 # Features folder retrieved from Jira
 /Features
+.DS_Store
