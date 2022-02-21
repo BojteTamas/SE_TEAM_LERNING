@@ -231,7 +231,104 @@ $ git checkout side
 $ git rebase -i bugFix
 $ git checkout another
 $ git rebase -i c6'
-$git branch -f main HEAD
+$ git branch -f main HEAD
+=============================================================
+21feb2022
 
+Specifying Parents
+Like the ~ modifier, the ^ modifier also accepts an optional number after it.
 
+Rather than specifying the number of generations to go back (what ~ takes),
+ the modifier on ^ specifies which parent reference to follow from a merge commit.
+ Remember that merge commits have multiple parents, so the path to choose is ambiguous.
 
+Git will normally follow the "first" parent upwards from a merge commit,
+ but specifying a number with ^ changes this default behavior.
+
+Enough talking, let's see it in action.
+
+Here we have a merge commit. If we checkout main^ without the modifier, we will follow the first parent after the merge commit.
+(In our visuals, the first parent is positioned directly above the merge commit.)
+$ git checkout main^
+Easy -- this is what we are all used to.
+
+Now let's try specifying the second parent instead...
+$ git checkout main^2
+See? We followed the other parent upwards.
+
+The ^ and ~ modifiers can make moving around a commit tree very powerful:
+$ git checkout HEAD~; git checkout HEAD~2; git checkout HEAD~2
+Even crazier, these modifiers can be chained together! Check this out:
+$ git checkout HEAD~^2~2
+The same movement as before, but all in one command.
+
+Put it to practice
+To complete this level, create a new branch at the specified destination.
+Obviously it would be easy to specify the commit directly (with something like C6), but I challenge you to use the modifiers we talked about instead!
+
+solution:
+$ git checkout HEAD~^2~1
+$ git branch bugWork
+$ git checkout main
+
+second solution
+$ git branch bugWork HEAD~^2~
+----------------------------------------
+WOAHHHhhh Nelly! We have quite the goal to reach in this level.
+
+Here we have main that is a few commits ahead of branches one two and three.
+For whatever reason, we need to update these three other branches with modified versions of the last few commits on main.
+
+Branch one needs a re-ordering of those commits and an exclusion/drop of C5.
+Branch two just needs a pure reordering of the commits, and three only needs one commit transferred!
+
+We will let you figure out how to solve this one -- make sure to check out our solution afterwards with show solution.
+$ git checkout one
+$ git cherry-pick c4 c3 c2
+$ git checkout two
+$ git cherry-pick c5 c4 c3 c2
+$ git branch -f three c2
+----------------------------------------
+$ git clone
+Remote branches have the special property that when you check them out,
+you are put into detached HEAD mode. Git does this on purpose because you can't work on these branches directly;
+you have to work elsewhere and then share your work with the remote (after which your remote branches will be updated).
+
+What is o/?
+You may be wondering what the leading o/ is for on these remote branches.
+Well, remote branches also have a (required) naming convention -- they are displayed in the format of:
+<remote name>/<branch name>
+Hence, if you look at a branch named o/main, the branch name is main and the name of the remote is o.
+Most developers actually name their main remote origin, not o. This is so common that git actually sets
+up your remote to be named origin when you git clone a repository.
+
+Unfortunately the full name of origin does not fit in our UI, so we use o as shorthand :(
+Just remember when you're using real git, your remote is probably going to be named origin!
+
+That's a lot to take in, so let's see all this in action.
+
+$ git checkout o/main ; git commit
+As you can see, git put us into detached HEAD mode and then did not update o/main when we added a new commit.
+This is because o/main will only update when the remote updates.
+
+To finish this level, commit once off of main and once after checking out o/main.
+This will help drive home how remote branches behave differently, and they only update to reflect the state of the remote.
+
+solution
+$ git commit
+$ git checkout o/main
+$ git commit
+
+-----------------------------
+In this lesson we will learn how to fetch data from a remote repository -- the command for this is conveniently named git fetch.
+
+You'll notice that as we update our representation of the remote repository,
+our remote branches will update to reflect that new representation. This ties into the previous lesson on remote branches.
+
+$ git fetch
+There we go! Commits C2 and C3 were downloaded to our local repository, and our remote branch o/main was updated to reflect this.
+
+What fetch does
+git fetch performs two main steps, and two main steps only. It:
+downloads the commits that the remote has but are missing from our local repository, and...
+updates where our remote branches point (for instance, o/main)
