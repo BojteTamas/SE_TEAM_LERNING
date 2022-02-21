@@ -332,3 +332,6 @@ What fetch does
 git fetch performs two main steps, and two main steps only. It:
 downloads the commits that the remote has but are missing from our local repository, and...
 updates where our remote branches point (for instance, o/main)
+
+to remove .DS_Store from git repo
+https://stackoverflow.com/questions/107701/how-can-i-remove-ds-store-files-from-a-git-repository
