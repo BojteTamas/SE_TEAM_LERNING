@@ -1,3 +1,6 @@
 Day11: 18.02.2022
 Advanced with the second game until 'A mixed Bag' chapter - finished chapter for MAIN.
 Remaining Advanced topics chapter.
+
+Day12: 21.02.2022
+Second game: Remote: Git pushin'	chapter.
