@@ -333,5 +333,70 @@ git fetch performs two main steps, and two main steps only. It:
 downloads the commits that the remote has but are missing from our local repository, and...
 updates where our remote branches point (for instance, o/main)
 
-to remove .DS_Store from git repo
-https://stackoverflow.com/questions/107701/how-can-i-remove-ds-store-files-from-a-git-repository
+git fetch essentially brings our local representation of the remote repository
+into synchronization with what the actual remote repository looks like (right now).
+
+If you remember from the previous lesson, we said that remote branches reflect the state of the remote
+repositories since you last talked to those remotes. git fetch is the way you talk to these remotes! Hopefully
+the connection between remote branches and git fetch is apparent now.
+
+git fetch usually talks to the remote repository through the Internet (via a protocol like http:// or git://).
+
+What fetch doesn't do
+git fetch, however, does not change anything about your local state.
+It will not update your main branch or change anything about how your file system looks right now.
+
+This is important to understand because a lot of developers think that
+running git fetch will make their local work reflect the state of the remote.
+It may download all the necessary data to do that, but it does not actually change
+any of your local files. We will learn commands in later lessons to do just that :D
+
+So at the end of the day, you can think of running git fetch as a download step.
+solution
+$ git fetch
+
+------------
+git pull
+Now that we've seen how to fetch data from a remote repository with git fetch, let's update our work to reflect those changes!
+There are actually many ways to do this -- once you have new commits available locally,
+you can incorporate them as if they were just normal commits on other branches. This means you could execute commands like:
+
+git cherry-pick o/main
+git rebase o/main
+git merge o/main
+etc., etc.
+In fact, the workflow of fetching remote changes and then merging them is so common that git actually
+provides a command that does both at once! That command is git pull.
+
+Let's first see a fetch and a merge executed sequentially.
+$ git fetch; git merge o/main
+$ git pull instead
+these 2 make the same thing. That should make it very clear that git pull is essentially
+shorthand for a git fetch followed by a merge of whatever branch was just fetched.
+solution:
+$ git pull
+-----------------------------------------
+$ git fakeTeamwork foo 3 ---3 commituri o data
+solutin
+git clone
+git fakeTeamwork 2
+git commit
+git pull
+-------------------------
+git push
+note -- the behavior of git push with no arguments varies
+depending on one of git's settings called push.default. The default value for this setting depends on
+the version of git you're using, but we are going to use the upstream value in our lessons.
+This isn't a huge deal, but it's worth checking your settings before pushing in your own projects.
+
+solution
+$ git ocmmit
+$ git commit
+$ git push
+
+
+
+
+
+
+
