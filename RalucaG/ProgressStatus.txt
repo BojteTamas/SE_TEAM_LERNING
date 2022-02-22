@@ -4,3 +4,6 @@ Remaining Advanced topics chapter.
 
 Day12: 21.02.2022
 Second game: Remote: Git pushin'	chapter.
+
+Day 13: 22.02.2022
+Second game: Remote: Git remote tracking branches
