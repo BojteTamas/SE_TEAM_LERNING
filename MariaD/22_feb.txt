@@ -1,0 +1,19 @@
+GIT REMOTE BRANCHES
+GIT FETCH
+Git cherry-pick o/main
+Git rebase o/main
+Git merge o/main
+Git fetch; git merge o/main
+Git pull
+Git fakeTeamwork
+Git fakeTeamwork foo 3
+git clone
+git fakeTeamwork 2
+git commit
+git pull
+DIVERGED WORK
+Git pull --rebase
+Remote rejected
+git reset --hard o/master
+git checkout -b feature C2
+git push origin feature
