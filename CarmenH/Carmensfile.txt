@@ -390,13 +390,96 @@ the version of git you're using, but we are going to use the upstream value in o
 This isn't a huge deal, but it's worth checking your settings before pushing in your own projects.
 
 solution
-$ git ocmmit
+$ git commit
 $ git commit
 $ git push
+------------------------
+22feb2022
 
+deviated commit history
+So far we've seen how to pull down commits from others and how to push up our own changes. It seems pretty simple, so how can people get so confused?
+The difficulty comes in when the history of the repository diverges. Before discussing the details of this, let's see an example...
 
+See? Nothing happened because the command fails.
+git push fails because your most recent commit C3 is based off of the remote at C1.
+The remote has since been updated to C2 though, so git rejects your push.
+How do you resolve this situation? It's easy, all you need to do is base your work off of the most recent version of the remote branch.
+There are a few ways to do this, but the most straightforward is to move your work via rebasing. Let's go ahead and see what that looks like.
 
+$git fetch; git rebase o/main; git push
+Boom! We updated our local representation of the remote with git fetch,
+rebased our work to reflect the new changes in the remote, and then pushed them with git push.
 
+Are there other ways to update my work when the remote repository has been updated?
+Of course! Let's check out the same thing but with merge instead.
+Although git merge doesn't move your work (and instead just creates a merge commit),
+it's a way to tell git that you have incorporated all the changes from the remote.
+This is because the remote branch is now an ancestor of your own branch, meaning your commit reflects all commits in the remote branch.
 
+Lets see this demonstrated...
+$ git fetch; git merge o/main; git push
+Boom! We updated our local representation of the remote with git fetch,
+merged the new work into our work (to reflect the new changes in the remote), and then pushed them with git push.
+
+Awesome! Is there any way I can do this without typing so many commands?
+Of course -- you already know git pull is just shorthand for a fetch and a merge. Conveniently enough, git pull --rebase is shorthand for a fetch and a rebase!
+Let's see these shorthand commands at work.
+$ git pull --rebase; git push
+$ git pull; git push
+
+In order to solve this level, take the following steps:
+Clone your repo
+Fake some teamwork (1 commit)
+Commit some work yourself (1 commit)
+Publish your work via rebasing
+
+solution:
+$ git clone
+$ git fakeTeamwork 1
+$ git commit
+$ git pull --rebase
+$ git push
+-------------------------------------------------------
+Remote rejected
+If you work on a large collaborative team it's likely that main is locked and requires
+some Pull Request process to merge changes. If you commit directly to main locally and try pushing you will be greeted with a message similar to this:
+
+! [remote rejected] main -> main (TF402455: Pushes to this branch are not permitted; you must use a pull request to update this branch.)
+
+The remote rejected the push of commits directly to main because of the policy on main requiring pull requests to instead be used.
+You meant to follow the process creating a branch then pushing that branch and doing a pull request,
+but you forgot and committed directly to main. Now you are stuck and cannot push your changes.
+
+Create another branch called feature and push that to the remote.
+Also reset your main back to be in sync with the remote otherwise you may have issues
+next time you do a pull and someone else's commit conflicts with yours.
+solution
+git reset --hard o/main
+git checkout -b feature C2
+git push origin feature
+
+-------------------------------------------------------
+merging feature branches
+
+$git pull --rebase; git push
+We executed two commands here that:
+rebased our work onto new commits from remote, and
+published our work to the remote
+
+This level is pretty hefty -- here is the general outline to solve:
+
+There are three feature branches -- side1 side2 and side3
+We want to push each one of these features, in order, to the remote
+The remote has since been updated, so we will need to incorporate that work as well
+:O intense! good luck, completing this level is a big step.
+
+solution
+$ git fetch
+$ git rebase o/main side1
+$ git rebase side1 side2
+$ git rebase side2 side3
+$ git rebase side3 main
+$ git push
+------------------------------------------------------------
 
 
