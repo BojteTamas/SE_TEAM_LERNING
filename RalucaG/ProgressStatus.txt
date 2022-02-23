@@ -7,3 +7,6 @@ Second game: Remote: Git pushin'	chapter.
 
 Day 13: 22.02.2022
 Second game: Remote: Git remote tracking branches
+
+Day14: 23.02.2022
+Finished second game
