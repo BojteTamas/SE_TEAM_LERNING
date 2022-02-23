@@ -1,0 +1,8 @@
+recap
+git pull
+DIVERGED WORK
+Git pull --rebase
+Remote rejected
+git reset --hard o/master
+git checkout -b feature C2
+git push origin feature
