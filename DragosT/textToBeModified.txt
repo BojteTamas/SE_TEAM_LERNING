@@ -2,3 +2,4 @@
 18 Februarie: OOO
 21 Februarie: git pull --rebase more exercises,push a new feature to origin
 22 Februarie: A mixed bag recap. On the Remote part Stating origin and beyond.
+23 Februarie: Merging with remotes.
