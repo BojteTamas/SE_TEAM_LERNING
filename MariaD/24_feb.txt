@@ -1,0 +1,28 @@
+Remote rejected
+git reset --hard o/master
+git checkout -b feature C2
+git push origin feature
+Git rebase
+Git fetch—aduce toate branchurile
+Git rebase o/main side 1 -> iti duce side1 sub o/main (face o copie a side1 sub o/main)
+git rebase side1 side2---face o copie a side 2 in continuarea side1
+git rebase side2 side3-- face o copie a side 3 in continuarea side2
+git rebase side3 main—mainul devine principal cu side 3 (le uneste)
+git push—duce modificerile facute pe branch mai departe
+MERGE
+Remote-tracking branches
+git checkout -b side o/main;
+git branch -f side main ---side devise master
+git branch -u o/main side ; git commit; git push
+git pull
+git commit
+git pull --rebase
+git push
+push arguments
+git push origin main
+git push origin foo
+<place> argument details
+
+git push origin foo:main
+git push origin main^:foo
+GIT FETCH
