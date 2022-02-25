@@ -1,0 +1,6 @@
+Git push origin :side
+Git fetch origin :bugFix
+
+git pull
+git pull origin bar:foo
+git pull origin main:side
