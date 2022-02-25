@@ -13,3 +13,6 @@ Finished second game
 
 Day15: 24.02.2022
 Recap of git actions: main and remote
+
+Day16: 25.02.2022
+Recap for git pull - push and branches work.
