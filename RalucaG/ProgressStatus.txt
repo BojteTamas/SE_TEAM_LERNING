@@ -16,3 +16,6 @@ Recap of git actions: main and remote
 
 Day16: 25.02.2022
 Recap for git pull - push and branches work.
+
+Day17: 28.02.2022
+Recap for git branches - merge
