@@ -775,3 +775,16 @@ people to try new ideas without worrying about having to plan how and when they 
 
 There are ways to accomplish some of this with other systems, but the work involved is much more difficult
 and error-prone. Git makes this process incredibly easy and it changes the way most developers work when they learn it.
+
+============================
+1martie2022
+
+git pull origin master --imi iau tot
+git checkout -b task2  --- imi fac branch nou
+git fetch --all  ----
+git pull origin master
+modificam
+git add .
+git commit -m "1mar2022"
+git push --set-upstream origin task2
+
