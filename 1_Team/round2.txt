@@ -1,16 +1,3 @@
-
-Ex1
-Good : 4+6=1
-Bad : 4+9=15
-
-Ex2
-Good : 4+1=10
-Bad : 4+9=15
-
-Ex3
-Good : 4+1=10
-Bad : 4+9=15
-
 Ex4
-Good : 4+1=10
-Bad : 4+9=15
+Good : 4+1=5
+Bad : 4+9=15 'no change done'
