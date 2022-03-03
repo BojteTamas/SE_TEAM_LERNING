@@ -19,3 +19,6 @@ Recap for git pull - push and branches work.
 
 Day17: 28.02.2022
 Recap for git branches - merge
+
+Day20:03.02.2022
+Going through Intellij Idea functions for git
