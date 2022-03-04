@@ -7,9 +7,9 @@ Good : 4+1=5
 Bad: 4+9=13
 
 Ex3
-Good : 4+1=10
-Bad : 4+9=15
+Good : 4+1=5
+Bad : 4+9=13
 
 Ex4
 Good : 4+1=5
-Bad : 4+9=14 'change done based on review'
+Bad : 4+9=13
