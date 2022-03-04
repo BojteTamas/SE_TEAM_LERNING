@@ -12,4 +12,4 @@ Bad : 4+9=15
 
 Ex4
 Good : 4+1=5
-Bad : 4+9=15 'no change done'
+Bad : 4+9=14 'change done based on review'
