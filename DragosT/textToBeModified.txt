@@ -5,3 +5,4 @@
 23 Februarie: Merging with remotes.
 24 Februarie: Rebasing over 9000.
 25 Februarie: Finished To Origin And Beyond -- Advanced Git Remotes! and finished Game2.
+7 March: Recap Branches section form first game!
