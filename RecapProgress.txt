@@ -1,0 +1,44 @@
+7/Mar/22
+checkout branch master
+create new branch Task01
+add and commit new txt file to new branch
+
+2nd game recap:
+git commit, git branches, git branches and merging, git rebase
+git checkout -b <newbranchname> -to create and checkout the new branch at the same time
+
+Merge:
+to merge main into bugFix branch --> git checkout bugFix
+                                 --> git merge main
+
+ Exercise:
+ make a new branch called bugFix
+ checkout the bugFix branch
+ commit once
+ go back to main with checkout
+ commit another time
+ merge the bugFix branch into main with git merge
+
+ Solution:
+ git checkout -b bugFix
+ git commit
+ git checkout main
+ git commit
+ git merge bugFix
+
+ Git Rebase:
+ git rebase main or git rebase bugFix
+
+ Exercise:
+ checkout a new branch named bugFix
+ commit once
+ go back to main and commit again
+ checkout bugFix again and rebase onto main
+
+ Solution:
+ git checkout -b bugFix
+ git commit
+ git checkout main
+ git commit
+ git checkout bugFix
+ git rebase main

@@ -7,3 +7,4 @@
 25 Februarie: Finished To Origin And Beyond -- Advanced Git Remotes! and finished Game2.
 7 March: Recap Branches section form first game!
 8 March: Merge and solve conflicts recap from game 1!
+
