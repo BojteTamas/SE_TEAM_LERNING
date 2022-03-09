@@ -1,0 +1,113 @@
+07March2022
+
+
+
+Started again game 1 ohmygit.
+
+LEVEL Intro:
+
+SUBLEVEL Living dangerously:
+Add a new lone at the end and all done. (No git commands yet)
+
+SUBLEVEL Making backups
+Added a new line on the last file: form2_really_final.txt ( no git commands yet)
+
+SUBLEVEL Enter the time machine : git init - initialize the git repository
+
+SUBLEVEL  The command line: same as previous : git init
+
+SUBLEVEL  Your first commit
+$ git add glass
+$ git commit -m "my first commit"
+Changed the glass file content : "the glass is empty"
+$ git commit -m "changed the glass content"
+
+
+SUBLEVEL  Working together
+Got so fast to remote and locally
+$ git pull - to bring locally the updates from the remote
+Add my name in students file
+$ git add students
+$ git commit -m "added my name on the list"
+$ git push - to send remote my changes
+
+LEVEL files
+
+SUBLEVEL Unexpected Roommates
+Remove all files with web in name:
+$rm *web
+SUBLEVEL Interior design
+$ touch chair ( write "yellow" in file )
+$ touch table ( write "yellow" in file )
+
+LEVEL branches
+
+SUBLEVEL Moving through time
+$ git checkout all commits and added "10 coins" to the last file piggy_bank
+$ git add piggy_bank
+$git commit -m "pace restored"
+
+SUBLEVEL  Make parallel commits
+$git checkout HEAD^
+$git checkout HEAD~2
+$git add . ; git commit ( add happy to the child file, add something to eat to the lion file"
+
+
+SUBLEVEL  Creating branches
+$git checkout birthday
+$git branch birthday ( same for concert)
+
+
+SUBLEVEL  Branches grow with you!
+$ git checkout branch_name
+Git reset --hard branch_name ( after checkout on branch name)
+
+
+SUBLEVEL  Deleting branches
+$ git checkout
+$ git branch -D branch_name
+
+SUBLEVEL  Moving branches around
+$ git reset --hard commit_name ( after git checkout branch_name)
+$ git checkout branch_name
+$ git add .
+$git commit -m "you ate a donut"
+
+==========================================
+08March2022 - Task2.3
+
+LEVEL merge
+SUBLEVEL Merging timelines
+added all 3 in the file
+$git add .
+$git commit -m "added all 3"
+$git merge commit_name_right_clicked
+SUBLEVEL Contradictions
+did a merge, resolved the conflict and reset hard to change main branch
+
+LEVEL index
+SUBLEVEL Step by step
+add noise to detector file; used git add ; git commit and git checkout used
+SUBLEVEL Add new files to the index
+git add filne_name; git commit -m "added new file"
+SUBLEVEL Update files in the index
+changed something in file; git add filename; git commit -m "changed something in the file"
+SUBLEVEL Resseting files in the index
+git reset file1; git reset file2; git commit -m "reseted the files"
+SUBLEVEL Adding changes step by step
+changed all 3 files; git add file; git commit -m "message"; 3 times for each file
+
+LEVEL remotes
+SUBLEVEL Friends
+git pull; make change - add 3rd line; git add; git commit; git push
+once again git pull; make change- add 5th line ; git add; git commit; git push
+SUBLEVEL Problems
+git add . ; git comit ; git merge; solve conflict; git  add . ; git commit ; git push
+
+LEVEL changing-the-past
+SUBLEVEL Rebasing
+git checkout main; git rebase last commit on one branch; the next branhc and the 3rd one and done.
+SUBLEVEL Reordering events
+git cherry-pick and do in order for every item to dress; then reset hard main to the new branch
+=======
+
