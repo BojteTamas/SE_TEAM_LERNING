@@ -7,4 +7,4 @@
 25 Februarie: Finished To Origin And Beyond -- Advanced Git Remotes! and finished Game2.
 7 March: Recap Branches section form first game!
 8 March: Merge and solve conflicts recap from game 1!
-
+9 March: Stash recap from game 1! git stash pop, git stash apply, git stash list, git stash clear, git stash drop nameofstash
