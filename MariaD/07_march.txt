@@ -1,0 +1,13 @@
+1st game
+started again 1st game
+Recap intro chapter
+--git init –initialized empty git repository
+--git add
+--git commit
+--extra learned: git commit -am –commit + add file-works only for existing files
+--git pull – updates the branch
+--commited changes
+--changes pushed in master branch
+--rm command – removes unwanted files
+-- touch ‘ ’ –add a new file
+
