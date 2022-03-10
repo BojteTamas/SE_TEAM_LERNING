@@ -176,3 +176,81 @@ Here's a sanbox with a remote! try pulling, fetching, or pulling!
 How can you push tags and branches on a remote? How can you delete them again?
 SUBLEVEL Sandbox with three commits
 
+===========================================================================
+10.03.2022 Task 2.5
+
+game2 https://learngitbranching.js.org/
+
+Main tab
+
+Introduction Sequence
+1. Introduction to Git Commits
+$git commit ; $git commit
+2. Branching in Git
+$ git checkout -b bugFix
+3. Merging in Git
+$ git checkout -b bugFix; $ git commit; $ git chekcout main; $git commit; $git merge bugFix
+4. Rebase introduction
+$ git checkout -b bugFix; $ git commit; $ git checkout main;$ git commit;$ git checkout bugFix; $ git rebase main
+
+Ramping Up
+1. Detach yo' HEAD
+$git checkout C4
+2. Relative Refs (^)
+$ git checkout HEAD^ ; $ git checkout C3
+3. Relative Refs #2 (~)
+$ git branch -f main c6  ; git branch -f bugFix c0 ; git checkout c1
+4. Reverses Changes in Git
+git reset HEAD^ ; git checkout pushed; git revert HEAD
+
+Moving Work Around
+1. Cherry-pick Intro
+$ git cherry-pick C3 C4 C7
+2. Interactive rebase Intro
+$git rebase -i HEAD~4
+
+A Mixed Bag
+1. Grabbing Just 1 Commit
+$ git rebase -i HEAD~3 ; git branch -f main bugFix
+2. Juggling Commits
+git rebase -i HEAD~2; git commit --amend; git rebase -i HEAD~2; git branch -f main
+3. Juggling Commits #2
+git checkout main; git cherry-pick newImage; git commit --amend; git cherry-pick caption
+4. Git Tags
+$git tag v0 C1; git tag v1 C2; git checkout C2
+5. Git Describe
+
+Advanced Topics
+1. Rebasing over 9000 times
+git rebase main bugFix ; git rebase bugFix side; git rebase side another; git branch -f main another
+or
+git checkout bugFix; git rebase main;
+git checkout side; git rebase bugFix;
+git checkout another; git rebase side;
+git checkout main; git rebase another
+========================================== stop for today
+2. Multiple parents
+3. Branch Spaghetti
+
+
+Remote tab
+
+Push & Pull -- Git Remotes!
+1. Clone Intro
+2. Remote Branches
+3. Git Fetchin'
+4. Git pullin'
+5. Faking Teamwork
+6. Git Pushin'
+7. Diverged History
+8. Locked Main
+
+To Origin And Beyond -- Advanced Git Remotes!
+1. Push Main!
+2. Merging with remotes
+3. Remote Tracking
+4. Git push arguments
+5. Git push arguments -- Expanded!
+6. Fetch arguments
+7. Source of nothing
+8. Pull arguments
