@@ -42,3 +42,24 @@ to merge main into bugFix branch --> git checkout bugFix
  git commit
  git checkout bugFix
  git rebase main
+
+ 09.03.2022
+ Relative refs
+ ^ -> moving upwards one commit at the time
+ -<num> -> moving upwards a number of times
+ main^ -> the equivalent of first parent of main
+ git checkout main^
+ git checkout HEAD~4 - > puts the head 4 commits back
+  Revert and Reset :
+  git reset HEAD~1
+  git checkout pushed
+  git revert HEAD
+
+  Git cherry pick intro  and Interactive Rebase Intro
+  git cherry pick <Commit1> <Commit2> <...>
+  git cherry pick C2 C4
+
+  git rebase -i HEAD~4 -> git copies down commits in the exact order the user specifies
+  git rebase -i overHere -> rearrange C3 C5 C4
+
+
