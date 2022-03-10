@@ -109,5 +109,74 @@ SUBLEVEL Rebasing
 git checkout main; git rebase last commit on one branch; the next branhc and the 3rd one and done.
 SUBLEVEL Reordering events
 git cherry-pick and do in order for every item to dress; then reset hard main to the new branch
+
+==========================================
+09March2022 - Task2.4
+
+LEVEL shit-happens
+SUBLEVEL Restore a deleted file
+$git checkout the_deleted_file in the past and commit that ?
+SUBLEVEL Restore a file from the past
+$ git checkout [commit] [file_name] ; git add . ; git commit -m "got initial file"
+SUBLEVEL Undo a bad commit
+$ git reset [commit]
+SUBLEVEL I pushed something broken
+$ git revert [commit]
+SUBLEVEL Go back to where you were before ?????
+$ git reflog tag/head
+$ git checkout [commit]
+
+LEVEL workflows
+SUBLEVEL Cloning a repo
+$ git clone ../friend
+$ git branch solution
+$ git add .
+$ git commit
+$ git tag pr
+$ git push
+
+
+LEVEL bisect
+SUBLEVEL Yellow brick road
+$ git bisect start
+go back and add $ git bisect good if the key is there, and $ git bisect bad if not the key
+reset the main to the last good commit
+
+LEVEL Stash
+SUBLEVEL Stashing
+$git stash push - to put away your changes
+SUBLEVEL Pop from Stash
+$ git stash pop - to apply your changes
+or $ git stash apply to apply changes and keep stash ( did not work)
+SUBLEVEL Clear the Stash
+inspect stash stack $git stash list
+$git stash clear
+$git stash drop <stash> a certain stash entry
+SUBLEVEL Branch from stash
+$ git stash branch <branchname> <stash>
+SUBLEVEL Merging popped stash
+$git stash pop ; solve conflict; commit; $git stash clear
+
+LEVEL tags
+SUBLEVEL Creating tags
+$ git tag <tag-name>
+SUBLEVEL Removing tags
+$ git tag -d <tag-name>
+SUBLEVEL Tagging later
+$ git tag <tag-name> [commit_ref]
+SUBLEVEL Remote Tags
+$ git push <remote> <tag-name>  ----- push a tag
+$ git push <remote> --tags ----- push all tags
+$ git push <remote> --delete <tag-name> ----- deleting tags on your remote works
+$ git fetch <remote> --prune -- prune-tags ----- sync
+<remote> is friend in the exercise
+
+LEVEL Sandbox
+SUBLEVEL Empty sandbox
+SUBLEVEL Sandbox with a remote
+Here's a sanbox with a remote! try pulling, fetching, or pulling!
+How can you push tags and branches on a remote? How can you delete them again?
+SUBLEVEL Sandbox with three commits
+
 =======
 
