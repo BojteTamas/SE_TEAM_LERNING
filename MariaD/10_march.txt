@@ -1,0 +1,15 @@
+Git checkout – restore file
+Git checkout [commit] [file] ---git checkout (id_commit)(nume fisier)
+Git reset [commit]—reseteaza un commit
+Git revert //Si dupa aia  Git push –ca sa faci push la revert
+Git reflog---iti arata toate logurile/commiturile step by step
+Git clone ../[name]
+Git stash
+Git push
+Git stash pop
+Git stash list- inspects the stash stack
+Git stash clear -clear the stashed changes
+Git stash drop <stash> -discards only a certain stash entry
+Git stash branch <branch_name> <stash> --creates a new branch for your stashed changes. If you just want to use the latest entry, leave the <stash> option empty
+
+
