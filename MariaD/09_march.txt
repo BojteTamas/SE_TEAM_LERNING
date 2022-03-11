@@ -1,0 +1,31 @@
+--Branches chapter
+git checkout doc_name
+git add –you can add multiple files at once
+
+parallel commits
+git checkout HEAD --- go to previous commit
+git checkout HEAD~2 – GO BACK 2 COMMITS
+
+creating branches
+git branch ‘’
+git checkout branch_name
+git branch -D –delete a branch
+git reset –hard
+git checkout –detach name_of_the branch ---travel to the last commit on the branch
+
+merging timelines
+git merge
+how to solve conflicts
+
+remote friends
+problems
+git pull
+git push
+git commit
+git merge
+
+--git rebase –
+--git rebase -i –make changes to the events in your current timeline back to the commit you drag this to
+--git cherry -pick –repeat the specified action on to of your current timeline
+-- git reset –hard
+
