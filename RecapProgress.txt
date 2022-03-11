@@ -62,4 +62,34 @@ to merge main into bugFix branch --> git checkout bugFix
   git rebase -i HEAD~4 -> git copies down commits in the exact order the user specifies
   git rebase -i overHere -> rearrange C3 C5 C4
 
+Task03_10/Mar/22 - Juggling commits
+
+git rebase -i main
+git rebase bugFix main C2/C3 commits omitted and C4 selected
+
+git rebase -i HEAD~2  -> ordering C2,C3 commits
+
+''Rebasing over 9000 times
+
+git rebase main bugFix
+git rebase bugFix side
+git rebase side another
+git rebase another main
+
+''Multiple parents
+
+git checkout HEAD~
+git checkout HEAD^2
+git checkout HEAD~2
+
+modifiers chained together: git checkout HEAD~^2~2
+git branch bugWork main^^2^
+
+''Branch spaghetti
+
+git checkout one
+git cherry-pick C4 C3 C2
+git checkout two
+git cherry-pick C5 C4 C3 C2
+git branch -f three C2
 
