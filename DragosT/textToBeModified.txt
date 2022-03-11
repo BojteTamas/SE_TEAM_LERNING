@@ -9,3 +9,4 @@
 8 March: Merge and solve conflicts recap from game 1!
 9 March: Stash recap from game 1! git stash pop, git stash apply, git stash list, git stash clear, git stash drop nameofstash
 10 March: Revisiting git bisect. git bisect start, git bisect good, git bisect bad, git reset --hard la ultimul bun.
+11 March: Recap Shit Happens Chapter form game 1. git reset commithash, git revert commithash, git reflog branch/heads/numberofcommit
