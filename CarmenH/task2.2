@@ -230,32 +230,54 @@ git checkout another; git rebase side;
 git checkout main; git rebase another
 ========================================== stop for today
 11.03.2022 Task2.6
-2. Multiple parents
-3. Branch Spaghetti
 
+11.03.2022 Task2.7
+2. Multiple parents
+git branch bugWork HEAD~^2~
+or
+git branch bugWork HEAD~^2~
+git checkout main
+3. Branch Spaghetti
+git checkout one; git cherry-pick c4 c3 c2; git checkout two; git cherry-pick c5 c4 c3 c2; git branch -f three c2
 
 Remote tab
 
 Push & Pull -- Git Remotes!
 1. Clone Intro
+git clone
 2. Remote Branches
+git commit; git checkout o/main; git commit
 3. Git Fetchin'
+git fetch
 4. Git pullin'
+git pull
 5. Faking Teamwork
+git clone; git fakeTeamwork 2; git commit; git pull
 6. Git Pushin'
+git commit; git commit; git push
 7. Diverged History
+git clone ; git fakeTeamwork 1; git commit; git pull --rebase; git push
 8. Locked Main
+git reset --hard o/main; git checkout -b feature C2; git push origin feature
 
 To Origin And Beyond -- Advanced Git Remotes!
 1. Push Main!
+git fetch; git rebase o/main side1; git rebase side1 side2; git rebase side2 side3; git rebase side3 main; git push
 2. Merging with remotes
+git checkout main; git pull origin main; git merge side1; git merge side2; git merge side3; git push origin main
 3. Remote Tracking
+git checkout -b side o/main; git branch -f side main; git commit; git pull --rebase; git push
 4. Git push arguments
+git push origin main; git push origin foo
 5. Git push arguments -- Expanded!
+git push origin foo:main; git push origin main^:foo
 6. Fetch arguments
+git fetch origin main^:foo; git fetch origin foo:main; git checkout foo; git merge main
 7. Source of nothing
+git pull origin :bar ; git push origin :foo
 8. Pull arguments
-
+git pull origin bar:foo; git pull origin master:side
+finished game2 : https://learngitbranching.js.org/
 ================================================
 https://codegym.cc/
 In the Java programming language, a command can't exist on its own. It's part of a function
@@ -277,3 +299,110 @@ Displaying text on the screen
 int and String types
 The difference between compiling in Java and other languages
 Adding comments in code and why we need them
+
+===
+12.03.2022 ( extra )
+Example 1
+Input a string and number from the keyboard
+
+
+InputStream inputStream = System.in;
+Reader inputStreamReader = new InputStreamReader(inputStream);
+BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+String name = bufferedReader.readLine(); //Read a string from the keyboard
+String sAge = bufferedReader.readLine(); //Read a string from the keyboard
+int nAge = Integer.parseInt(sAge); //Convert the string to a number.
+
+or
+BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+String name = reader.readLine();
+String sAge = reader.readLine();
+int nAge = Integer.parseInt(sAge);
+
+or
+Scanner scanner = new Scanner(System.in);
+String name = scanner.nextLine();
+int age = scanner.nextInt();
+
+JAVA books:
+"Kathy Sierra and Bert Bates, Head First Java"
+"Herbert Schildt: Java: The Complete Reference"
+"Bruce Eckel, Thinking in Java" - level 20 from codegym ---you can start to read it
+"Charles Petzold, Code: The Hidden Language of Computer Hardware and Software" -- good for ones that forgot o do not have programming studies
+"Aditya Bhargava, Grokking Algorithms"
+
+In Java, the expression 5/2 evaluates to: 2 ( am raspuns gresit, 2,5)
+In Java, to read data from the console (from the keyboard), this standard class is used: ( Scanner ?)
+
+
+All variables declared inside methods exist (are visible) from the point where they are declared until the end of the method (Example 1).
+If a variable is declared in a code block, it exists until the end of the code block (Example 2)
+If a variable is a method parameter, it exists (is visible) in the entire body of the method (Example 3).
+If a variable is an instance variable (Example 4), it is linked to a certain object and exists as long as the object exists.
+If no object exists, then there are no instances of the variable. You can access the variable (i.e. the variable is visible)
+from all methods of the class, regardless of whether they were declared before or after it. A new variable is created for each object.
+It is independent of other objects. You can't access an instance variable from static methods.
+
+If a variable is declared static, i.e. marked with the keyword static, it exists as long as its class exists.
+The JVM usually loads a class into memory at its first use. That's also when static variables are initialized.
+
+non-static methods:
+When you call a method using <object> dot <method name>, you're actually calling a class method and passing that same object as the first argument.
+Inside the method, the object is called 'this'. All operations in the method are performed on this object and its data.
+
+static methods:
+When you call a static method, no object is passed to it. In other words, 'this' equals null.
+That's why a static method can't access non-static variables and methods (since it has no 'this' to pass to these methods)
+
+package en.codegym.task.jdk13.task04.task0401;
+
+/*
+This age doesn't work for me…
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        Person person = new Person();
+        System.out.println("Age: " + person.age);
+        person.adjustAge(person.age);
+        System.out.println("Adjusted age: " + person.age);
+    }
+
+    public static class Person {
+        public int age = 20;
+
+        public void adjustAge(int age) {
+            this.age = this.age + 20;
+            System.out.println("The age in adjustAge() is: " + this.age);
+        }
+    }
+}
+
+package en.codegym.task.jdk13.task04.task0402;
+
+/*
+Price of apples
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        Apple apple = new Apple();
+        apple.addPrice(50);
+        Apple apple2 = new Apple();
+        apple2.addPrice(100);
+        System.out.println("Apple price " + Apple.applePrice);
+    }
+
+    public static class Apple {
+        public static int applePrice = 0;
+
+        public static void addPrice(int applePrice) {
+            //write your code here
+
+            Apple.applePrice += applePrice;
+
+        }
+    }
+}
