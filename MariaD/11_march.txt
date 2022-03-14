@@ -1,0 +1,11 @@
+Tags
+Git tag <tag-name> (ex git tag tag_1)
+Git tag -d <tag_name> --deletes a tag
+Git tag <tag_name> <commit -hash>
+Git push <remote> <tag-name> --push a tag
+Git push <remote> --tags –push all tags
+Git push <remote> --delete <tag-name> --deleting tags on your remote works
+Git fetch <remote> --prune –prune tags –sync all tags
+Sandbox
+
+started reading first chapter in CodeGym about Java Sintaxes
