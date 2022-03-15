@@ -1,0 +1,21 @@
+Ellie, variables, and data types
+definition of a variable: Variables are special entities used to store data
+characteristics:  has three important properties: type, name, and value.
+To create (or declare) a variable, we use the name of the type: TypeName variableName.
+Remember that Java is case-sensitive. int a is not the same as Int a
+
+the jvm will compile the bytecode into machine code before the program is executed
+1) Enterprise: heavy server-oriented applications for banks, corporations, investment funds, etc.
+
+2) Mobile: mobile development (smartphones, tablets), thanks to Android.
+
+3) Web: PHP is in the lead, but Java has captured a solid share of the market.
+
+4) Big Data: distributed computing in clusters consisting of thousands of servers.
+
+5) Smart devices: programs for smart homes, electronic devices, IoT refrigerators, etc.
+
+how to comment:
+The beginning of the comment is indicated by a pair of symbols (/*), and the end – by (*/).
+When the program is compiled, the compiler omits everything between the symbols /* and */
+the code starting with the // and up to the end of the line with the // is considered to be a comment
