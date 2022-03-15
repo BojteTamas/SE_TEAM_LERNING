@@ -101,3 +101,42 @@ system.out.println - displays the output on different lines
 1 class can contain multiple methods
 2 variables with the same name can only be defined in different methods, never in the same method
 ->progress until Lesson5
+
+
+15/Mar/22
+''"In Java, you can write commands, but you can also add comments to those commands right in the code.
+''The compiler completely ignores the comments. When the program is run, all the comments are omitted."
+public class Home
+{
+    public static void main(String[] args)
+    {
+        /*
+        Now we'll display the phrase 'Amigo Is The Best' on the screen
+        */
+        System.out.print("Amigo ");
+        System.out.print("Is ");
+        System.out.print("The ");
+        System.out.print("Best");
+    }
+}
+
+OR
+
+public class Home
+{
+    public static void main(String[] args)
+    {
+        System.out.print("Amigo ");
+        System.out.print("Is The "); // This is also a comment
+        System.out.print("Best");
+    }
+}
+
+Learned about:
+Variables
+Displaying text on the screen
+int and String types
+The difference between compiling in Java and other languages
+Adding comments in code and why we need them
+
+Progress until Lvl 2 - Lesson 0
