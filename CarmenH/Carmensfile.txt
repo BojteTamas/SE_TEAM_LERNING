@@ -765,7 +765,7 @@ another that you merge work into for testing, and several smaller ones for day t
 
 Feature Based Workflow. Create new branches for each new feature you're working on so you can
 seamlessly switch back and forth between them, then delete each branch when that feature gets merged into your main line.
-
+sadsa
 Disposable Experimentation. Create a branch to experiment in, realize it's not going to work,
 and just delete it - abandoning the work—with nobody else ever seeing it (even if you've pushed other branches in the meantime).
 
