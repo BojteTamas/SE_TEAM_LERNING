@@ -93,3 +93,12 @@ git checkout two
 git cherry-pick C5 C4 C3 C2
 git branch -f three C2
 
+=======
+14/Mar/22
+Starting learning Jabva on codegym
+declaring variables : integer, string, double
+system.out.print - displays the output on the same line in console
+system.out.println - displays the output on different lines
+1 class can contain multiple methods
+2 variables with the same name can only be defined in different methods, never in the same method
+->progress until Lesson5
