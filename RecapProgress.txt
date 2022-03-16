@@ -141,3 +141,15 @@ The difference between compiling in Java and other languages
 Adding comments in code and why we need them
 
 Progress until Lvl 2 - Lesson 0
+
+15/Mar/22
+Progress until lvl 3 -lesson 0
+Memory and variables
+Ints and strings
+Keyboard input
+Enter a number
+convert an integer to string via Integer.ParseInt
+length of a string: Syntax. int length = stringName.length();
+to read data from the console(keyboard) the standard class used is Scan
+you can enter a string from the keyboard and from a scanner with: scanner.nextLine();
+you can enter a number from the keyboard using a Scanner object with: scanner.nextInt();
