@@ -109,7 +109,6 @@ SUBLEVEL Rebasing
 git checkout main; git rebase last commit on one branch; the next branhc and the 3rd one and done.
 SUBLEVEL Reordering events
 git cherry-pick and do in order for every item to dress; then reset hard main to the new branch
-
 ==========================================
 09March2022 - Task2.4
 
@@ -230,30 +229,584 @@ git checkout bugFix; git rebase main;
 git checkout side; git rebase bugFix;
 git checkout another; git rebase side;
 git checkout main; git rebase another
-========================================== stop for today
-2. Multiple parents
-3. Branch Spaghetti
 
+========================================== stop for today
+11.03.2022 Task2.6
+
+
+
+11.03.2022 Task2.7
+2. Multiple parents
+git branch bugWork HEAD~^2~
+or
+git branch bugWork HEAD~^2~
+git checkout main
+3. Branch Spaghetti
+git checkout one; git cherry-pick c4 c3 c2; git checkout two; git cherry-pick c5 c4 c3 c2; git branch -f three c2
 
 Remote tab
 
 Push & Pull -- Git Remotes!
 1. Clone Intro
+git clone
 2. Remote Branches
+git commit; git checkout o/main; git commit
 3. Git Fetchin'
+git fetch
 4. Git pullin'
+git pull
 5. Faking Teamwork
+git clone; git fakeTeamwork 2; git commit; git pull
 6. Git Pushin'
+git commit; git commit; git push
 7. Diverged History
+git clone ; git fakeTeamwork 1; git commit; git pull --rebase; git push
 8. Locked Main
+git reset --hard o/main; git checkout -b feature C2; git push origin feature
 
 To Origin And Beyond -- Advanced Git Remotes!
 1. Push Main!
+git fetch; git rebase o/main side1; git rebase side1 side2; git rebase side2 side3; git rebase side3 main; git push
 2. Merging with remotes
+git checkout main; git pull origin main; git merge side1; git merge side2; git merge side3; git push origin main
 3. Remote Tracking
+git checkout -b side o/main; git branch -f side main; git commit; git pull --rebase; git push
 4. Git push arguments
+git push origin main; git push origin foo
 5. Git push arguments -- Expanded!
+git push origin foo:main; git push origin main^:foo
 6. Fetch arguments
+git fetch origin main^:foo; git fetch origin foo:main; git checkout foo; git merge main
 7. Source of nothing
+git pull origin :bar ; git push origin :foo
 8. Pull arguments
+git pull origin bar:foo; git pull origin master:side
+finished game2 : https://learngitbranching.js.org/
+================================================
+https://codegym.cc/
+In the Java programming language, a command can't exist on its own. It's part of a function
+(in Java, 'functions' are also called 'methods'). A method is part of a class. In other words,
+a class is divided into methods and methods are divided into commands."
+
+Programs in Java consist of classes. There might be tens of thousands of classes. A minimal
+program is one class. For each class, a separate file is created. The name of the file matches the name of the class.
+
+when you add strings and numbers, the result is always a string
+
+A Java compiler doesn't compile all the classes into one machine-code program. Instead, it compiles every
+class independently and, what's more, not into machine code, but into a special intermediate code (bytecode).
+The bytecode is compiled into machine code when the program is started.
+
+Today you learned about:
+Variables
+Displaying text on the screen
+int and String types
+The difference between compiling in Java and other languages
+Adding comments in code and why we need them
+
+12.03.2022 ( extra )
+Example 1
+Input a string and number from the keyboard
+
+
+InputStream inputStream = System.in;
+Reader inputStreamReader = new InputStreamReader(inputStream);
+BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+String name = bufferedReader.readLine(); //Read a string from the keyboard
+String sAge = bufferedReader.readLine(); //Read a string from the keyboard
+int nAge = Integer.parseInt(sAge); //Convert the string to a number.
+
+or
+BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+String name = reader.readLine();
+String sAge = reader.readLine();
+int nAge = Integer.parseInt(sAge);
+
+or
+Scanner scanner = new Scanner(System.in);
+String name = scanner.nextLine();
+int age = scanner.nextInt();
+
+JAVA books:
+"Kathy Sierra and Bert Bates, Head First Java"
+"Herbert Schildt: Java: The Complete Reference"
+"Bruce Eckel, Thinking in Java" - level 20 from codegym ---you can start to read it
+"Charles Petzold, Code: The Hidden Language of Computer Hardware and Software" -- good for ones that forgot o do not have programming studies
+"Aditya Bhargava, Grokking Algorithms"
+
+In Java, the expression 5/2 evaluates to: 2 ( am raspuns gresit, 2,5)
+In Java, to read data from the console (from the keyboard), this standard class is used: ( Scanner ?)
+
+
+All variables declared inside methods exist (are visible) from the point where they are declared until the end of the method (Example 1).
+If a variable is declared in a code block, it exists until the end of the code block (Example 2)
+If a variable is a method parameter, it exists (is visible) in the entire body of the method (Example 3).
+If a variable is an instance variable (Example 4), it is linked to a certain object and exists as long as the object exists.
+If no object exists, then there are no instances of the variable. You can access the variable (i.e. the variable is visible)
+from all methods of the class, regardless of whether they were declared before or after it. A new variable is created for each object.
+It is independent of other objects. You can't access an instance variable from static methods.
+
+If a variable is declared static, i.e. marked with the keyword static, it exists as long as its class exists.
+The JVM usually loads a class into memory at its first use. That's also when static variables are initialized.
+
+non-static methods:
+When you call a method using <object> dot <method name>, you're actually calling a class method and passing that same object as the first argument.
+Inside the method, the object is called 'this'. All operations in the method are performed on this object and its data.
+
+static methods:
+When you call a static method, no object is passed to it. In other words, 'this' equals null.
+That's why a static method can't access non-static variables and methods (since it has no 'this' to pass to these methods)
+
+package en.codegym.task.jdk13.task04.task0401;
+
+/*
+This age doesn't work for me…
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        Person person = new Person();
+        System.out.println("Age: " + person.age);
+        person.adjustAge(person.age);
+        System.out.println("Adjusted age: " + person.age);
+    }
+
+    public static class Person {
+        public int age = 20;
+
+        public void adjustAge(int age) {
+            this.age = this.age + 20;
+            System.out.println("The age in adjustAge() is: " + this.age);
+        }
+    }
+}
+
+package en.codegym.task.jdk13.task04.task0402;
+
+/*
+Price of apples
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        Apple apple = new Apple();
+        apple.addPrice(50);
+        Apple apple2 = new Apple();
+        apple2.addPrice(100);
+        System.out.println("Apple price " + Apple.applePrice);
+    }
+
+    public static class Apple {
+        public static int applePrice = 0;
+
+        public static void addPrice(int applePrice) {
+            //write your code here
+
+            Apple.applePrice += applePrice;
+
+        }
+    }
+}
+=========
+14.03.2022 - codegym:
+package en.codegym.task.jdk13.task04.task0403;
+
+/*
+What's the cat's name?
+*/
+
+public class Cat {
+    private String name = "nameless cat";
+
+    public void setName(String name) {
+        //write your code here
+        this.name = name; //this was added by me, and it was correct
+
+    }
+
+    public static void main(String[] args) {
+        Cat cat = new Cat();
+        cat.setName("Charlie");
+        System.out.println(cat.name);
+    }
+}
+
+inca un "nu-mi vine sa cred"
+package en.codegym.task.jdk13.task04.task0404;
+
+/*
+Cat register
+*/
+
+public class Cat {
+    private static int catCount = 0;
+
+    public static void addNewCat() {
+        //write your code here
+        catCount++;
+    }
+
+    public static void main(String[] args) {
+        Cat cat= new Cat();
+        cat.addNewCat();
+        System.out.println(cat.catCount);
+
+    }
+}
+
+ex3: ---aici greu am inteles si ca trteuie sa il declar cu 0....
+package en.codegym.task.jdk13.task04.task0405;
+
+/*
+Setting the number of cats
+*/
+
+public class Cat {
+    private static int catCount = 0;
+
+    public static void setCatCount(int catCount) {
+        //write your code here
+        Cat.catCount=9;
+        Cat.catCount+=catCount;
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println(catCount);
+
+    }
+}
+ex 4 ---inca ma bate:
+package en.codegym.task.jdk13.task04.task0406;
+
+/*
+Name register
+*/
+
+public class Cat {
+    private String fullName;
+
+    public void setName(String firstName, String lastName) {
+        String fullName = firstName + " " + lastName;
+        this.fullName=fullName;
+    }
+
+    public static void main(String[] args) {
+     }
+}
+
+
+package en.codegym.task.jdk13.task04.task0412;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/*
+Positive and negative numbers
+*/
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        //write your code here
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String sNumber = reader.readLine();
+        int number= Integer.parseInt(sNumber);
+        if (number==0)
+            System.out.println(number);
+            else
+                {
+                if(number>0)
+                    number=number*2;
+                else
+                    number++;
+                System.out.println(number);
+                }
+
+    }
+
+}
+
+objects comparison
+String s = new String("Mom");
+String s2 = new String("Mom");
+System.out.println(s.equals(s2));
+
+package en.codegym.task.jdk13.task04.task0418;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/*
+Minimum of two numbers
+*/
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        //write your code here
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String sNumber1 = reader.readLine();
+        int a= Integer.parseInt(sNumber1);
+        String sNumber2 = reader.readLine();
+        int b= Integer.parseInt(sNumber2);
+
+        if (a==b || a<b) System.out.println(a);
+            else System.out.println(b);
+
+    }
+}
+
+package en.codegym.task.jdk13.task04.task0427;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/*
+Describing numbers
+*/
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        //write your code here
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String sNumber1 = reader.readLine();
+        int a= Integer.parseInt(sNumber1);
+        int aLen=0;
+        int b=a;
+
+        while ( b>0)
+        {
+            b=b/10;
+            aLen++;
+        }
+
+        if ( (a%2==0) && aLen==1 ) System.out.println("even single-digit number");
+        if ( (a%2!=0) && aLen==1 ) System.out.println("odd single-digit number");
+
+        if ( (a%2==0) && aLen==2 ) System.out.println("even two-digit number");
+        if ( (a%2!=0) && aLen==2 ) System.out.println("odd two-digit number");
+
+        if ( (a%2==0) && aLen==3 ) System.out.println("even three-digit number");
+        if ( (a%2!=0) && aLen==3 ) System.out.println("odd three-digit number");
+
+    }
+}
+=============
+15.03.2022 Task 2.8
+starting level 2 lesson 10 task positive number
+
+
+int age = 35;
+boolean isYoung = (age < 18);
+boolean isOld = (age > 65);
+if (!isYoung && !isOld)
+   System.out.println("You can work");
+
+
+   !(a || b) ==== !a && !b
+   !(a && b) ==== !a || !b
+
+//comparing objects:
+public class Man {
+
+   String geneticCode;
+
+   public static void main(String[] args) {
+
+       Man man1 = new Man();
+       man1.geneticCode = "111122223333";
+
+       Man man2 = new Man();
+       man2.geneticCode = "111122223333";
+
+       System.out.println(man1.equals(man2));
+   }
+}
+result is false - object are different, always
+
+//Object class equals
+public boolean equals(Object obj) {
+   return (this == obj);
+}
+
+But the trick with this method is that we can override it.
+To override means to write your own equals() method in our Man class, giving it the behavior we need!
+public class Man {
+
+   int dnaCode;
+
+   public boolean equals(Man man) {
+       return this.dnaCode ==  man.dnaCode;
+
+   }
+
+   public static void main(String[] args) {
+
+       Man man1 = new Man();
+       man1.dnaCode = 1111222233;
+
+       Man man2 = new Man();
+       man2.dnaCode = 1111222233;
+
+       System.out.println(man1.equals(man2));
+
+   }
+} //this returns true
+
+public class Main {
+
+   public static void main(String[] args) {
+
+       String s1 = "CodeGym is the best website for learning Java!";
+       String s2 = new String("CODEGYM IS THE BEST WEBSITE FOR LEARNING JAVA!");
+       System.out.println(s1.equals(s2));
+   }
+} //false
+
+public class Main {
+
+   public static void main(String[] args) {
+
+       String address1 = "2311 Broadway Street, San Francisco";
+       String address2 = new String("2311 BROADWAY STREET, SAN FRANCISCO");
+       System.out.println(address1.equalsIgnoreCase(address2));
+   }
+} //true
+
+public class Main {
+
+   public static void main(String[] args) {
+
+       String s1 = "CodeGym is the best website for learning Java!";
+       String s2 = new String("CodeGym is the best website for learning Java!");
+       System.out.println(s1 == s2.intern());
+   }
+} //true
+
+ALWAYS use the equals() method to compare strings!
+
+We know how the == operator works, as well as the equals() and hashCode() methods
+
+Questions you answered incorrectly:
+double variables a and b are most correctly compared in this expression:
+System.out.println( a.compareTo(b) );
+String variables a and b are correctly compared in this expression:
+System.out.println(s1.equals(s2));
+System.out.println(s1.equalsIgnoreCase(s2));
+
+https://codegym.cc/groups/posts/14-ternary-operator
+Array list https://codegym.cc/groups/posts/257-javas-comparator-class
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Main {
+
+   public static void main(String[] args) {
+
+       String name1 = "Masha";
+       String name2 = "Sasha";
+       String name3 = "Dasha";
+
+       List<String> names = new ArrayList<>();
+       names.add(name1);
+       names.add(name2);
+       names.add(name3);
+
+       Collections.sort(names);
+       System.out.println(names);
+   }
+}
+
+Use a while loop to display a 10x10 square of dollar signs.
+Don't separate the symbols in each line.
+package en.codegym.task.jdk13.task04.task0433;
+
+/*
+Seeing dollars in your future
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        //write your code here
+        int i=0, j=0;
+        while ( i<10)
+        {
+            while ( j<10)
+                {
+                System.out.print("$");
+                j++;
+                }
+                 i++;
+                 System.out.println();
+                 j=0;
+
+        }
+    }
+}
+
+for (boolean isExit = false; !isExit; )
+{
+    String s = buffer.readLine();
+    isExit = s.equals("exit");
+}
+
+for (; true; )
+    System.out.println("C");
+
+    for (; true; )
+    {
+        String s = buffer.readLine();
+        if (s.equals("exit"))
+            break;
+    }
+
+
+Use any kind of loop to display a 10x10 multiplication table.
+Separate the numbers with spaces.
+    package en.codegym.task.jdk13.task04.task0434;
+
+    /*
+    Multiplication table
+    */
+
+    public class Solution {
+        public static void main(String[] args) {
+            //write your code here
+            for( int i=1; i<=10; i++)
+
+               {
+
+                   for ( int j=i*1; j<=i*10; j=j+i)
+                    System.out.print(j + " ");
+                    System.out.println();
+               }
+                  //
+
+        }
+    }
+================================
+16.03.2022 Task2.9
+Level 4, Lesson 6
+for loop
+for ( int i=0; i<n; i++)
+
+Level 4, Lesson 7: Interrupting a loop
+use break; to stop de loop= exit the loop
+use continue; to skip the rest of the loop and continue after incrementation
+
+But break isn't the only Java statement that lets you control a loop's behavior.
+Java also has the continue statement. If you execute a continue statement inside a loop, the current iteration of the loop will end of schedule.
+
+Level 4, Lesson 8
+Learned so far:
+how to use loops in Java
+real numbers
+
+going back to some things to recap & to fix:
+java commands, variables, compilers JVM, comments, Memory addressing and variables
+
+
+
 
