@@ -93,6 +93,7 @@ git checkout two
 git cherry-pick C5 C4 C3 C2
 git branch -f three C2
 
+=======
 14/Mar/22
 Starting learning Jabva on codegym
 declaring variables : integer, string, double
@@ -140,4 +141,3 @@ The difference between compiling in Java and other languages
 Adding comments in code and why we need them
 
 Progress until Lvl 2 - Lesson 0
-
