@@ -93,7 +93,6 @@ git checkout two
 git cherry-pick C5 C4 C3 C2
 git branch -f three C2
 
-=======
 14/Mar/22
 Starting learning Jabva on codegym
 declaring variables : integer, string, double
@@ -141,75 +140,3 @@ The difference between compiling in Java and other languages
 Adding comments in code and why we need them
 
 Progress until Lvl 2 - Lesson 0
-
-15/Mar/22
-Progress until lvl 3 -lesson 0
-Memory and variables
-Ints and strings
-Keyboard input
-Enter a number
-convert an integer to string via Integer.ParseInt
-length of a string: Syntax. int length = stringName.length();
-to read data from the console(keyboard) the standard class used is Scan
-you can enter a string from the keyboard and from a scanner with: scanner.nextLine();
-you can enter a number from the keyboard using a Scanner object with: scanner.nextInt();
-
-16/Mar/22
-Recap lessons:
-
-*variables are special entities used to store data
-*variables have 3 important properties: type, name and value
-int a => create an int variable named a;
-string s => create a string variable named s;
-double c => create a double variable named c;
-Doubles are fractional or real numbers
-
-Assignment:
-i=3; a=1; b= a+1;
-x=3;
-x=x+1;
-
-Compilers:
-Program in Java => Java compiler => Special platform-independent code(bytecode) => JVM => Machine code
-JVM = JAva Virtual Machine => it complies the bytecode into machine code before the program is executed
-
-/*
-Now we'll display the phrase "Bla bla bla" on the screen.
-*/ -> when the program is compiled the compiler omits everything between the symbols
-// -> this is also a comment
-
-**When a variable is declared in code, a bit of memory that isn't already being used is assigned to it.
-**This is usually a few bytes. Declaring a variable requires that you indicate the type of information the program will store in it: numbers, text or other data.
-**For convenience, a unique name is assigned to each variable.
-
-**There are two major types in Java: String and int.
-**We store strings/text in String, and integers (whole numbers) in int. To declare a new variable, you need to specify its type and name.
-**The name cannot be the same as the names of any other variables and/or functions.
-
-**To assign a new value to a variable, we use the = sign. It is also called the 'assignment operator'.
-**Assignment means to place into a variable a value from another variable or one computed from several variables.
-
-Keyboard input:
-Example 1
-Input a string and number from the keyboard
-InputStream inputStream = System.in;
-Reader inputStreamReader = new InputStreamReader(inputStream);
-BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-
-String name = bufferedReader.readLine(); //Read a string from the keyboard
-String sAge = bufferedReader.readLine(); //Read a string from the keyboard
-int nAge = Integer.parseInt(sAge); //Convert the string to a number.
-Example 2
-A more compact version of the previous example:
-BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-String name = reader.readLine();
-String sAge = reader.readLine();
-int nAge = Integer.parseInt(sAge);
-Example 3
-Even more compact
-Scanner scanner = new Scanner(System.in);
-String name = scanner.nextLine();
-int age = scanner.nextInt();
-
-
