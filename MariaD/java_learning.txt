@@ -456,7 +456,7 @@ public class Cat {
     }
 }
 
-package en.codegym.task.jdk13.task04.task0404;
+package en.code-gym.task.jdk13.task04.task0404;
 
 /*
 Cat register
