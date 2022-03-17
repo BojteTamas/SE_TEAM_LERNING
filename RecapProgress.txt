@@ -140,4 +140,3 @@ The difference between compiling in Java and other languages
 Adding comments in code and why we need them
 
 Progress until Lvl 2 - Lesson 0
-
