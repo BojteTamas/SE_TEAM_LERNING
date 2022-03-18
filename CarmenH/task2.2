@@ -235,6 +235,7 @@ git checkout main; git rebase another
 11.03.2022 Task2.6
 
 
+
 11.03.2022 Task2.7
 2. Multiple parents
 git branch bugWork HEAD~^2~
@@ -653,13 +654,172 @@ public class Man {
 
    }
 } //this returns true
+
+public class Main {
+
+   public static void main(String[] args) {
+
+       String s1 = "CodeGym is the best website for learning Java!";
+       String s2 = new String("CODEGYM IS THE BEST WEBSITE FOR LEARNING JAVA!");
+       System.out.println(s1.equals(s2));
+   }
+} //false
+
+public class Main {
+
+   public static void main(String[] args) {
+
+       String address1 = "2311 Broadway Street, San Francisco";
+       String address2 = new String("2311 BROADWAY STREET, SAN FRANCISCO");
+       System.out.println(address1.equalsIgnoreCase(address2));
+   }
+} //true
+
+public class Main {
+
+   public static void main(String[] args) {
+
+       String s1 = "CodeGym is the best website for learning Java!";
+       String s2 = new String("CodeGym is the best website for learning Java!");
+       System.out.println(s1 == s2.intern());
+   }
+} //true
+
+ALWAYS use the equals() method to compare strings!
+
+We know how the == operator works, as well as the equals() and hashCode() methods
+
+Questions you answered incorrectly:
+double variables a and b are most correctly compared in this expression:
+System.out.println( a.compareTo(b) );
+String variables a and b are correctly compared in this expression:
+System.out.println(s1.equals(s2));
+System.out.println(s1.equalsIgnoreCase(s2));
+
+https://codegym.cc/groups/posts/14-ternary-operator
+Array list https://codegym.cc/groups/posts/257-javas-comparator-class
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Main {
+
+   public static void main(String[] args) {
+
+       String name1 = "Masha";
+       String name2 = "Sasha";
+       String name3 = "Dasha";
+
+       List<String> names = new ArrayList<>();
+       names.add(name1);
+       names.add(name2);
+       names.add(name3);
+
+       Collections.sort(names);
+       System.out.println(names);
+   }
+}
+
+Use a while loop to display a 10x10 square of dollar signs.
+Don't separate the symbols in each line.
+package en.codegym.task.jdk13.task04.task0433;
+
+/*
+Seeing dollars in your future
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        //write your code here
+        int i=0, j=0;
+        while ( i<10)
+        {
+            while ( j<10)
+                {
+                System.out.print("$");
+                j++;
+                }
+                 i++;
+                 System.out.println();
+                 j=0;
+
+        }
+    }
+}
+
+for (boolean isExit = false; !isExit; )
+{
+    String s = buffer.readLine();
+    isExit = s.equals("exit");
+}
+
+for (; true; )
+    System.out.println("C");
+
+    for (; true; )
+    {
+        String s = buffer.readLine();
+        if (s.equals("exit"))
+            break;
+    }
+
+
+Use any kind of loop to display a 10x10 multiplication table.
+Separate the numbers with spaces.
+    package en.codegym.task.jdk13.task04.task0434;
+
+    /*
+    Multiplication table
+    */
+
+    public class Solution {
+        public static void main(String[] args) {
+            //write your code here
+            for( int i=1; i<=10; i++)
+
+               {
+
+                   for ( int j=i*1; j<=i*10; j=j+i)
+                    System.out.print(j + " ");
+                    System.out.println();
+               }
+                  //
+
+        }
+    }
 --------------------
-Task2.9 16.03.2022
-Level 4, Lesson 6: Even numbers
-Level 4 lesson 7 : Interrupting a loop : using break
+16.03.2022 Task2.9
+Level 4, Lesson 6
+for loop
+for ( int i=0; i<n; i++)
+
+Level 4, Lesson 7: Interrupting a loop
+use break; to stop de loop= exit the loop
+use continue; to skip the rest of the loop and continue after incrementation
+
+But break isn't the only Java statement that lets you control a loop's behavior.
+Java also has the continue statement. If you execute a continue statement inside a loop, the current iteration of the loop will end of schedule.
+
+Level 4, Lesson 8
+Learned so far:
+how to use loops in Java
+real numbers
+
+going back to some things to recap & to fix:
+java commands, variables, compilers JVM, comments, Memory addressing and variables
 --------------------
 Task2.10  17.03.2022
 started to read OCA8: introduction + appendixB
 Chapter1.
+
+--------------------
+Task2.11  18.03.2022
+OCA 8 Chapter 1
+comments
+class structure
+run java file from terminal
+fields and methods
+classes vs. files
+
 
 
