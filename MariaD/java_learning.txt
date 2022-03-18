@@ -331,6 +331,7 @@ EX:
 ┃┃   }
 ┃┃}
 
+
 EXAMPLE WITH 2 COUNT VARIABLES:
 class Main
 {
@@ -395,7 +396,6 @@ public class Solution {
             age = age + 20 ;
             age2 = 40;
             System.out.println("The age in adjustAge() is: " + age);
-        }
         }
     }
 }
