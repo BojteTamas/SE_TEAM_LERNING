@@ -1,0 +1,418 @@
+15/Mar/22
+''"In Java, you can write commands, but you can also add comments to those commands right in the code.
+''The compiler completely ignores the comments. When the program is run, all the comments are omitted."
+public class Home
+{
+    public static void main(String[] args)
+    {
+        /*
+        Now we'll display the phrase 'Amigo Is The Best' on the screen
+        */
+        System.out.print("Amigo ");
+        System.out.print("Is ");
+        System.out.print("The ");
+        System.out.print("Best");
+    }
+}
+
+OR
+
+public class Home
+{
+    public static void main(String[] args)
+    {
+        System.out.print("Amigo ");
+        System.out.print("Is The "); // This is also a comment
+        System.out.print("Best");
+    }
+}
+
+Learned about:
+Variables
+Displaying text on the screen
+int and String types
+The difference between compiling in Java and other languages
+Adding comments in code and why we need them
+
+**17/Mar/22
+
+**visibility of variables
+┏
+┃public class Variables
+┃┏
+┃┃{
+┃┃   private static String TEXT = "The end.";
+┃┃  ┗━━━━━━━━━━━━━━┛
+┃┃   public static void main (String[] args)
+┃┃ ┏                         ┗━━━━━━━┛
+┃┃ ┃ {
+┃┃ ┃    System.out.println("Hi");
+┃┃ ┃    String s = "Hi!";
+┃┃ ┃  ┏┗━━━━┛
+┃┃ ┃  ┃ System.out.println(s);
+┃┃ ┃  ┃ if (args != NULL)
+┃┃ ┃  ┃ {
+┃┃ ┃  ┃    String s2 = s;
+┃┃ ┃  ┃   ┗━━━━┛
+┃┃ ┃  ┃  ┏
+┃┃ ┃  ┃  ┃ System.out.println(s2);
+┃┃ ┃  ┃  ┗
+┃┃ ┃  ┃ }
+┃┃ ┃  ┃ Variables variables = new Variables();
+┃┃ ┃  ┃ System.out.println(variables.instanceVariable);
+┃┃ ┃  ┃ System.out.println(TEXT);
+┃┃ ┃  ┗
+┃┃ ┃ }
+┃┃ ┗
+┃┃   public String instanceVariable;
+┃┃  ┗━━━━━━━━━━━━━━━┛
+┃┃   public Variables()
+┃┃   {
+┃┃      instanceVariable = "Instance variable test.";
+┃┃   }
+┃┃}
+┃┗
+┗
+
+**
+1. A variable declared in a method exists (is visible) from the start of its declaration to the end of the method.
+
+2. A variable declared in a code block exists until the end of the code block.
+
+3. A method's parameters exist everywhere within the method.
+
+4. Variables in an object exist during the entire lifespan of the object that contains them. Their visibility is also defined by special access modifiers: public and private.
+
+5. Static (class) variables exist the whole time the program is running. Their visibility is also defined by access modifiers.
+
+**
+1. public access modifier.
+
+You can use a variable, method or class marked with the public modifier from anywhere in the program.- highest level of access, no constraints.
+
+2. private access modifier.
+
+You can use a variable or a method marked with the private modifier only from the class it is declared in. For all other classes, the marked method or variable will be invisible, just as if it doesn't exist. This is the highest level of closedness – access only within its own class.
+
+3. No modifier.
+
+If a variable or a method isn't marked with any modifier, it is considered to be marked with a 'default' access modifier. Such variables and methods are visible to all classes in the package they are declared in. And to them only. This level of access is sometimes called 'package-private' access, since access to the variables and methods is open for the entire package that contains their class.
+
+
+**Example with two count variables
+class Main
+{
+    public int count = 0;     // Declare an instance variable
+
+    public void run()
+    {
+        count = 15;           // Access the instance variable
+        int count = 10;       // Declare a local method variable
+        count++;             // Access the method variable
+    }
+}
+
+***Static (class) variable
+ClassName.variableName
+
+// Here are some examples:
+Cat.catsCount
+
+***Non-static (instance) variable
+this.variableName
+
+// Here are some examples:
+this.catsCount
+
+**When you call a method using <object> dot <method name>, you're actually calling a class method and passing that same object as the first argument. Inside the method, the object is called 'this'. All operations in the method are performed on this object and its data
+
+***Non-static method
+**What the code looks like
+    Cat cat = new Cat();
+    String name = cat.getName();
+    cat.setAge(17);
+    cat.setChildren(cat1, cat2, cat3);
+**What really happens
+    Cat cat = new Cat();
+    String name = Cat.getName(cat);
+    Cat.setAge(cat,17);
+    Cat.setChildren(cat, cat1, cat2, cat3);
+
+***Static method
+**What the code looks like
+    Cat cat1 = new Cat();
+    Cat cat2 = new Cat();
+    int catCount = Cat.getAllCatsCount();
+**What really happens
+    Cat cat1 = new Cat();
+    Cat cat2 = new Cat();
+    int catCount = Cat.getAllCatsCount(null);
+
+**When you call a static method, no object is passed to it. In other words, 'this' equals null. That's why a static method can't access non-static variables and methods (since it has no 'this' to pass to these methods
+
+
+**This age doesn't work for me exercise:
+public class Solution {
+    public static void main(String[] args) {
+        Person person = new Person();
+        System.out.println("Age: " + person.age);
+        person.adjustAge(person.age);
+        System.out.println("Adjusted age: " + person.age);
+    }
+
+    public static class Person {
+        public int age = 20;
+
+        public void adjustAge(int age) {
+            this.age = age + 20;
+            System.out.println("The age in adjustAge() is: " + age);
+        }
+    }
+}
+
+**Price of apples exercise
+public class Solution {
+    public static void main(String[] args) {
+        Apple apple = new Apple();
+        Apple.addPrice(50);
+        Apple apple2 = new Apple();
+        Apple.addPrice(100);
+        System.out.println("Apple price " + Apple.applePrice);
+    }
+
+    public static class Apple {
+        public static int applePrice = 0;
+
+        public static void addPrice(int applesPrice) {
+            Apple.applePrice = Apple.applePrice + applesPrice;
+        }
+    }
+}
+
+**What's the cat's name?
+**The Cat class's setName method must set the value of the private String variable name equal to the passed String argument name.
+public class Cat {
+    private String name = "nameless cat";
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public static void main(String[] args) {
+        Cat cat = new Cat();
+        cat.setName("Charlie");
+        System.out.println(cat.name);
+    }
+
+**Cat register exercise
+**The Cat class's addNewCat method should increase the number of cats by 1.
+public class Cat {
+    private static int catCount = 0;
+
+    public static void addNewCat() {
+        catCount++;
+    }
+
+    public static void main(String[] args) {
+
+    }
+}
+
+
+**Setting the number of cats exercise
+****The Cat class's setCatCount method must set the value of the catCount variable equal to the passed argument.
+public class Cat {
+    private static int catCount = 0;
+
+    public static void setCatCount(int catCount) {
+        Cat.catCount = catCount;
+    }
+
+    public static void main(String[] args) {
+
+    }
+}
+
+**Name register exercise
+***The Cat class's setName method must set the value of the global private String variable fullName equal to the local variable fullName.
+public class Cat {
+    private String fullName;
+
+    public void setName(String firstName, String lastName) {
+        String fullName = firstName + " " + lastName;
+        this.fullName = fullName;
+    }
+
+    public static void main(String[] args) {
+
+    }
+}
+
+
+**Count the number of cats
+***The variable count must store the actual number of cat objects created
+public class Solution {
+    public static void main(String[] args) {
+        Cat cat1 = new Cat();
+        Cat.count++;
+
+        Cat cat2 = new Cat();
+        Cat.count++;
+
+        System.out.println("The cat count is " + Cat.count);
+    }
+
+    public static class Cat {
+        public static int count = 0;
+    }
+}
+
+
+***Commands and code blocks
+**Examples of commands:
+1)  String s = "Name";
+2)  System.out.println(1234);
+3)  return a + b * c;
+4)  throw new RuntimeException();
+5)  ;
+
+**A code block consists of several commands combined using curly brackets. A method body is a code block.
+***Examples:
+{}
+{
+    throw new RuntimeException():
+}
+
+{
+    return null;
+}
+
+{
+    System.out.println(23);
+    System.out.println(1);
+    System.out.println(14);
+}
+
+
+***Conditional operators : if/else statements
+**Examples:
+    if (a<b)
+        System.out.println("a is less than b");
+    else
+        System.out.println("b is less than a");
+
+//If a is less than b, the first command will be executed. Otherwise the second command will be executed. The commands are never both executed.
+
+    if (a < b)
+{
+    System.out.println("A is less than B");
+    System.out.println("B is greater than A");
+}
+else
+{
+     System.out.println("B is less than A");
+     System.out.println("A is greater than B");
+}
+// You can replace one command with a code block. The rest is the same.
+
+if (a < b)
+{
+    a = 0;
+}
+else
+{
+}
+
+if (a < b)
+{
+    a = 0;
+}
+
+if (a < b)
+    a = 0;
+
+//  You can omit the else block if it's empty. You can omit the brackets if you have to exe only one command.
+
+***Good or bad? exercise
+public class Solution {
+    public static void main(String[] args) {
+        compare(3);
+        compare(6);
+        compare(5);
+    }
+
+    public static void compare(int a) {
+        if (a < 5) {
+            System.out.println("The number is less than 5");
+        } else {
+            System.out.println("The number is equal or greater than 5");
+        }
+    }
+}
+
+**Interval exercise
+public class Solution {
+    public static void main(String[] args) {
+        checkInterval(60);
+        checkInterval(112);
+        checkInterval(10);
+    }
+
+    public static void checkInterval(int a) {
+        //write your code here
+        if (a < 100 & a > 50)
+        System.out.println("The number " + a + " is in the interval.");
+        else
+        System.out.println("The number " + a + " is not in the interval.");
+
+    }
+}
+
+***Positive and negative numbers exercise
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); // read number from keyboard
+        int number = Integer.parseInt(reader.readLine());
+
+        if (number > 0) {
+            number = number * 2;
+        } else if (number < 0) {
+            number = number + 1;
+        }
+        System.out.println(number);
+    }
+}
+
+**Day of the week exercise
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int Weekday = Integer.parseInt(reader.readLine());
+        String dayDisplay = "No such day of the week";
+
+        if (Weekday == 1) {
+            dayDisplay = "Monday";
+        }
+        if (Weekday == 2) {
+            dayDisplay = "Tuesday";
+        }
+        if (Weekday == 3) {
+            dayDisplay = "Wednesday";
+        }
+        if (Weekday == 4) {
+            dayDisplay = "Thursday";
+        }
+        if (Weekday == 5) {
+            dayDisplay = "Friday";
+        }
+        if (Weekday == 6) {
+            dayDisplay = "Saturday";
+        }
+        if (Weekday == 7) {
+            dayDisplay = "Sunday";
+        }
+
+        System.out.println(dayDisplay);
+    }
+}
+
