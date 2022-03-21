@@ -35,3 +35,5 @@ hs_err_pid*
 # Features folder retrieved from Jira
 /Features
 .DS_Store
+.idea
+/src/java/RalucaG/JavaLearning/lib/
