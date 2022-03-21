@@ -176,5 +176,303 @@ public class Solution {
     }
 }
 
+level 2 lesson 6
+System.out.println(); - it will add an empty line
+package com.codegym.task.task01.task0121;
+
+/*
+Contract
+
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+       String a = "My name is Amigo";
+       String b = "I agree to wages of $5000/month in the first year.";
+       String d = "Kiss my shiny metal rear actuator!";
+        System.out.println(a);
+        System.out.println ();
+        System.out.println(b);
+        System.out.println ("I agree to wages of $5500/month in the second year.");
+        System.out.println ("I agree to wages of $7000/month in the third year. ");
+        System.out.println ("I agree to wages of $8000/month in the fourth year.");
+        System.out.println ("I agree to wages of $10000/month in the fifth year.");
+        System.out.println();
+        System.out.println(d);
+    }
+}
+
+lesson 7
+System.in.
+> InputStream: Input a string and number from the keyboard
+InputStream inputStream = System.in;
+Reader inputStreamReader = new InputStreamReader(inputStream);
+BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+String name = bufferedReader.readLine(); //Read a string from the keyboard
+String sAge = bufferedReader.readLine(); //Read a string from the keyboard
+int nAge = Integer.parseInt(sAge); //Convert the string to a number.
+
+> BufferedReader A more compact version of the previous example:
+BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+String name = reader.readLine();
+String sAge = reader.readLine();
+int nAge = Integer.parseInt(sAge);
+
+--But System.in and BufferedReader are incompatible, so we use another adapter – another InputStreamReader object.
+package en.codegym.task.jdk13.task03.task0318;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/*
+How to take over the world
+*/
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+    String name = reader.readLine();
+    String snumber = reader.readLine();
+    System.out.println(name);
+    System.out.println("will take over the world in");
+    System.out.println(snumber);
+    System.out.println("years. Mwa-ha-ha!");
+
+    }
+}
+
+ System.out.println( name + ” will take over the world in ” + number + ” years. Mwa-ha-ha!“);
+
+ package en.codegym.task.jdk13.task03.task0319;
+
+ import java.io.BufferedReader;
+ import java.io.InputStreamReader;
+
+ /*
+ Predictions
+ */
+
+ public class Solution {
+     public static void main(String[] args) throws Exception {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+     String name = reader.readLine();
+     String number1 = reader.readLine();
+     String number2 = reader.readLine();
+     System.out.println( name + " will receive " + number1 + " in " + number2 + " years.");
+
+     }
+ }
+
+package en.codegym.task.jdk13.task03.task0322;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/*
+Deep and pure love
+*/
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+     String name1 = reader.readLine();
+     String name2 = reader.readLine();
+     String name3 = reader.readLine();
+     //System.out.println(name1 + " + " + name2 + " + " + name3 + " = Pure love.Ooo la-la!.");
+
+    System.out.printf("%s + %s + %s = Pure love. Ooo la-la!", name1 , name2, name3);
+    }
+}
+
+LEVEL 3
+VARIABLES
+A variable's 'visibility', or scope, means the places in the code where you can refer to that variable.
+You may use some variables everywhere in the program, but others can only be used within their class, and still others
+– only within one method.
+For example, you can't use a variable before it has been declared
+
+EX:
+┏
+┃public class Variables
+┃┏
+┃┃{
+┃┃   private static String TEXT = "The end.";
+┃┃  ┗━━━━━━━━━━━━━━━━━━━┛
+┃┃   public static void main (String[] args)
+┃┃ ┏                         ┗━━━━━━━┛
+┃┃ ┃ {
+┃┃ ┃    System.out.println("Hi");
+┃┃ ┃    String s = "Hi!";
+┃┃ ┃  ┏┗━━━━┛
+┃┃ ┃  ┃ System.out.println(s);
+┃┃ ┃  ┃ if (args != NULL)
+┃┃ ┃  ┃ {
+┃┃ ┃  ┃    String s2 = s;
+┃┃ ┃  ┃   ┗━━━━┛
+┃┃ ┃  ┃  ┏
+┃┃ ┃  ┃  ┃ System.out.println(s2);
+┃┃ ┃  ┃  ┗
+┃┃ ┃  ┃ }
+┃┃ ┃  ┃ Variables variables = new Variables();
+┃┃ ┃  ┃ System.out.println(variables.instanceVariable);
+┃┃ ┃  ┃ System.out.println(TEXT);
+┃┃ ┃  ┗
+┃┃ ┃ }
+┃┃ ┗
+┃┃   public String instanceVariable;
+┃┃  ┗━━━━━━━━━━━━━━━┛
+┃┃   public Variables()
+┃┃   {
+┃┃      instanceVariable = "Instance variable test.";
+┃┃   }
+┃┃}
+
+
+EXAMPLE WITH 2 COUNT VARIABLES:
+class Main
+{
+    public int count = 0;     // Declare an instance variable
+
+    public void run()
+    {
+        count = 15;           // Access the instance variable
+        int count = 10;       // Declare a local method variable
+        count++;             // Access the method variable
+    }
+}
+
+So, if I understood well :
+A variable is visible within its context. If it is declared in a method, you can only access it within the method. If you declare it in a class, there are two cases : If it is a static variable, then it will be independent from the objects of the class. Otherwise it will be declared when an object is created and linked to it.
+Example :
+public class Lion {
+   public String name;
+   public int numberOfCubs;
+   static public int numberOfLions;
+   }
+
+"name" and "numberOfCubs" will be dependant of every Lion object created, the numberOfLions variable will be unique and independant of the number of Lion object I may create.
+Within a method, to access the "name" or the "numberOfClaws" of a Lion object, I have to use the declared name of the object. To access the static variable, I must use the class name. Example :
+Lion simba = new Lion();
+simba.name = "Simba";
+simba.numberOfCubs = 3;
+Lion.numberOfLions = 4;
+
+I can use a static method that will use the parameter numberOfLions but if I want to access the static variable of the Lion class, I will have to use Lion.numberOfLions. Example :
+Public static void lionPopulationChange(int numberOfLions) {
+  Lion.numberOfLion = numberOfLion + Lion.numberOfLion ;
+}
+
+To use a non static variable, I still can use the same variable name within a method, but the object variable will be called using "this". Example :
+Public void newCubs(int numberOfCubs) {
+  this.numberOfCubs = this.numberOfCubs + numberOfCubs
+}
+simba.newCubs(2); // Simba has now 5 cubs.
+
+
+ex1:
+package en.codegym.task.jdk13.task04.task0401;
+
+/*
+This age doesn't work for me…
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        Person person = new Person();
+        System.out.println("Age: " + person.age);
+        person.adjustAge(person.age2) ;
+        System.out.println("Adjusted age: " + person.age2);
+    }
+
+    public static class Person {
+        public int age = 20;
+         public int age2 = 40;
+
+        public void adjustAge(int age2) {
+            age = age + 20 ;
+            age2 = 40;
+            System.out.println("The age in adjustAge() is: " + age);
+        }
+    }
+}
+
+package en.codegym.task.jdk13.task04.task0402;
+
+/*
+Price of apples
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        Apple apple = new Apple();
+        Apple.addPrice(50);
+        Apple apple2 = new Apple();
+        Apple.addPrice(100);
+        System.out.println("Apple price " + Apple.applePrice);
+    }
+
+    public static class Apple {
+        public static int applePrice = 0;
+
+        public static void addPrice(int applesPrice) {
+            Apple.applePrice = Apple.applePrice + applesPrice;
+        }
+    }
+}
+
+lesson 5
+Cat cat = new Cat();
+String name = cat.getName();
+cat.setAge(17);
+cat.setChildren(cat1, cat2, cat3);
+
+
+
+Cat cat1 = new Cat();
+Cat cat2 = new Cat();
+int catCount = Cat.getAllCatsCount();
+
+ex1
+package en.codegym.task.jdk13.task04.task0403;
+
+/*
+What's the cat's name?
+*/
+
+public class Cat {
+    private String name = "nameless cat";
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public static void main(String[] args) {
+        Cat cat = new Cat();
+        cat.setName("Charlie");
+        System.out.println(cat.name);
+    }
+}
+
+package en.code-gym.task.jdk13.task04.task0404;
+
+/*
+Cat register
+*/
+
+public class Cat {
+    private static int catCount = 0;
+
+    public static void addNewCat() {
+        catCount++;
+    }
+
+    public static void main(String[] args) {
+
+    }
+}
 
 
