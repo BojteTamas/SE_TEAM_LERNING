@@ -1,5 +1,13 @@
 21.03.2022
 
-https://testautomationu.applitools.com/intellij/  to watch
+https://testautomationu.applitools.com/intellij/  watched cap1&2
+
+--------------------------------------------------------------------------------------
+
+22.03.2022
+https://testautomationu.applitools.com/intellij/  - day2 to watch
+created a new project, don't know yet how to create test
+
+also to do:
 Gymcode - tasks
 OCA8 book to read
