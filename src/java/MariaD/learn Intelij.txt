@@ -52,6 +52,36 @@ Key Map Refference - a default keymap cheat sheet all shortchuts available in in
 -> submit a bug report - redirects you to the browser
 -> Find Action - Ctrl + Shift + A - shows you all the actions that you can perform in Intelli J
 
+Project screen
+View - show/hide the left menu
+you can see folders/subfolders and all packages
+classes are marked with a C and a blue icon
+difference between the classes from main folder and the test folder
+each class opens in a new tab in intelij
+
+Footer & Maven Bars
+the currently inview path -> we can see the entire path
+add configuration options
+you can also debug the test directly from the navigation bar upside the screen
+downside the screen :
+
+SETTINGS
+File -> Settings
+1. Appearance & Behaviour
+    > Theme
+2.Settings > Editor > Font > Changing Font Size
+3. Settings > Keymap - Setting Shortcuts
+Keymap - choose the list with the shortcuts you prefer
+
+Creating a Package and Test Class
+create a package or a class
+create the class -> type the name of the class, select the type of the class
+
+
+
+
+
+
 
 
 
