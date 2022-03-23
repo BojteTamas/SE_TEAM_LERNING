@@ -48,7 +48,7 @@ view -> entire full screen
 view -> active editor -> soft wrap (re-arrange the text, making it more readable)
 
 HELP menu
-Key Map Refference - a default keymap cheat sheet all shortchuts available in intelli j
+Key Map Reference - a default keymap cheat sheet all shortchuts available in intelli j
 -> submit a bug report - redirects you to the browser
 -> Find Action - Ctrl + Shift + A - shows you all the actions that you can perform in Intelli J
 
