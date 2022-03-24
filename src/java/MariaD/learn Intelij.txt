@@ -77,6 +77,85 @@ Creating a Package and Test Class
 create a package or a class
 create the class -> type the name of the class, select the type of the class
 
+Creating Test Methods
+
+> The purpose of the test that  is to open a browser, open a page in the browser, then interact with that page,
+    and after the test has run, close the browser.
+-> use a method annotated with the @BeforeAll annotation,
+    which will execute before any other test method will execute.
+    add put the code which opens my browser.
+> After all the tests have been run -  close the browser. So, for this purpose,
+    create a method annotated with @AfterAll.
+    This annotation, also from JUnit, specifies that the method, which is annotated with this annotation,
+    will run after all the test methods from this class have run.
+
+creating a test using BeforeAll method.
+>  hit Enter right after this bracket, and type the @ character.
+>  type “B” to find the BeforeAll method
+>  got an automatic import
+>  Because it is a test - create a public void method
+> type of method: return
+> public void
+ex:
+
+public class SeleniumTest {
+    @BeforeAll
+    public void beforeAll() {
+    }
+  }
+// > after all method:
+
+@AfterAll
+public void afterAll () {
+
+}
+// > Test method:
+ @Test
+ public void openThePageAndCheckTheTitle() {
+
+ }
+
+// > make the import
+package taudemo;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+CREATING FIELDS & VARIABLES
+--GitHub source: https://github.com/iamalittletester/selenium-tutorial
+ > web driver instance which will hold my browser session.
+> In order to use that class with these browser initialization methods,
+-  create a field -  by typing “p” and selecting private.
+> specify the name of the class : BrowseGetter(browser) --the name of the class with all the browser related methods.
+> add a name because the field is now private
+> create a WebDriver filed where to store the result of calling the browser initialization method
+NOTE
+! Whenever in your tests you will see something that has a gray name,
+    that suggests that whatever that object you're looking at is, it is not used anywhere. It's the same with imports.
+    It is important not to have any grayed-out items in your test because that means you have declared something that is not being used.!!!!
+ex : private BrowseGetter browserGetter = new BrowserGetter() ;
+     private WebDriver driver;
+     @Test
+     public void openThePageAndCheckTheTitle"() {
+     String expectedTitle = "Example title";
+     }
+    import browser.BrowserGetter;
+    import org.junit.jupiter.api.AfterAll;
+    import org.junit.jupiter.api.BeforeAll;
+    import org.junit.jupiter.api.Test;
+    import org.openqa.selenium.WebDriver;
+
+CALLING METHODS & JUMPING TO SOURCE
+>  the code for the beforeAll and afterAll methods.
+> getChromeDriver method, this method  will open the Chrome browser.
+> write the body of the @BeforeAll and the @AfterAll methods.
+> the fields should not be gray, so their names are not gray.
+
+
+
+
+
 
 
 
