@@ -1,0 +1,170 @@
+read/ watched  the first 5 chapters from https://testautomationu.applitools.com/intellij/chapter1.html
+--chapter 1 -installation intellij idea
+--chapter2 - creating a java project
+> create a new project
+    > different types of project
+    > java project java sdk (java version of project)
+            create a simple project
+            add a project name
+            choose a location for the project
+                finish
+            .idea & .demoJavaproject.xml are automatically created --never commit these folders
+   > creating new maven projects --used for creating test cases for qa
+            a list of archetypes (templates) is displayed
+            add a group id & artifactid - check the bellow links before creating a maven project
+                https://maven.apache.org/guides/introduction/introduction-to-archetypes.html
+                https://maven.apache.org/guides/getting-started/index.html
+            automatically creates a pom.xml file (this is the core of the maven project)
+            creates a src (source folder) with main & test folders -  - same as java
+            created also dependencies
+
+> import project
+    a. from existing sources
+    file -> new -> project from existing sources
+    import screen is displayed
+    select a file/directory > ok
+    create a file/ import file
+        > next
+        > choose the java sdk to use
+        > finish
+    b. from source control
+    file -> new -> project from version control -> project from git (provide the url from github)
+                    test - to check the conection
+                    clone
+> open
+> check out from version control
+
+FILE MENU
+Open recent - shows you a list with the recent files opened in INTELLI J
+Project Structure - refers to the project you are currently working at
+Project language level - what features you can type into your code should be in sync with the java sdk
+
+VIEW MENU
+CONFIGURING YOUR DISPLAY
+AUTO SAVING ENABLED IN INTELLI J
+display the left side menu, the status bar, show/hide the navigation bar
+view -> distraction free mode
+view -> entire full screen
+view -> active editor -> soft wrap (re-arrange the text, making it more readable)
+
+HELP menu
+Key Map Refference - a default keymap cheat sheet all shortchuts available in intelli j
+-> submit a bug report - redirects you to the browser
+-> Find Action - Ctrl + Shift + A - shows you all the actions that you can perform in Intelli J
+
+Project screen
+View - show/hide the left menu
+you can see folders/subfolders and all packages
+classes are marked with a C and a blue icon
+difference between the classes from main folder and the test folder
+each class opens in a new tab in intelij
+
+Footer & Maven Bars
+the currently inview path -> we can see the entire path
+add configuration options
+you can also debug the test directly from the navigation bar upside the screen
+downside the screen :
+
+SETTINGS
+File -> Settings
+1. Appearance & Behaviour
+    > Theme
+2.Settings > Editor > Font > Changing Font Size
+3. Settings > Keymap - Setting Shortcuts
+Keymap - choose the list with the shortcuts you prefer
+
+Creating a Package and Test Class
+create a package or a class
+create the class -> type the name of the class, select the type of the class
+
+Creating Test Methods
+
+> The purpose of the test that  is to open a browser, open a page in the browser, then interact with that page,
+    and after the test has run, close the browser.
+-> use a method annotated with the @BeforeAll annotation,
+    which will execute before any other test method will execute.
+    add put the code which opens my browser.
+> After all the tests have been run -  close the browser. So, for this purpose,
+    create a method annotated with @AfterAll.
+    This annotation, also from JUnit, specifies that the method, which is annotated with this annotation,
+    will run after all the test methods from this class have run.
+
+creating a test using BeforeAll method.
+>  hit Enter right after this bracket, and type the @ character.
+>  type “B” to find the BeforeAll method
+>  got an automatic import
+>  Because it is a test - create a public void method
+> type of method: return
+> public void
+ex:
+
+public class SeleniumTest {
+    @BeforeAll
+    public void beforeAll() {
+    }
+  }
+// > after all method:
+
+@AfterAll
+public void afterAll () {
+
+}
+// > Test method:
+ @Test
+ public void openThePageAndCheckTheTitle() {
+
+ }
+
+// > make the import
+package taudemo;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+CREATING FIELDS & VARIABLES
+--GitHub source: https://github.com/iamalittletester/selenium-tutorial
+ > web driver instance which will hold my browser session.
+> In order to use that class with these browser initialization methods,
+-  create a field -  by typing “p” and selecting private.
+> specify the name of the class : BrowseGetter(browser) --the name of the class with all the browser related methods.
+> add a name because the field is now private
+> create a WebDriver filed where to store the result of calling the browser initialization method
+NOTE
+! Whenever in your tests you will see something that has a gray name,
+    that suggests that whatever that object you're looking at is, it is not used anywhere. It's the same with imports.
+    It is important not to have any grayed-out items in your test because that means you have declared something that is not being used.!!!!
+ex : private BrowseGetter browserGetter = new BrowserGetter() ;
+     private WebDriver driver;
+     @Test
+     public void openThePageAndCheckTheTitle"() {
+     String expectedTitle = "Example title";
+     }
+    import browser.BrowserGetter;
+    import org.junit.jupiter.api.AfterAll;
+    import org.junit.jupiter.api.BeforeAll;
+    import org.junit.jupiter.api.Test;
+    import org.openqa.selenium.WebDriver;
+
+CALLING METHODS & JUMPING TO SOURCE
+>  the code for the beforeAll and afterAll methods.
+> getChromeDriver method, this method  will open the Chrome browser.
+> write the body of the @BeforeAll and the @AfterAll methods.
+> the fields should not be gray, so their names are not gray.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

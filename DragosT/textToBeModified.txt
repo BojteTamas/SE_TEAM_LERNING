@@ -1,0 +1,12 @@
+17 Februarie: Git pull --rebase being a combination of fetch and a rebase and git pull is fetch + merge equivalent.
+18 Februarie: OOO
+21 Februarie: git pull --rebase more exercises,push a new feature to origin
+22 Februarie: A mixed bag recap. On the Remote part Stating origin and beyond.
+23 Februarie: Merging with remotes.
+24 Februarie: Rebasing over 9000.
+25 Februarie: Finished To Origin And Beyond -- Advanced Git Remotes! and finished Game2.
+7 March: Recap Branches section form first game!
+8 March: Merge and solve conflicts recap from game 1!
+9 March: Stash recap from game 1! git stash pop, git stash apply, git stash list, git stash clear, git stash drop nameofstash
+10 March: Revisiting git bisect. git bisect start, git bisect good, git bisect bad, git reset --hard la ultimul bun.
+11 March: Recap Shit Happens Chapter form game 1. git reset commithash, git revert commithash, git reflog branch/heads/numberofcommit
