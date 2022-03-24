@@ -1,5 +1,6 @@
 package taudemo;
 
+import browser.BrowserGetter;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -10,14 +11,18 @@ public class SeleniumTest {
     private WebDriver driver;
     @BeforeAll
     public void  beforeAll(){
+        browserGetter.getChromeDriver();
+        driver = browserGetter.getChromeDriver();
 
     }
     @AfterAll
     public  void afterAll() {
+       driver.quit();
 
     }
     @Test
     public void openThePageAndCheckTheTitle() {
+        String expectedTitle = "Example title";
 
     }
 
