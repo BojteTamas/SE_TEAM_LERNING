@@ -153,6 +153,42 @@ CALLING METHODS & JUMPING TO SOURCE
 > the fields should not be gray, so their names are not gray.
 
 
+AUTO IMPORT
+write the body of the test
+> open the brwoser
+>quit the browser
+@Test
+public void openThePackageAndCheckTheTitle
+    String expectedTitle = "Example Title";
+    driver.get("https://www.example.com");
+    assertEquals(expectedTitle, driver.getTitle()) ;
+    Assertions.assertEquals(expected:1,actual:2)
+
+package taudemo;
+
+import browser.BrowserGetter;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforerAll;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebDriver;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
+
+
+  - choose the import method : Import static method - 2 possible methods I can choose from, two assertEquals method.
+ > assertEquals can be used with all kinds of parameters including Strings, bytes, integers, Long, etc
+ > assertEquals the expectedTitle
+ > the page title will be obtained via Selenium by calling driver.getTitle.
+
+
+RENAMING METHODS AND VARIABLES
+MORE TESTS & FLIP
+
+
+
+
 
 
 
