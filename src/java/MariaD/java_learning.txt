@@ -396,7 +396,6 @@ public class Solution {
             age2 = 40;
             System.out.println("The age in adjustAge() is: " + age);
         }
-        }
     }
 }
 
@@ -474,5 +473,6 @@ public class Cat {
 
     }
 }
+
 
 
