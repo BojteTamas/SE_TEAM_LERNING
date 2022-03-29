@@ -1,30 +1,24 @@
 21.03.2022
-
 https://testautomationu.applitools.com/intellij/  watched cap1&2
-
 --------------------------------------------------------------------------------------
-
 22.03.2022
 https://testautomationu.applitools.com/intellij/  - day2 to watch
 created a new project, don't know yet how to create test
 chapter 3
-
 --------------------------------------------------------------------------------------
-
 23.03.2022
 https://testautomationu.applitools.com/intellij/  - day3 to watch
 chapter 4 & 5
-
 --------------------------------------------------------------------------------------
-
 24.03.2022
 https://testautomationu.applitools.com/intellij/  - day4 to watch
 chapter 6
-
 --------------------------------------------------------------------------------------
-
 25.03.2022
 https://testautomationu.applitools.com/intellij/  - day5 to watch
 chapter 6 - finished
-
+--------------------------------------------------------------------------------------
+28.03.2022
+https://testautomationu.applitools.com/intellij/  - day5 to watch
+chapter 7&8&9
 --------------------------------------------------------------------------------------
