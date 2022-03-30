@@ -6,3 +6,10 @@ OCA pdf: finishing chapter 1
 -Intellij test automation tutorial --> finished tutorial
 OCA pdf: recap for chapter 1 - classes, methods, variables
 
+39 Mar 2022
+OCA PDF
+chapter 1:
+-creating objects
+-constructors
+-object fields
+- dif between obj references and primitives
