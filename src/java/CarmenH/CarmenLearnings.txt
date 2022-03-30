@@ -22,3 +22,15 @@ chapter 6 - finished
 https://testautomationu.applitools.com/intellij/  - day5 to watch
 chapter 7&8&9
 --------------------------------------------------------------------------------------
+29.03.2022
+https://testautomationu.applitools.com/intellij/  - day7 to watch
+finished tutorial - chapters 10 & 11 & 12
+chapter 10 with Git, very interesting - understood more than on other chapters
+chapter 11
+Tips:
+double shift - search everywhere
+local history of a file
+select text + ctrl +F
+select am method + ctrl_shift_N - search all methods
+annotate - person who made the last change present in repo
+-----
