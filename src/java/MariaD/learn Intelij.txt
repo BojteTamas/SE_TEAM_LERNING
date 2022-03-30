@@ -185,16 +185,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 RENAMING METHODS AND VARIABLES
 MORE TESTS & FLIP
-
-
-
-
-
-
-
-
-
-
+Running Package from Project screen
+Run and Rerunning
+Pin, Fix Tests & Rerun
+Debugging
+Code Analysis
+Version Control system
 
 
 
