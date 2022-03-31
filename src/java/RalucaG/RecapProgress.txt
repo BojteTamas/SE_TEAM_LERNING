@@ -13,3 +13,20 @@ chapter 1:
 -constructors
 -object fields
 - dif between obj references and primitives
+
+31 Mar 2022
+OCA PDF:
+chapter 1:
+-java primitive types such as: boolean,byte,short,int,log,float,double,char
+-converting to binary
+-reference types: this refers to an object (an instance of a class) , unlike primitive values that hold their value in the memory where the variable is allocated
+-declaring and initializing variables: string zooName; int numberAnimals;
+zooName= ""The Best Zoo;
+numberAnimals = 100;
+-declaring multiple variables
+String s1,s2;
+String s3="yes";
+String s4= "no";
+int i1,i2,i3=0;
+boolean b1,b2;
+double d1,d2;
