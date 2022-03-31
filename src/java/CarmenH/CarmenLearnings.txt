@@ -40,3 +40,13 @@ Understanding Package Declarations and Imports
 Creating Objects
     Constructors
     Reading and Writing Object Fields
+--------------------------------------------------------------------------------------
+31.03.2022
+codegym -
+level4, lesson 9-10
+level5, lesson 5 - have to finid out exaclty why codegym mplucgin is not ok ( JDK version 16 I think)
+
+OCA8 - chapter 1
+Distinguishing Between Object References and Primitives
+Primitive Types &  Reference Types
+--------------------------------------------------------------------------------------
