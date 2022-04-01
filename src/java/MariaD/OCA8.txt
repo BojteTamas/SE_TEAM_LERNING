@@ -1,0 +1,125 @@
+Chapter 1
+    classes
+    fields
+    methods
+    comments
+class example:
+    public class Animal {
+    }
+public - type of the class means that the class can be used by other classes
+Animal -  the name of the class
+
+public class Animal {
+String name;
+}
+
+String name = define a variable called name
+STRING = a value that we can put text into
+
+    public class Animal {
+        String name;
+    public String genName() {
+        return name;
+     }
+     public void setName(String newName) {
+        name = newName;
+     }
+    }
+// public String genName() { ---- define the method
+        return name; --return type , the method returns a string
+     }
+     method = operation that can be called
+//     public void setName(String newName) {
+          name = newName; -> the second method, but this method returns a VOID
+          void = no value is returned. requires a parameter
+          setName = newName > parameter
+public int numberVisitors (int month)
+INT-> defines a numeric type
+
+COMMENTS:
+// COMMENT UNTIL END OF LINE
+/* Multiple
+* line comment
+*/
+
+/**
+*
+* Javadoc multiple-line comment
+*/
+
+CLASSES vs Files
+
+class Animal {
+    String name;
+}
+
+-> 2 classes in the file
+public class Animal {
+    private String name;
+    }
+class Animal2 {
+}
+
+JAVA JDK
+To compile Java code, the file must have the extension .java or javax
+The name of the file must match the name of the class. The result is a file of bytecode by the same name, but with
+a .class filename extension.
+Bytecode = instructions that the JVM knows how to execute. Notice that we must omit the .class extension to run Zoo.java
+    because the period has a reserved meaning in the JVM.
+
+The rules for what a Java code file contains, and in what order
+Each file can contain only one class.
+The filename must match the class name, including case, and have a .java extension.
+
+main() Method - access modifier
+void =  represents the return type
+-> declare the entry point
+put in a main() method
+public class Zoo {
+    public static void main(String[] args) {
+
+    }
+}
+
+public class Zoo {
+    public static void main(String[] args) {
+        System.out.println(args[0]);
+        System.out.println(args[1]);
+    }
+}
+args[0] - access the first element of the array.
+    array indexes begin with 0 in java
+
+Package declarations and imports
+classes group in packages
+public class ImportExample {
+    public static void main(String[]args) {
+        Random r = newRandom(); // - DOES NOT COMPILE
+        System.out.println(R.NextInt(10));
+    }
+}
+
+import java.util.Random; //import tells us where to find Randon
+public class ImportExample {
+    public static void main(String[] args) {
+        Randon r = new Random();
+        System.out.println(r.nextInt(10)); //print a number betwen 0 & 9 . Java starts counting from 0
+    }
+}
+
+WILDCARDS
+* = wildcard every class in the java.util package is available. it imports only classes, not methods orr child packages
+classes in the same packages are imported together
+import java.util.*; //imports java.util.Random
+public class ImportExample {
+    public static void main(String[] args) {
+        Rand r = new Random();
+        System.out.println(r.nextInt(10));
+    }
+}
+
+Reduntant Imports
+java.lang - is automatically imported
+
+
+
