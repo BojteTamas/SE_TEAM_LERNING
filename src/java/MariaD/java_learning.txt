@@ -474,5 +474,11 @@ public class Cat {
     }
 }
 
+finished reading chapter 1 from OCA.8
 
+chapter 2
+java operators
+if/else constructs
+switch statement
 
+loop constructs

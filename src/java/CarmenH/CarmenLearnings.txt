@@ -1,18 +1,52 @@
 21.03.2022
-
 https://testautomationu.applitools.com/intellij/  watched cap1&2
-
 --------------------------------------------------------------------------------------
-
 22.03.2022
 https://testautomationu.applitools.com/intellij/  - day2 to watch
 created a new project, don't know yet how to create test
 chapter 3
-
 --------------------------------------------------------------------------------------
-
 23.03.2022
 https://testautomationu.applitools.com/intellij/  - day3 to watch
 chapter 4 & 5
+--------------------------------------------------------------------------------------
+24.03.2022
+https://testautomationu.applitools.com/intellij/  - day4 to watch
+chapter 6
+--------------------------------------------------------------------------------------
+25.03.2022
+https://testautomationu.applitools.com/intellij/  - day5 to watch
+chapter 6 - finished
+--------------------------------------------------------------------------------------
+28.03.2022
+https://testautomationu.applitools.com/intellij/  - day5 to watch
+chapter 7&8&9
+--------------------------------------------------------------------------------------
+29.03.2022
+https://testautomationu.applitools.com/intellij/  - day7 to watch
+finished tutorial - chapters 10 & 11 & 12
+chapter 10 with Git, very interesting - understood more than on other chapters
+chapter 11
+Tips:
+double shift - search everywhere
+local history of a file
+select text + ctrl +F
+select am method + ctrl_shift_N - search all methods
+annotate - person who made the last change present in repo
+--------------------------------------------------------------------------------------
+30.03.2022
+back to OCA8 - chapter 1
+Understanding Package Declarations and Imports
+Creating Objects
+    Constructors
+    Reading and Writing Object Fields
+--------------------------------------------------------------------------------------
+31.03.2022
+codegym -
+level4, lesson 9-10
+level5, lesson 5 - have to finid out exaclty why codegym mplucgin is not ok ( JDK version 16 I think)
 
+OCA8 - chapter 1
+Distinguishing Between Object References and Primitives
+Primitive Types &  Reference Types
 --------------------------------------------------------------------------------------
