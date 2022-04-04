@@ -53,6 +53,7 @@ Primitive Types
 --------------------------------------------------------------------------------------
 01.04.2022
 OCA8 - chapter 1
+Primitive Types
 >>>>Java primitive types:
 a byte can hold a value from –128 to 127.
 A byte is 8 bits. A bit has two possible values. (These are basic com- puter science definitions that you should memorize.)
@@ -78,8 +79,9 @@ double notByDecimal = 1000_.00;  //DOES NOT COMPILE
 double annoyingButLegal = 1_00_0.0_0; // this one compiles
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
-01.04.2022
+04.04.2022
 OCA8 - chapter 1
 finished to read. need to do next the questions.
 codegym to Level5Lesson8
+
 --------------------------------------------------------------------------------------
