@@ -6,14 +6,6 @@ OCA pdf: finishing chapter 1
 -Intellij test automation tutorial --> finished tutorial
 OCA pdf: recap for chapter 1 - classes, methods, variables
 
-39 Mar 2022
-OCA PDF
-chapter 1:
--creating objects
--constructors
--object fields
-- dif between obj references and primitives
-
 31 Mar 2022
 OCA PDF:
 chapter 1:
@@ -30,3 +22,39 @@ String s4= "no";
 int i1,i2,i3=0;
 boolean b1,b2;
 double d1,d2;
+04 Apr 2022
+Dif between obj refrences and primitives:
+-boolean -> true or false;
+-byte -> 8-bit integral value;
+-short -> 16-bit integral value;
+-int -> 32-bit integral value;
+-long -> 64-bit integral value;
+-float -> 32-bit floating-point value -- 123.45f;
+-double -> 64-bit floating point value -- 123.456;
+char ->16 bit unicode value ;
+float and double are used for floating-point(decimal values)
+a float requires the letter f following the number so Java can identify it as a float;
+byte,short,int and long are used for numbers without decimal points
+
+-local variables: a local variable is a variable defined within a method , they must be initialized before use:
+public int notValid() {
+int y=10;
+int x;
+x =3;
+int reply= x+y;
+return reply;
+}
+
+public void findAnswer(boolean check){
+int answer;
+int onlyOneBranch;
+if (check) {
+onlyOneBranch = 1;
+answer = 1;
+}
+else {
+answer = 2;
+}
+System.out.println(answer);
+
+}

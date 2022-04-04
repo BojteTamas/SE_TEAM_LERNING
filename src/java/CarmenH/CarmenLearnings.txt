@@ -49,4 +49,39 @@ level5, lesson 5 - have to finid out exaclty why codegym mplucgin is not ok ( JD
 OCA8 - chapter 1
 Distinguishing Between Object References and Primitives
 Primitive Types &  Reference Types
+Primitive Types
+--------------------------------------------------------------------------------------
+01.04.2022
+OCA8 - chapter 1
+Primitive Types
+>>>>Java primitive types:
+a byte can hold a value from –128 to 127.
+A byte is 8 bits. A bit has two possible values. (These are basic com- puter science definitions that you should memorize.)
+2^8 is 2 × 2 = 4 × 2 = 8 × 2 = 16 × 2 = 32 × 2 = 64 × 2 = 128 × 2 = 256
+
+
+System.out.println(Integer.MAX_VALUE);
+The other way is with math. An int is 32 bits. 232 is 4,294,967,296. Divide that by 2
+and you get 2,147,483,648. Then subtract 1 as we did with bytes and you get 2,147,483,647. It’s easier to
+ just ask Java to print the value, isn’t it?
+
+long max = 3123456789L; // now Java knows it is a long
+
+ Converting Back to Binary
+
+The last thing you need to know about numeric literals is a feature added in Java 7.
+You can have underscores in numbers to make them easier to read:
+int million1 = 1000000; int million2 = 1_000_000;
+
+double notAtStart = _1000.00;  //DOES NOT COMPILE
+double notAtEnd = 1000.00_;  //DOES NOT COMPILE
+double notByDecimal = 1000_.00;  //DOES NOT COMPILE
+double annoyingButLegal = 1_00_0.0_0; // this one compiles
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+04.04.2022
+OCA8 - chapter 1
+finished to read. need to do next the questions.
+codegym to Level5Lesson8
+
 --------------------------------------------------------------------------------------
