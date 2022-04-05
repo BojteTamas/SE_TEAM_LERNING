@@ -481,4 +481,39 @@ java operators
 if/else constructs
 switch statement
 
-loop constructs
+
+
+VARIABLES:
+DECLARE A VARIABLE:
+int a;
+String s;
+double c; ///used for fractional or real numbers
+
+add value / initializing:
+int i = 3;
+int a = 1;
+int b = a + 1;
+
+visibility of variables:
+1. A variable declared in a method exists (is visible) from the start of its declaration to the end of the method.
+
+2. A variable declared in a code block exists until the end of the code block.
+
+3. A method's parameters exist everywhere within the method.
+
+4. Variables in an object exist during the entire lifespan of the object that contains them.
+    Their visibility is also defined by special access modifiers: public and private.
+
+5. Static (class) variables exist the whole time the program is running. Their visibility is also defined by access modifiers.
+class Main
+{
+    public int count = 0;     // Declare an instance variable
+
+    public void run()
+    {
+        count = 15;           // Access the instance variable
+        int count = 10;       // Declare a local method variable
+        count++;             // Access the method variable
+    }
+}
+
