@@ -49,6 +49,7 @@ level5, lesson 5 - have to finid out exaclty why codegym mplucgin is not ok ( JD
 OCA8 - chapter 1
 Distinguishing Between Object References and Primitives
 Primitive Types &  Reference Types
+Primitive Types
 --------------------------------------------------------------------------------------
 01.04.2022
 OCA8 - chapter 1
@@ -76,4 +77,11 @@ double notAtStart = _1000.00;  //DOES NOT COMPILE
 double notAtEnd = 1000.00_;  //DOES NOT COMPILE
 double notByDecimal = 1000_.00;  //DOES NOT COMPILE
 double annoyingButLegal = 1_00_0.0_0; // this one compiles
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+04.04.2022
+OCA8 - chapter 1
+finished to read. need to do next the questions.
+codegym to Level5Lesson8
+
 --------------------------------------------------------------------------------------
