@@ -58,3 +58,54 @@ answer = 2;
 System.out.println(answer);
 
 }
+
+
+05 Apr 2022
+-default initialization values for type
+boolean - false
+byte,short,int,long - 0 ( in the type's bit length)
+float,double - 0.0 ( in the type's bit length)
+char - '\u0000' (NUL)
+all object references (everything else) - null
+
+public void eat (int pecesOfCheese) {
+int bitesOfCheese =1 ;
+}
+
+- Ordering Elements in a Class
+package declaration - package abc;
+import statements - import java.util.*;
+class declaration - public class C;
+field declarations - int value;
+method declarations - void method ()
+
+example:
+package structure; // package must be first non-comment;
+import java.util.*; //import must come after package;
+public class Meerkat { //then comes the class
+double weight; //fields and methods can go in either order;
+public double getWeight () {
+return weight;}
+double height; //another field -they don't need to be together
+}
+
+Summary:
+java classes consist of members called fields and methods
+an object is an instance of a java class
+commenting styles: // -single line comment; /* */ - multiline comment and /** */ javadoc comment
+java begins program execution with a main() method
+most common: public static void main (String[] args)
+java code is organized into folders called packages
+to reference classes in other packages we use an import statement
+a wildcard ending an import statement means you want to import all classes in that package.It does not include
+packages that are inside that one.
+java.lang - special package that doesn't need to be imported
+constructors create java objects
+constructor = method matching the class name and omitting the return type
+primitive types are the basic building blocks of java types, assembled into reference types
+scope refers to portion of code where a variable can be accessed: instance variables, class variables and local variables
+instance variables - nonstatic fields of a class
+class variables - static fields within a class
+local variables - declared withing a method
+garbage collection - responsible for removing objects from memory when they can never be used again.
+an object becomes eligible for garbage collection when there are no more references to it or its references have gone out of scope
