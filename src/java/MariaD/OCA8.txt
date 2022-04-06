@@ -342,3 +342,46 @@ visibility of variables:
     Their visibility is also defined by special access modifiers: public and private.
 
 5. Static (class) variables exist the whole time the program is running. Their visibility is also defined by access modifiers.
+
+ORDERING ELEMENTS IN A CLASS
+1.PACKAGE DECLARATION; -  package a.1;
+2.Import statement; - import java.util.*;
+3.Class declaration; - public class C
+4.Field declarations - int value;
+5.Method declarations void method();
+
+ex:
+package structure; //package must be first non - comment
+import java.util.*; //import must come after package
+public class Market { //then comes the class
+    double weight;    // fields and methods can go in eighter order
+    public double getWeight() {
+        return weight;
+    }
+    double height;    // another field - they don't need to be together
+}
+
+
+public class Scope {
+public static void main(String[] args) {
+}
+String one, two;
+one = new String("a");
+two = new String("b"); one = two;
+String three = one; one = null;
+}
+public class Finalizer { protected void finalize() {
+System.out.println("Calling finalize"); }
+public static void main(String[] args) { Finalizer f = new Finalizer();
+}}
+public class Finalizer {
+private static List objects = new ArrayList(); protected void finalize() {
+objects.add(this); // Don't do this }}
+
+BENEFITS OF JAVA:
+    > OBJECT ORIENTED all code is defined in classes. classes instantiated in objects
+    > ENCAPSULATION access modifiers to protect data from unintended acces/modification
+    > PLATFORM INDEPENDENT - the language gets compiled to bytecode "write once, run everywhere"
+    > ROBUST prevents memory leaks. java does garbage collection automatically
+    > SIMPLE - eliminates pointers and get rid of operator overloading
+    > SECURE - java runs inside jvm
