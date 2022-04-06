@@ -1,4 +1,4 @@
-import java.io.BufferedReader;
+/**import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class Statements {
@@ -42,6 +42,6 @@ public class Statements {
         }
         System.out.println(number);
     }
-*/
 
-}
+
+}*/

@@ -1,4 +1,4 @@
-package browser;
+/*package browser;
 
 
 import org.openqa.selenium.Dimension;
@@ -9,12 +9,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import static java.lang.System.setProperty;
 import static org.apache.commons.lang3.SystemUtils.*;
 
-public class BrowserGetter {
-    /**
-     *          detect operating system
-     *          if it is not one of the predefined ones, just throw exception
-     *          only create a webDriver instance for a known operating system
-     */
 
     public WebDriver getWinChromeDriver() {
         setProperty("webdriver.chrome.driver", "src/test/resources/browserBinaries/chromedriver.exe");
@@ -94,3 +88,4 @@ public class BrowserGetter {
     }
 
 }
+*/

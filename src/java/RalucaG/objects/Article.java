@@ -1,4 +1,4 @@
-package objects;
+/*package objects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -46,3 +46,4 @@ public class Article {
                 '}';
     }
 }
+*/
