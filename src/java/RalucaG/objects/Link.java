@@ -1,4 +1,4 @@
-package objects;
+/*package objects;
 
 import org.openqa.selenium.WebElement;
 
@@ -40,3 +40,4 @@ public class Link {
                 '}';
     }
 }
+*/
