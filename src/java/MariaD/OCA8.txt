@@ -385,3 +385,6 @@ BENEFITS OF JAVA:
     > ROBUST prevents memory leaks. java does garbage collection automatically
     > SIMPLE - eliminates pointers and get rid of operator overloading
     > SECURE - java runs inside jvm
+
+    Reviewing questions
+    reached out to question 11

@@ -517,3 +517,4 @@ class Main
     }
 }
 
+exercised https://codegym.cc/quests/lectures/questsyntax.level04.lecture02
