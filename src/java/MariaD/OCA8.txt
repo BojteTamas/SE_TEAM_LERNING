@@ -352,7 +352,7 @@ ORDERING ELEMENTS IN A CLASS
 
 ex:
 package structure; //package must be first non - comment
-import java.util.*; //import must come after package
+import java.util.*; //import must come after package, import is not mandatory.
 public class Market { //then comes the class
     double weight;    // fields and methods can go in eighter order
     public double getWeight() {
