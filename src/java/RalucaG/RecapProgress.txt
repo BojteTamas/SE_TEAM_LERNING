@@ -114,3 +114,7 @@ an object becomes eligible for garbage collection when there are no more referen
 06 Apr 2022
 Started review quiz from chapter 1 - completed until Q11.
 Review info from chapter 1 to answer questions.
+
+07 Apr 2022
+Continued with quiz from chapter 1
+Recap and review answers

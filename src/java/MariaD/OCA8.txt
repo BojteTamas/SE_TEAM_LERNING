@@ -352,7 +352,7 @@ ORDERING ELEMENTS IN A CLASS
 
 ex:
 package structure; //package must be first non - comment
-import java.util.*; //import must come after package
+import java.util.*; //import must come after package, import is not mandatory.
 public class Market { //then comes the class
     double weight;    // fields and methods can go in eighter order
     public double getWeight() {
@@ -385,3 +385,6 @@ BENEFITS OF JAVA:
     > ROBUST prevents memory leaks. java does garbage collection automatically
     > SIMPLE - eliminates pointers and get rid of operator overloading
     > SECURE - java runs inside jvm
+
+    Reviewing questions
+    reached out to question 11
