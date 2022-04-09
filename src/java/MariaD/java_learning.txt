@@ -518,3 +518,5 @@ class Main
 }
 
 exercised https://codegym.cc/quests/lectures/questsyntax.level04.lecture02
+finished ex.https://codegym.cc/quests/lectures/questsyntax.level04.lecture02
+reached out to level04.lecture03
