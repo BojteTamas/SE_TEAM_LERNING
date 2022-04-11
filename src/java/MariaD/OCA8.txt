@@ -389,3 +389,17 @@ BENEFITS OF JAVA:
     Reviewing questions
     reached out to question 11
 finished test
+
+Java operators:
+binary arithmetic operators
+arithmetic operatos
++
+-
+*
+/
+% - modulus
+
+unary operators:
+++, --
+modulus operators are not limited to positive integer values in Java
+they can be applied to negative integers and floating points integers
