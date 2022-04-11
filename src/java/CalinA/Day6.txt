@@ -1,0 +1,4 @@
+Day6
+Learned: - git merge
+         - git tag
+         - git reset --hard

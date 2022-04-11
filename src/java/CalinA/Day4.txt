@@ -1,0 +1,10 @@
+Day 4
+Learned:    - Add a new file
+            - resetting files in the index
+            - adding changes step by step
+            - git pull
+            - git push
+            - git rebase
+            - git cherry-pick
+            - git commit -a
+            - git reflog

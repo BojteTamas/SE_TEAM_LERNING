@@ -1,0 +1,8 @@
+Day1
+Learned about:
+                -git add
+                -git commit
+                -git push
+                -git pull
+                -rm *
+                -touch

@@ -1,0 +1,6 @@
+Day 5
+Learned: - git clone ../
+         - git tag pr
+         - git bisect start
+         - git bisect good
+         - git bisect bad

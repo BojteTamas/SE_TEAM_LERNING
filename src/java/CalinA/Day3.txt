@@ -1,0 +1,4 @@
+Day 3
+Learned: - Git --detach
+         - git reset --hard
+         - git merge

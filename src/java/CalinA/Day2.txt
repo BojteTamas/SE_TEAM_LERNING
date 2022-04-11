@@ -1,0 +1,5 @@
+Day 2:
+Learned:    -Git checkout
+            - git HEAD^
+            - git Branch
+            - git Branch -D
