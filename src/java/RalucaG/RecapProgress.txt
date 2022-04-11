@@ -118,3 +118,8 @@ Review info from chapter 1 to answer questions.
 07 Apr 2022
 Continued with quiz from chapter 1
 Recap and review answers
+
+11 Apr 2022
+Reviewed finished for chapter 1 quiz -- answers verified
+Started reading chapter 2 - Operators and statements
+understanding java operators and working with binary arithmetic operators
