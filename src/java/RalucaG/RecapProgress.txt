@@ -123,3 +123,10 @@ Recap and review answers
 Reviewed finished for chapter 1 quiz -- answers verified
 Started reading chapter 2 - Operators and statements
 understanding java operators and working with binary arithmetic operators
+
+12 Apr 2022
+continue reading chapter 2 -Operators and statements
+ numeric promotion
+ working with unary operators: logical complement and negation operators
+ increment and decrement operators
+ using additional binary operators
