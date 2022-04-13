@@ -409,5 +409,24 @@ using additional binary operators
 assignment operators
 casting primitive values
 overflow and underflow
+relational operators
+<
+<=
+>
+>=
+logical operators
+&  = AND  is only true if both operands are true
+| = INCLUSIVE OR is only false if both operands are false
+,^ = EXCLUSIVE OR is only true if the operands are different
+
+SHORT CIRCUIT OPERATORS
+&&
+||
+-> are checking for null objects before performing an operation
+
+EQUALITY operators
+java statements
+
+
 
 
