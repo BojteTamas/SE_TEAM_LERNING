@@ -130,3 +130,7 @@ continue reading chapter 2 -Operators and statements
  working with unary operators: logical complement and negation operators
  increment and decrement operators
  using additional binary operators
+
+ 13 Apr 2022
+ continue reading chpater 2
+ binary operators : assignment operators, compound operators, logical operators and equality operators
