@@ -403,3 +403,11 @@ unary operators:
 ++, --
 modulus operators are not limited to positive integer values in Java
 they can be applied to negative integers and floating points integers
+logical complement and negation operators
+increment and decrement operators
+using additional binary operators
+assignment operators
+casting primitive values
+overflow and underflow
+
+
