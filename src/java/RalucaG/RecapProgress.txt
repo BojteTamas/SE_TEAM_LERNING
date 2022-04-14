@@ -134,3 +134,15 @@ continue reading chapter 2 -Operators and statements
  13 Apr 2022
  continue reading chpater 2
  binary operators : assignment operators, compound operators, logical operators and equality operators
+
+14 Apr 2022
+continue reading chapter 2
+understanding java statements : if -then statement
+ex: if (hourOfDay < 11)  System.out.println("Good Morning");
+if -then -else statement
+ex: if (hourOfDay < 11) {
+System.out.println("Good Morning");
+} else {
+System.out.println("Good Afternoon");
+}
+
