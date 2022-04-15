@@ -35,7 +35,7 @@ public class WaterFiller {
 
  */
 
-public class BirdDisplay{
+class BirdDisplay{
     public static void Main(String[] name){
         System.out.println(name[1]);
     }
