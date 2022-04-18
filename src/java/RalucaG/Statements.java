@@ -1,9 +1,6 @@
-/**import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
 public class Statements {
     public static void main(String[] args) throws Exception {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    /**    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int Weekday = Integer.parseInt(reader.readLine());
         String dayDisplay = "No such day of the week";
 
@@ -32,7 +29,7 @@ public class Statements {
         System.out.println(dayDisplay);
     }
 
-      /*  BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); // read number from keyboard
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); // read number from keyboard
         int number = Integer.parseInt(reader.readLine()); //parse number
 
         if (number > 0) {
@@ -41,7 +38,9 @@ public class Statements {
             number = number + 1;
         }
         System.out.println(number);
+
+     **/
     }
 
 
-}*/
+}
