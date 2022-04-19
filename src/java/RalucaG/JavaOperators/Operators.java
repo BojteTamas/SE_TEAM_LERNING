@@ -67,7 +67,7 @@ public class Operators{
         } while (false);
         System.out.println(r);
 
-
+        //19 Apr 2022
 
         // the for statement - the basic for statement
 
@@ -90,6 +90,37 @@ public class Operators{
         values.add("Roger");
         for (String value : values){
             System.out.println(value + " , ");
+        }
+
+
+      //compare for and for each loops
+
+      for (String name:names){
+          System.out.println(name + " ,");
+      }
+      for (int i=0; i <names.length; i++){
+          String name = names[i];
+          System.out.println(name + " ,");
+      }
+
+      //objects that inherit java.lang.Iterable
+
+        for(int value : values){
+            System.out.println(value + " ,");
+        }
+
+        for(java.util.Iterator<Integer> i = values.iterator();i.hasNext();){
+            int value = i.next();
+            System.out.println(value + " ,")
+        }
+
+        int[] values = new int[3];
+        values[0] = 10;
+        values[1] = new Integer(5);
+        values[2] = 15;
+
+        for (int i=1; i<values.length;i++){
+            System.out.println(values[i] - values[i-1]);
         }
 
     }
