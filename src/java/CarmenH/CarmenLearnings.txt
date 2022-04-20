@@ -119,3 +119,6 @@ OCA8  - codegym files java + test ch2
 19.04.2022
 OCA8  - finished test ch2 + checked result : 15 from 20 correct. yey!
 --------------------------------------------------------------------------------------
+19.04.2022
+OCA8 - Creating and manipulating strings - important string methods, string pool, mutability and chaining
+--------------------------------------------------------------------------------------

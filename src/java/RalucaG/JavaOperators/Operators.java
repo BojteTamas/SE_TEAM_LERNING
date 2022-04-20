@@ -1,3 +1,4 @@
+/*
 package JavaOperators;
 
 public class Operators{
@@ -111,7 +112,7 @@ public class Operators{
 
         for(java.util.Iterator<Integer> i = values.iterator();i.hasNext();){
             int value = i.next();
-            System.out.println(value + " ,")
+            System.out.println(value + " ,");
         }
 
         int[] values = new int[3];
@@ -128,3 +129,6 @@ public class Operators{
 
 
 }
+
+
+ */
