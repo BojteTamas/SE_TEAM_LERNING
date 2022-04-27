@@ -1,4 +1,4 @@
-public class Dragos15Aprilie {
+//public class Dragos15Aprilie {
 
 //   How break; statement works
 //    With a value of dayOfWeek of 5, this code will output: Weekday
@@ -8,12 +8,14 @@ public class Dragos15Aprilie {
 //    statement. As we’ll soon see, if you leave out the break statement, flow will continue to the next
 //    proceeding case or default block automatically.
 
-    int dayOfWeek = 5; switch(dayOfWeek) {
-        default: System.out.println("Weekday"); break;
-        case 0: System.out.println("Sunday"); break;
-        case 6: System.out.println("Saturday"); break;
-    }
+   // int dayOfWeek = 5;
+  //  switch(dayOfWeek) {
+  //      default: System.out.println("Weekday"); break;
+  //      case 0: System.out.println("Sunday"); break;
+  //      case 6: System.out.println("Saturday"); break;
+  //  }
 // next example
+   /*
     int dayOfWeek = 5;
     switch(dayOfWeek){
         case 0:
@@ -23,7 +25,7 @@ public class Dragos15Aprilie {
         case 6:
             System.out.println("Saturday");
             break;
-    }
+    }*/
 //This means that for the given value of day- OfWeek, 5, the code will jump to the default block
 // and then execute all of the proceeding case statements in order until it finds a break statement
 // or finishes the structure:
@@ -34,6 +36,7 @@ public class Dragos15Aprilie {
 //    Weekday Saturday
 // all the cases must be of the same type
 
+    /*
     private int getSortOrder(String firstName, final String lastName) {
         String middleName = "Patricia"; final String suffix = "JR";
         int id = 0;
@@ -58,4 +61,4 @@ public class Dragos15Aprilie {
         return id; }
 
 }
-
+*/

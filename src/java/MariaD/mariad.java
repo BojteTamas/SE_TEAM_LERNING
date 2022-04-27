@@ -1,4 +1,6 @@
+/*
 package MariaD;
+
 
 import java.util.Scanner;
 
@@ -14,6 +16,6 @@ public class MariaD18Apr {
         }
     }
 }
-
+ */
 
 
