@@ -1,9 +1,9 @@
-/*
+
 package JavaOperators;
 
 public class Operators{
     public static void main(String[] args) {
-
+/*
       int number;
         number = 5;
         if (number > 0) {
@@ -124,11 +124,65 @@ public class Operators{
             System.out.println(values[i] - values[i-1]);
         }
 
+ */
+
+// 27 APR 2022
+
+        int[][] myComplexArray = {{5,2,1,3},{3,9,8,9},{5,7,12,7}};
+        for(int[] mySimpleArray : myComplexArray) {
+            for(int i=0; i< mySimpleArray.length; i++) {
+                System.out.println(mySimpleArray[i] + "\t");
+            }
+                System.out.println();
+        }
+
+        int w = 20;
+        while (w > 20) {
+            do{
+                w -= 2;
+            } while (w > 5);
+            w--;
+            System.out.println(w + "\t");
+
+        }
+
+        // break statement
+
+        int[][] list = {{1,13,5},{1,2,5},{2,7,2}};
+        int searchValue = 2;
+        int positionX = -1;
+        int positionY = -1;
+
+        PARENT_LOOP: for (int j=0; j<list.length; j++){
+            for(int k=0; k< list.length; k++){
+                if (list[j][k] == searchValue){
+                    positionX = j;
+                    positionY = k;
+                    break PARENT_LOOP;
+                }
+            }
+        }
+
+        if (positionX == -1 || positionY == -1){
+            System.out.println("Value " +searchValue+ " not found");
+        }else
+        {
+            System.out.println("Value " + searchValue + "  found at:  " + "(" + positionX + " , " + positionY + " ) ");
+        }
+
+        //continue statement
+        FIRST_CHAR_LOOP: for (int a = 1; a<=4; a++){
+            for (char x = 'a'; x <= 'c'; x++){
+                if(a == 2 || x == 'b')
+                    continue FIRST_CHAR_LOOP;
+                System.out.println(" " + a + x);
+            }
+        }
+
+
     }
 
 
 
 }
 
-
- */
