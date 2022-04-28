@@ -1,3 +1,4 @@
+/*
 public class April20Dragos {
 //For each examples
 final String[] names = new String[3]; names[0] = "Lisa";
@@ -21,3 +22,5 @@ for(String name : names) { // DOES NOT COMPILE because names is not an array/lis
 
 
 }
+
+ */
