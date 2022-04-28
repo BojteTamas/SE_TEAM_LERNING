@@ -126,3 +126,5 @@ OCA8 - Creating and manipulating strings - important string methods, string pool
 --------------------------------------------------------------------------------------
 27.04.2022 codegym arrays tasks Level 6, Lesson 4 + recap java important string methods
 --------------------------------------------------------------------------------------
+28.04.2022 oca8 - String Builder Methods
+--------------------------------------------------------------------------------------
