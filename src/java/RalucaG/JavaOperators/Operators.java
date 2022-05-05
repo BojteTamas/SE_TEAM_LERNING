@@ -1,7 +1,5 @@
 
 package JavaOperators;
-
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -183,50 +181,6 @@ public class Operators{
             }
         }
 */
-
-    //28 Apr 2022
-
-       //codegym lvl 3 lesson 8
-       //min of two numbers
-
-        BufferedReader reader = new BufferedReader((new InputStreamReader(System.in)));
-        int no1 = Integer.parseInt(reader.readLine());
-        int no2 = Integer.parseInt(reader.readLine());
-
-        int min;
-        if (no1 < no2) {
-            min = no1;
-        } else {
-            min = no2;
-        }
-        System.out.println("Min of two numbers is: " + min);
-
-// use the keyboard to enter the name and the age, if the age is less than 18 display text
-
-        String name = reader.readLine();
-        int age = Integer.parseInt(reader.readLine());
-
-        if (age < 18) {
-            System.out.println("Grow up a little more, " + name);
-        }
-
-        //use the keyboard to enter two integers repres coordinates of point not on X and Y axes
-        //display the number of the quadrant that contains given point
-
-        int a = Integer.parseInt(reader.readLine());
-        int b = Integer.parseInt(reader.readLine());
-
-        if (a > 0 && b > 0){
-            System.out.println("For the first quadrant: 1");
-        } else if (a<0 && b>0) {
-            System.out.println("For the second quadrant: 2");
-        } else if (a<0 && b<0){
-            System.out.println("FOr the third quadrant: 3");
-        }else if (a>0 && b<0) {
-            System.out.println("For the forth quadrant: 4");
-        } else {
-            System.out.println("Unexpected error!");
-        }
 
 
     }
