@@ -133,3 +133,6 @@ OCA8 - Creating and manipulating strings - important string methods, string pool
 03.05.2022 oca8 - Multidimensional array + start ArrayList
 --------------------------------------------------------------------------------------
 04.05.2022 oca8 - ArrayList & methods
+--------------------------------------------------------------------------------------
+04.05.2022 oca8 + googling - ArrayList & methods - apply - writing the code and see results
+--------------------------------------------------------------------------------------
