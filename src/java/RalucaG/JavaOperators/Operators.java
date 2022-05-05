@@ -1,7 +1,5 @@
 
 package JavaOperators;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 
 public class Operators{
     public static void main(String[] args) throws Exception {
@@ -180,7 +178,63 @@ public class Operators{
                 System.out.println(" " + a + x);
             }
         }
+
+//4 May Java Operators second quiz code review
+      int x =5;
+        *System.out.println(x > 2 ? x < 4 ? 10 : 8 : 7);
+
+    byte a = 40 , b =50;
+    byte sum = (byte) a + b;
+    System.out.println(sum);
+
+      int x = 5 * 4 % 3;
+        System.out.println(x);
+
+      int x=0;
+      String s =null;
+
+      if (x == s) {
+          System.out.println("Success");
+      }
+      else{
+          System.out.println("Failure");
+      }
+
+      int x1=50, x2=75;
+      boolean b = x1 >= x2;
+      if (b=true){
+          System.out.println("Success");
+      }else {
+          System.out.println("Failure");
+      }
+
+      int c = 7;
+      int result = 4;
+
+      result += ++c;
+      System.out.println(result);
+
+
+      do {
+          int y = 1;
+          System.out.println(y++ + " ");
+      } while (y <= 10);
+
+      boolean keepGoing = true;
+      int result = 15, i = 10;
+      do {
+          i--;
+          if (i == 8) keepGoing = false;
+          result -= 2;
+      } while (keepGoing);
+      System.out.println(result);
+
+
+
 */
+
+
+
 
 
     }
