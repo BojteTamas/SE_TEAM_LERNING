@@ -1,4 +1,4 @@
-package 05_may;
+/*package 05_may;
 
 public class Main {
 
@@ -27,3 +27,6 @@ public class Main {
     }
 }
 
+
+
+ */

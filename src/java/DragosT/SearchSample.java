@@ -1,3 +1,4 @@
+/*
 public class SearchSample {
     public static void main(String[] args) {
         int[][] list = {{1,13,5},{1,2,5},{2,7,2}};
@@ -34,3 +35,5 @@ public class SwitchSample {
     }
     //use continue to skip next instructions in loop after you found condition to be true and go to next value
 }
+
+ */
