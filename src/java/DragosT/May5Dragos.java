@@ -1,3 +1,4 @@
+/*
 public class May5Dragos {
 //    Imutability of strings and workarounds(can mutate strings using classes)
     class Mutable {
@@ -16,3 +17,5 @@ public class May5Dragos {
     String name = new String("Fluffy");// creates new string obj, less efficient
 
 }
+
+ */

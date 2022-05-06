@@ -136,3 +136,6 @@ OCA8 - Creating and manipulating strings - important string methods, string pool
 --------------------------------------------------------------------------------------
 04.05.2022 oca8 + googling - ArrayList & methods - apply - writing the code and see results
 --------------------------------------------------------------------------------------
+05.05.2022 oca8  ArrayList examples run
+--------------------------------------------------------------------------------------
+06.05.2022 Arrays codegym
