@@ -3,7 +3,7 @@ package JavaOperators;
 
 public class Operators{
     public static void main(String[] args) throws Exception {
-/*
+
       int number;
         number = 5;
         if (number > 0) {
@@ -229,9 +229,6 @@ public class Operators{
       } while (keepGoing);
       System.out.println(result);
 
-
-
-*/
 
 
 
