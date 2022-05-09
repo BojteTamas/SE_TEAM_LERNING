@@ -1,0 +1,53 @@
+Code Formatting
+6: public void method(ArrayList list) {
+7: if (list.isEmpty()) { System.out.println("e");
+8: } else { System.out.println("n");
+9: } }
+The answer here is that it does compile because the code starts below the imports. Now,
+what about this one? Does it compile?
+1: public class LineNumbers {
+2: public void method(ArrayList list) {
+3: if (list.isEmpty()) { System.out.println("e");
+4: } else { System.out.println("n");
+5: } } }
+For this one, you would answer “Does not compile.” Since the code begins with line 1,
+you don’t get to assume that valid imports were provided earlier. The exam will let
+you know what package classes are in unless they’re covered in the objectives
+Creating Objects
+Our programs wouldn’t be able to do anything useful if we didn’t have the ability to create
+new objects. Remember that an object is an instance of a class. In the following sections,
+we’ll look at constructors, object fi elds, instance initializers, and the order in which values
+are initialized.
+Constructors
+To create an instance of a class, all you have to do is write new before it. For example:
+Random r = new Random();
+First you declare the type that you’ll be creating (Random) and give the variable a name
+(r). This gives Java a place to store a reference to the object. Then you write new Random()
+to actually create the object.
+Random() looks like a method since it is followed by parentheses. It’s called a constructor, which is a special type of method that creates a new object. Now it’s time to defi ne a
+constructor of your own:
+public class Chick {
+ public Chick() {
+ System.out.println("in constructor");
+ }
+}
+There are two key points to note about the constructor: the name of the constructor
+matches the name of the class, and there’s no return type. You’ll likely see a method like
+this on the exam:
+public void Chick() { } // NOT A CONSTRUCTOR
+When you see a method name beginning with a capital letter and having a return type,
+pay special attention to it. It is not a constructor since there’s a return type. It’s a regular
+method that won’t be called when you write new Chick().
+The purpose of a constructor is to initialize fi elds, although you can put any code in
+there. Another way to initialize fi elds is to do so directly on the line on which they’re
+declared. This example shows both approaches:
+public class Chicken {
+ int numEggs = 0;// initialize on line
+ String name;
+ public Chicken() {
+ name = "Duke";// initialize in constructor
+ } }
+For most classes, you don’t have to code a constructor—the compiler will supply a “do
+nothing” default constructor for you.
+
+Watched the video https://testautomationu.applitools.com/intellij/ - from chapter 1 to 2.4
