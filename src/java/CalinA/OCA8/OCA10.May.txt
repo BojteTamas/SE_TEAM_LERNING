@@ -1,0 +1,96 @@
+The if-then Statement
+
+Often, we only want to execute a block of code under certain circumstances. The if-then
+statement, as shown in Figure 2.2(in OCA8 book), accomplishes this by allowing our application to execute
+a particular block of code if and only if a boolean expression evaluates to true at runtime.
+
+For example, imagine we had a function that used the hour of day, an integer value from
+0 to 23, to display a message to the user:
+if(hourOfDay < 11)
+ System.out.println("Good Morning");
+If the hour of the day is less than 11, then the message will be displayed. Now let’s say
+we also wanted to increment some value, morningGreetingCount, every time the greeting
+is printed. We could write the if-then statement twice, but luckily Java offers us a more
+natural approach using a block:
+if(hourOfDay < 11) {
+ System.out.println("Good Morning");
+ morningGreetingCount++;
+}
+68 Chapter 2 ■ Operators and Statements
+The block allows multiple statements to be executed based on the if-then evaluation.
+Notice that the fi rst statement didn’t contain a block around the print section, but it easily
+could have. For readability, it is considered good coding practice to put blocks around the
+execution component of if-then statements, as well as many other control fl ow statements,
+although it is not required.
+
+if(hourOfDay < 11)
+ System.out.println("Good Morning");
+ morningGreetingCount++;
+Based on the indentation, you might be inclined to think the variable morningGreetingCount is only going to be incremented if the hourOfDay is less than 11, but that’s not what
+this code does. It will execute the print statement only if the condition is met, but it will
+always execute the increment operation.
+
+The if-then-else Statement
+What if we want to display a different message if it is 11
+a.m. or later? Could we do it using only the tools we have? Of course we can!
+if(hourOfDay < 11) {
+ System.out.println("Good Morning");
+}
+if(hourOfDay >= 11) {
+ System.out.println("Good Afternoon");
+}
+This seems a bit redundant, though, since we’re performing an evaluation on hourOfDay
+twice. It’s also wasteful because in some circumstances the cost of the boolean expression
+we’re evaluating could be computationally expensive. Luckily, Java offers us a more useful
+approach in the form of an if-then-else statement, as shown in Figure 2.3.(in OCA8 book)
+if(hourOfDay < 11) {
+ System.out.println("Good Morning");
+} else {
+ System.out.println("Good Afternoon");
+}
+Now our code is truly branching between one of the two possible options, with the
+boolean evaluation happening only once. The else operator takes a statement or block of
+statement, in the same manner as the if statement does. In this manner, we can append
+additional if-then statements to an else block to arrive at a more refi ned example:
+if(hourOfDay < 11) {
+ System.out.println("Good Morning");
+} else if(hourOfDay < 15) {
+ System.out.println("Good Afternoon");
+} else {
+ System.out.println("Good Evening");
+}
+In this example, the Java process will continue execution until it encounters an if-then
+statement that evaluates to true. If neither of the fi rst two expressions are true, it will
+execute the fi nal code of the else block. One thing to keep in mind in creating complex
+if-then-else statements is that order is important. For example, see what happens if we
+reorder the previous snippet of code as follows:
+if(hourOfDay < 15) {
+ System.out.println("Good Afternoon");
+} else if(hourOfDay < 11) {
+ System.out.println("Good Morning"); // UNREACHABLE CODE
+} else {
+ System.out.println("Good Evening");
+}
+For hours of the day less than 11, this code behaves very differently than the previous set
+of code. See if you can determine why the second block can never be executed regardless of
+the value of hourOfDay.
+If a value is less than 11, then it must be also less than 15 by defi nition. Therefore, if the
+second branch in the example can be reached, the fi rst branch can also be reached. Since
+execution of each branch is mutually exclusive in this example—that is, only one branch
+can be executed—if the fi rst branch is executed, then the second cannot be executed.
+Therefore, there is no way the second branch will ever be executed, and the code is deemed
+unreachable.
+Verifying the if Statement Evaluates to a Boolean Expression
+Another common place the exam may try to lead you astray is by providing code where
+the boolean expression inside the if-then statement is not actually a boolean expression. For example, take a look at the following lines of code:
+int x = 1;
+if(x) { // DOES NOT COMPILE
+ ...
+}
+This statement may be valid in some other programming and scripting languages, but not
+in Java, where 0 and 1 are not considered boolean values. Also, be wary of assignment
+operators being used as if they were equals == operators in if-then statements:
+int x = 1;
+if(x = 5) { // DOES NOT COMPILE
+ ...
+}
