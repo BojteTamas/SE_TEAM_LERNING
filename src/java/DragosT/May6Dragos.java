@@ -1,3 +1,4 @@
+/*
 public class May6Dragos {
 //Important String Methods
 String string = "animals";
@@ -38,3 +39,5 @@ System.out.println("abc".trim()); // abc removes withespace before and aftr stri
 System.out.println("\t a b c\n".trim()); // a b c removes withespace before and aftr string
 
 }
+
+ */
