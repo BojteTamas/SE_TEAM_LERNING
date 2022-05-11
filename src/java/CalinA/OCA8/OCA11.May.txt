@@ -1,0 +1,92 @@
+Reading and Writing Object Fields
+
+It’s possible to read and write instance variables directly from the caller. In this example, a
+mother swan lays eggs:
+public class Swan {
+ int numberEggs;// instance variable
+ public static void main(String[] args) {
+ Swan mother = new Swan();
+ mother.numberEggs = 1; // set variable
+ System.out.println(mother.numberEggs); // read variable
+ }
+}
+Reading a variable is known as getting it. The class gets numberEggs directly to print it
+out. Writing to a variable is known as setting it. This class sets numberEggs to 1.
+In Chapter 4, you’ll learn how to protect the Swan class from having someone set a negative number of eggs.
+You can even read and write fi elds directly on the line declaring them:
+1: public class Name {
+2: String first = "Theodore";
+3: String last = "Moose";
+4: String full = first + last;
+5: {
+Lines 2 and 3 both write to fi elds. Line 4 does both. It reads the fi elds first and last. It
+then writes the fi eld full.
+
+Instance Initializer Blocks
+When you learned about methods, you saw braces ({}). The code between the braces is
+called a code block. Sometimes this code is called being inside the braces. Anywhere you
+see braces is a code block.
+Sometimes code blocks are inside a method. These are run when the method is called.
+Other times, code blocks appear outside a method.These are called instance initializers.
+How many blocks do you see in this example? How many instance initializers do
+you see?
+3: public static void main(String[] args) {
+4: { System.out.println("Feathers"); }
+5: }
+6: { System.out.println("Snowy"); }
+Creating Objects 19
+There are three code blocks and one instance initializer. Counting code blocks is easy:
+you just count the number of pairs of braces. If there aren’t the same number of open ({)
+and close (}) braces, the code doesn’t compile. It doesn’t matter that one set of braces is
+inside the main() method—it still counts.
+When counting instance initializers, keep in mind that it does matter whether the braces
+are inside a method. There’s only one pair of braces outside a method. Line 6 is an instance
+initializer.
+
+Order of Initialization
+When writing code that initializes fi elds in multiple places, you have to keep track of the
+order of initialization. We’ll add some more rules to the order of initialization in Chapters 4
+and 5. In the meantime, you need to remember:
+■ Fields and instance initializer blocks are run in the order in which they appear in
+the file.
+■ The constructor runs after all fields and instance initializer blocks have run.
+Let’s look at an example:
+1: public class Chick {
+2: private String name = "Fluffy";
+3: { System.out.println("setting field"); }
+4: public Chick() {
+5: name = "Tiny";
+6: System.out.println("setting constructor");
+7: }
+8: public static void main(String[] args) {
+9: Chick chick = new Chick();
+10: System.out.println(chick.name); } }
+Running this example prints this:
+setting field
+setting constructor
+Tiny
+Let’s look at what’s happening here. We start with the main() method because that’s
+where Java starts execution. On line 9, we call the constructor of Chick. Java creates a new
+object. First it initializes name to "Fluffy" on line 2. Next it executes the print statement
+in the instance initializer on line 3. Once all the fi elds and instance initializers have run,
+Java returns to the constructor. Line 5 changes the value of name to "Tiny" and line 6 prints
+another statement. At this point, the constructor is done executing and goes back to the
+print statement on line 10.
+Order matters for the fi elds and blocks of code. You can’t refer to a variable before it has
+been initialized:
+{ System.out.println(name); } // DOES NOT COMPILE
+private String name = "Fluffy";
+You should expect to see a question about initialization on the exam. Let’s try one more.
+What do you think this code prints out?
+public class Egg {
+ public Egg() {
+ number = 5;
+ }
+ public static void main(String[] args) {
+ Egg egg = new Egg();
+ System.out.println(egg.number);
+ }
+ private int number = 3;
+ { number = 4; } }
+If you answered 5, you got it right. Fields and blocks are run fi rst in order, setting
+number to 3 and then 4. Then the constructor runs, setting number to 5.
