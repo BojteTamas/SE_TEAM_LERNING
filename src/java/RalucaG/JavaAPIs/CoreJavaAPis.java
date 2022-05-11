@@ -1,7 +1,6 @@
-package JavaOperators.JavaAPIs;
+package JavaAPIs;
 
 public class CoreJavaAPis {
-
     public static void main (String[]... args) throws Exception{
 
         int three = 3;
@@ -10,7 +9,7 @@ public class CoreJavaAPis {
 
         //Immutability
 
-        class Mutable {
+      /**  class Mutable {
             private String s;
             public void setS(String newS){s = newS;}  //setter makes it mutable
             public String getS() {
@@ -24,7 +23,7 @@ public class CoreJavaAPis {
                 return s;
             }
         }
-
+**/
 
         //Important string methods
         //length()  -- returns the number of characters in the string
@@ -70,6 +69,35 @@ public class CoreJavaAPis {
 
         System.out.println(a.toUpperCase()); /* ANIMALS */
         System.out.println("Abc123".toLowerCase()); /* abc123 */
+
+//11 May continue Core Java API's chapter
+
+        /** equals() and equalsIgnoreCase()
+         * equals - checks whether two String objects contain exactly the same characters in the same order
+         * equalsIgnore - checks whether two String objects contain exactly the same characters in the same order
+         * with the exception that it will convert the charaters case if needed
+         *
+         */
+
+        System.out.println("abc".equals("ABC")); // false
+        System.out.println("ABC".equals("ABC")); // true
+        System.out.println("abc".equalsIgnoreCase("ABC")); // true
+
+        /** startsWith() and endsWith()
+         * the methods look at whether the provided value matches part of the String
+         */
+
+        System.out.println("abc".startsWith("a")); // true
+        System.out.println("abc".startsWith("A")); // false
+        System.out.println("abc".endsWith("c")); // true
+        System.out.println("abc".endsWith("a")); //false
+
+        /** contains() - looks for matches in the String, the match can be anywhere in the string
+         */
+
+        System.out.println("abc".contains("b")); // true
+        System.out.println("abc".contains("B")); // false
+
 
 
     }
