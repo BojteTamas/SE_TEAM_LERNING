@@ -149,6 +149,73 @@ public class JavaApi {
 
         System.out.println(same);
 
+//12 May continue chapter 3 of OCA
+        //Important StringBuilder Methods
+        //charAt(), indexOf(), substring()
 
+        StringBuilder sba = new StringBuilder("animals");
+        String sub = sba.substring(sba.indexOf("a"),sba.indexOf("al"));
+        int len = sba.length();
+        char ch = sba.charAt(6);
+
+        System.out.println(sub + " " + len + " " + ch);
+
+    //append()
+
+        StringBuilder swe = new StringBuilder().append(1).append('c');
+        swe.append("-").append(true);
+
+        System.out.println(swe);
+
+    //insert()
+
+        StringBuilder ani = new StringBuilder("animals");
+        ani.insert(7, "-");
+        ani.insert(0,"-");
+        ani.insert(4,"-");
+
+        System.out.println(ani);
+
+    //delete() and deleteCharAt()
+
+    /**    StringBuilder we = new StringBuilder("abcdef");
+        we.delete(1,3);
+        we.deleteCharAt(5);
+    **/
+    //reverse() and toString()
+
+        StringBuilder de = new StringBuilder("ABC");
+        de.reverse();
+
+        System.out.println(de);
+
+    //    String q = q.toString();
+
+    //Java Arrays
+        /** char [] letters; --> letters is a reference variable and not a primitive, char is a primitive
+         * an array is an ordered list
+         *int[] numbers1 = new int[3];
+         *int[] numbers2 = {42,55,99};
+         *int[] numAnimals;
+         * int[] numAnimals2;
+         * int numAnimals3[];
+         * int numAnimals4[];
+          */
+
+
+        String[] bugs = {"cricket", "beetle","ladybug"};
+        String[] alias = bugs;
+        System.out.println(bugs.equals(alias)); //true
+        System.out.println(bugs.toString()); // [Ljava.lang.String;@9807454]
+
+        String[] mammals ={"monkey","chimp","donkey"};
+        System.out.println(mammals.length);  //3
+        System.out.println(mammals[0]); // monkey
+        System.out.println(mammals[1]); // chimp
+        System.out.println(mammals[2]); // donkey
+
+
+        String[] birds = new String[6];
+        System.out.println(birds.length);
     }
 }
