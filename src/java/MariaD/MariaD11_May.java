@@ -1,8 +1,6 @@
 package MariaD;
 
 
-import java.util.Scanner;
-
 public class MariaD11_May {
     public static void main(String[] args) {
 
