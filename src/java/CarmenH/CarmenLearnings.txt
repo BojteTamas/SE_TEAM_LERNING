@@ -146,7 +146,10 @@ OCA8 - Creating and manipulating strings - important string methods, string pool
 --------------------------------------------------------------------------------------
 11.05.2022 Times and Date oca8 -continued d2
 --------------------------------------------------------------------------------------
-11.05.2022 Finished chapter3 OCA8
+12.05.2022 Finished chapter3 OCA8
 -renamed Maria's java class file so that will compile
 -added main to Dragos's java class so that will compile
 --------------------------------------------------------------------------------------
+13.05.2022
+started recap for chapter 3 so I can answer the review questions for chapter3
+ran the tests learned today, trying to understand all the code.
