@@ -1,5 +1,7 @@
 package JavaAPIs;
 
+import java.util.Arrays;
+
 public class JavaApi {
     public static void main(String[] args) throws Exception {
 
@@ -193,7 +195,7 @@ public class JavaApi {
 
     //Java Arrays
         /** char [] letters; --> letters is a reference variable and not a primitive, char is a primitive
-         * an array is an ordered list
+         * an array is a  n ordered list
          *int[] numbers1 = new int[3];
          *int[] numbers2 = {42,55,99};
          *int[] numAnimals;
@@ -217,5 +219,40 @@ public class JavaApi {
 
         String[] birds = new String[6];
         System.out.println(birds.length);
+
+
+
+    //16 May -- continue chapter 3 OCA- Arrays and Sorting
+
+    String birdss[] = new String[6];
+    System.out.println(birdss.length);
+
+    int[] numbers = {6, 9, 1};
+    Arrays.sort(numbers);
+    for (int i = 0; i< numbers.length; i++){
+        System.out.println(numbers[i] + " ");
+    }
+
+    String[] strings = {"10", "9", "100"};
+    Arrays.sort(strings);
+    for (String string : strings){
+        System.out.println(string + " ");
+    }
+
+    //Searching
+        int[] numberss = {2,4,6,8};
+        System.out.println(Arrays.binarySearch(numberss, 2)); // 0
+        System.out.println(Arrays.binarySearch(numberss, 4)); // 1
+        System.out.println(Arrays.binarySearch(numberss, 1)); // -1
+        System.out.println(Arrays.binarySearch(numberss, 3)); // -2
+        System.out.println(Arrays.binarySearch(numberss, 9)); // -5
+
+
+
+
+
+
+
+
     }
 }
