@@ -1,4 +1,4 @@
-public class May16Dragos {
+/*public class May16Dragos {
 
     StringBuilder sb = new StringBuilder("abcdef");
     sb.delete(1, 3); // sb = adef deletes fom to
@@ -7,3 +7,5 @@ public class May16Dragos {
     String s = sb.toString(); // will convert to string the stringbuilder in this case
 
 }
+
+ */
