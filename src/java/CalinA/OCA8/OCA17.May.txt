@@ -1,0 +1,104 @@
+Identifiers
+It probably comes as no surprise that Java has precise rules about identifi er names. Luckily,
+the same rules for identifi ers apply to anything you are free to name, including variables,
+methods, classes, and fi elds.
+There are only three rules to remember for legal identifi ers:
+■ The name must begin with a letter or the symbol $ or _.
+■ Subsequent characters may also be numbers.
+■ You cannot use the same name as a Java reserved word. As you might imagine, a
+reserved word is a keyword that Java has reserved so that you are not allowed to use it.
+Remember that Java is case sensitive, so you can use versions of the keywords that only
+differ in case. Please don’t, though.
+Don’t worry—you won’t need to memorize the full list of reserved words. The exam will
+only ask you about ones you’ve already learned, such as class. The following is a list of all
+the reserved words in Java. const and goto aren’t actually used in Java. They are reserved
+so that people coming from other languages don’t use them by accident—and in theory, in
+case Java wants to use them one day.
+The following examples are legal:
+okidentifier
+$OK2Identifier
+_alsoOK1d3ntifi3r
+__SStillOkbutKnotsonice$
+These examples are not legal:
+3DPointClass // identifiers cannot begin with a number
+hollywood@vine // @ is not a letter, digit, $ or _
+*$coffee // * is not a letter, digit, $ or _
+public // public is a reserved word
+Although you can do crazy things with identifi er names, you shouldn’t. Java has conventions so that code is readable and consistent. This consistency includes CamelCase. In
+CamelCase, each word begins with an uppercase letter. This makes multiple-word variable
+names easier to read. Which would you rather read: Thisismyclass name or ThisIsMyClass
+name? The exam will mostly use common conventions for identifi ers, but not always. When
+you see a nonstandard identifi er, be sure to check if it is legal. If not, you get to mark the
+answer “does not compile” and skip analyzing everything else in the question.
+Most Java developers follow these conventions for identifi er names:
+■ Method and variables names begin with a lowercase letter followed by CamelCase.
+■ Class names begin with an uppercase letter followed by CamelCase. Don’t start any
+identifi ers with $. The compiler uses this symbol for some fi les.
+Also, know that valid letters in Java are not just characters in the English alphabet. Java
+supports the Unicode character set, so there are more than 45,000 characters that can
+start a legal Java identifi er. A few hundred more are non-Arabic numerals that may
+appear after the fi rst character in a legal identifi er. Luckily, you don’t have to worry about
+memorizing those for the exam. If you are in a country that doesn’t use the English alphabet, this is useful to know for a job.
+
+Understanding Default Initialization of Variables
+Before you can use a variable, it needs a value. Some types of variables get this value
+set automatically, and others require the programmer to specify it. In the following
+sections, we’ll look at the differences between the defaults for local, instance, and
+class variables.
+
+Local Variables
+A local variable is a variable defi ned within a method. Local variables must be initialized
+before use. They do not have a default value and contain garbage data until initialized. The
+compiler will not let you read an uninitialized value. For example, the following code
+generates a compiler error:
+4: public int notValid() {
+5: int y = 10;
+6: int x;
+7: int reply = x + y; // DOES NOT COMPILE
+8: return reply;
+9: }
+y is initialized to 10. However, because x is not initialized before it is used in the expression on line 7, the compiler generates the following error:
+Test.java:5: variable x might not have been initialized
+ int reply = x + y;
+ ^
+Until x is assigned a value, it cannot appear within an expression, and the compiler will
+gladly remind you of this rule. The compiler knows your code has control of what happens
+inside the method and can be expected to initialize values.
+The compiler is smart enough to recognize variables that have been initialized after their
+declaration but before they are used. Here’s an example:
+public int valid() {
+ int y = 10;
+ int x; // x is declared here
+ x = 3; // and initialized here
+ int reply = x + y;
+ return reply;
+}
+The compiler is also smart enough to recognize initializations that are more complex.
+In this example, there are two branches of code. answer is initialized in both of them so
+the compiler is perfectly happy. onlyOneBranch is only initialized if check happens to be
+true. The compiler knows there is the possibility for check to be false, resulting in uninitialized code, and gives a compiler error. You’ll learn more about the if statement in the next
+chapter.
+public void findAnswer(boolean check) {
+ int answer;
+ int onlyOneBranch;
+ if (check) {
+ onlyOneBranch = 1;
+ answer = 1;
+ } else {
+ answer = 2;
+ }
+ System.out.println(answer);
+ System.out.println(onlyOneBranch); // DOES NOT COMPILE
+}
+
+Instance and Class Variables
+Variables that are not local variables are known as instance variables or class variables.
+Instance variables are also called fi elds. Class variables are shared across multiple objects.
+You can tell a variable is a class variable because it has the keyword static before it. You’ll
+learn about this in Chapter 4. For now, just know that a variable is a class variable if it has
+the static keyword in its declaration.
+Instance and class variables do not require you to initialize them. As soon as you declare
+these variables, they are given a default value. You’ll need to memorize everything in table
+1.2 (page 31 OCA) except the default value of char. To make this easier, remember that the compiler
+doesn’t know what value to use and so wants the simplest type it can give the value: null
+for an object and 0/false for a primitive.
