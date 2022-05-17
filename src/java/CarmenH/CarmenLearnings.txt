@@ -154,5 +154,7 @@ OCA8 - Creating and manipulating strings - important string methods, string pool
 started recap for chapter 3 so I can answer the review questions for chapter3
 ran the tests learned today, trying to understand all the code.
 --------------------------------------------------------------------------------------
-14.05.2022 - start review questions chapter 3
+16.05.2022 - start review questions chapter 3
+--------------------------------------------------------------------------------------
+17.05.2022 - finished the test for ch3, next - to check the answers and learn what was wrong
 --------------------------------------------------------------------------------------
