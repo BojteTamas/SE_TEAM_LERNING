@@ -1,0 +1,107 @@
+Reference Types
+A reference type refers to an object (an instance of a class). Unlike primitive types that hold
+their values in the memory where the variable is allocated, references do not hold the value
+of the object they refer to. Instead, a reference “points” to an object by storing the memory
+address where the object is located, a concept referred to as a pointer. Unlike other
+languages, Java does not allow you to learn what the physical memory address is. You can
+only use the reference to refer to the object.
+Let’s take a look at some examples that declare and initialize reference types. Suppose
+we declare a reference of type java.util.Date and a reference of type String:
+java.util.Date today;
+String greeting;
+The today variable is a reference of type Date and can only point to a Date object. The
+greeting variable is a reference that can only point to a String object. A value is assigned
+to a reference in one of two ways:
+■ A reference can be assigned to another object of the same type.
+■ A reference can be assigned to a new object using the new keyword.
+For example, the following statements assign these references to new objects:
+today = new java.util.Date();
+greeting = "How are you?";
+
+Key Differences
+There are a few important differences you should know between primitives and reference
+types. First, reference types can be assigned null, which means they do not currently refer
+to an object. Primitive types will give you a compiler error if you attempt to assign them
+null. In this example, value cannot point to null because it is of type int:
+int value = null; // DOES NOT COMPILE
+String s = null;
+Next, reference types can be used to call methods when they do not point to null.
+Primitives do not have methods declared on them. In this example, we can call a method on
+reference since it is of a reference type. You can tell length is a method because it has ()
+after it. The following line is gibberish. No methods exist on len because it is an int primitive. Primitives do not have methods.
+String reference = "hello";
+int len = reference.length();
+int bad = len.length(); // DOES NOT COMPILE
+Finally, notice that all the primitive types have lowercase type names. All classes that
+come with Java begin with uppercase. You should follow this convention for classes you
+create as well.
+
+Declaring and Initializing Variables
+We’ve seen some variables already. A variable is a name for a piece of memory that stores
+data. When you declare a variable, you need to state the variable type along with giving it a
+name. For example, the following code declares two variables. One is named zooName and
+is of type String. The other is named numberAnimals and is of type int.
+String zooName;
+int numberAnimals;
+Now that we’ve declared a variable, we can give it a value. This is called initializing a
+variable. To initialize a variable, you just type the variable name followed by an equal sign,
+followed by the desired value:
+zooName = "The Best Zoo";
+numberAnimals = 100;
+Since you often want to initialize a variable right away, you can do so in the same statement as the declaration. For example, here we merge the previous declarations and initializations into more concise code:
+String zooName = "The Best Zoo";
+int numberAnimals = 100;
+
+Declaring Multiple Variables
+You can also declare and initialize multiple variables in the same statement. How many
+variables do you think are declared and initialized in the following two lines?
+String s1, s2;
+String s3 = "yes", s4 = "no";
+Four String variables were declared: s1, s2, s3, and s4. You can declare many variables
+in the same declaration as long as they are all of the same type. You can also initialize any
+or all of those values inline. In the previous example, we have two initialized variables: s3
+and s4. The other two variables remain declared but not yet initialized.
+This is where it gets tricky. Pay attention to tricky things! The exam will attempt to trick
+you. Again, how many variables do you think are declared and initialized in this code?
+int i1, i2, i3 = 0;
+As you should expect, three variables were declared: i1, i2, and i3. However, only one
+of those values was initialized: i3. The other two remain declared but not yet initialized.
+That’s the trick. Each snippet separated by a comma is a little declaration of its own. The
+initialization of i3 only applies to i3. It doesn’t have anything to do with i1 or i2 despite
+being in the same statement.
+Another way the exam could try to trick you is to show you code like this line:
+int num, String value; // DOES NOT COMPILE
+This code doesn’t compile because it tries to declare multiple variables of different types
+in the same statement. The shortcut to declare multiple variables in the same statement only
+works when they share a type.
+To make sure you understand this, see if you can fi gure out which of the following are
+legal declarations. “Legal,” “valid,” and “compiles” are all synonyms in the Java exam
+world. We try to use all the terminology you could encounter on the exam.
+boolean b1, b2;
+String s1 = "1", s2;
+double d1, double d2;
+int i1; int i2;
+int i3; i4;
+The fi rst statement is legal. It declares two variables without initializing them. The
+second statement is also legal. It declares two variables and initializes only one of them.
+The third statement is not legal. Java does not allow you to declare two different types
+in the same statement. Wait a minute! Variables d1 and d2 are the same type. They are both
+of type double. Although that’s true, it still isn’t allowed. If you want to declare multiple
+variables in the same statement, they must share the same type declaration and not repeat
+it. double d1, d2; would have been legal.
+The fourth statement is legal. Although int does appear twice, each one is in a separate
+statement. A semicolon (;) separates statements in Java. It just so happens there are two
+completely different statements on the same line. The fi fth statement is not legal. Again,
+we have two completely different statements on the same line. The second one is not a
+valid declaration because it omits the type. When you see an oddly placed semicolon on the
+exam, pretend the code is on separate lines and think about whether the code compiles that
+way. In this case, we have the following:
+int i1;
+int i2;
+int i3;
+i4;// DOES NOT COMPILE
+Looking at the last line on its own, you can easily see that the declaration is invalid.
+And yes, the exam really does cram multiple statements onto the same line—partly to
+try to trick you and partly to fi t more code on the screen. In the real world, please limit
+yourself to one declaration per statement and line. Your teammates will thank you for the
+readable code.
