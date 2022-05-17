@@ -1,5 +1,6 @@
 package JavaAPIs;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class JavaApi {
@@ -248,11 +249,48 @@ public class JavaApi {
         System.out.println(Arrays.binarySearch(numberss, 9)); // -5
 
 
+//17 May multidimensional array
+        int[][] vars1; //2D array
+        int vars2[][]; //2D array
+        int[] vars3[]; //2D array
+        int[] vars4 [], space[][]; //a2D and a3D array
+
+        //specify the size of your multidimensional array
+        String [] [] rectangle = new String [3][2]; // result is an array rectangle with three elements each of which refers to an array of two elements
+
+        int[][] twoD = new int[3][2];
+        for (int r=0; r <twoD.length; r++){
+            for (int w=0;w <twoD[r].length; w++){
+                System.out.println(twoD[r][w] + " "); //print element
+                System.out.println(); // time for a new row
+            }
+        }
+
+        //old java way to create lists
+
+        ArrayList list1 = new ArrayList<>();
+        ArrayList list2 = new ArrayList<>(10);
+        ArrayList list3 = new ArrayList<>(list2);
+
+        //new java way
+        ArrayList<String> list4 = new ArrayList<String>();
+        ArrayList<String> list5 = new ArrayList<>();
+
+        list4.add("hawk");
+        list4.add(String.valueOf(Boolean.TRUE));
+        System.out.println(list4);
+
+        list5.add("raven");
+        list5.add(1,"robin");
+        list5.add(0,"blue jay");
+        list5.add(1,"cardinal");
 
 
+        System.out.println(list5);
 
-
-
+        list5.set(2,"robin");
+        System.out.println(list5.remove(1));
+        System.out.println(list5);
 
     }
 }
