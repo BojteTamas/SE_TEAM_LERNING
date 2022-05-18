@@ -1,7 +1,13 @@
 package JavaAPIs;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class JavaApi {
     public static void main(String[] args) throws Exception {
@@ -291,6 +297,75 @@ public class JavaApi {
         list5.set(2,"robin");
         System.out.println(list5.remove(1));
         System.out.println(list5);
+
+    //18 May 2022
+
+       List<String> birdies = new ArrayList<>();
+       birdies.add("blue jay");
+       birdies.add("paradise bird");
+       System.out.println(birdies.isEmpty()); //false
+       System.out.println(birdies.size()); // 2
+        birdies.clear(); // []
+        System.out.println(birdies.isEmpty()); // true
+        System.out.println(birdies.size()); // 0
+
+    //wrapper classes
+    //each primitive type has a wrapper class which is an object type that corresponds to the primitive
+    //int primitive = Integer.parseInt("123"); converts a string to an int primitive
+    //Integer wrapper = Integer.valueOf("123"); converts a string to an integer wrapper class
+
+    //int bad1 = Integer.parseInt("a")  //throws NumberFormatException
+    //Integer bad2 = Integer.valueOf("123.45") // throws NumberFormatException
+
+    //Autoboxing - you can just type the primitive value and Java will convert it to the relevant wrapper class
+
+    List<Double> weights = new ArrayList<>();
+    weights.add(50.5);
+    weights.add(new Double(60));
+    weights.remove(50.5);
+    double first = weights.get(0);
+
+    System.out.println(weights);
+
+  //Converting between array and List
+
+      List<String> liste = new ArrayList<>();
+     liste.add("hawk");
+     liste.add("robin");
+     Object[] objectArray = liste.toArray();
+     System.out.println(objectArray.length);
+    String[] stringArray = liste.toArray(new String[0]);
+     System.out.println(stringArray.length);
+
+    //Sorting
+
+        List<Integer> numeros = new ArrayList<>();
+        numeros.add(99);
+        numeros.add(5);
+        numeros.add(81);
+
+        Collections.sort(numeros);
+        System.out.println(numeros);
+
+
+     //Working with Dates and Times
+     //LocalDate : contains just a date - no time and no time zone
+     //LocalTime : contains just a time - no date and no time zone
+     //LocalDateTime: contains both a date and time but no time zone
+
+     System.out.println(LocalDate.now());
+     System.out.println(LocalTime.now());
+     System.out.println(LocalDateTime.now());
+
+     LocalDate date1 = LocalDate.of(1991, Month.JANUARY, 24);
+     LocalDate date2 = LocalDate.of(1991,1,24);
+
+     LocalTime time1 = LocalTime.of(21,03);
+     LocalTime time2 = LocalTime.of(21, 03, 45);
+     LocalTime time3 = LocalTime.of(21, 03, 45, 200);
+
+     System.out.println(date1 + " ------ " + date2 + " -------" + time1 + " ----" + time2 + " -----" + time3);
+
 
     }
 }
