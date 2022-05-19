@@ -1,4 +1,4 @@
-public class May17Dragos {
+/* public class May17Dragos {
     // Understanding Equality
     String x = "Hello World";
     String y = "Hello World";
@@ -17,4 +17,4 @@ public class May17Dragos {
     System.out.println(x.equals(z)); // true this is logical ezuality not obj eq
 
 
-}
+}*/
