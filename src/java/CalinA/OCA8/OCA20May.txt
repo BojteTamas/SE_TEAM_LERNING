@@ -1,0 +1,135 @@
+Ordering Elements in a Class
+
+Now that you’ve seen the most common parts of a class, let’s take a look at the correct
+order to type them into a fi le. Comments can go anywhere in the code. Beyond that, you
+need to memorize the rules in Table 1.4. (page 34)
+Let’s look at a few examples to help you remember this. The fi rst example contains one
+of each element:
+package structure; // package must be first non-comment
+import java.util.*; // import must come after package
+public class Meerkat { // then comes the class
+ double weight; // fields and methods can go in either order
+ public double getWeight() {
+ return weight; }
+ double height; // another field – they don't need to be together
+ }
+So far so good. This is a common pattern that you should be familiar with. How about
+this one?
+/* header */
+package structure;
+// class Meerkat
+public class Meerkat { }
+Still good. We can put comments anywhere, and imports are optional. In the next
+example, we have a problem:
+import java.util.*;
+package structure; // DOES NOT COMPILE
+String name; // DOES NOT COMPILE
+public class Meerkat { }
+There are two problems here. One is that the package and import statements are
+reversed. Though both are optional, package must come before import if present. The
+other issue is that a fi eld attempts declaration outside a class. This is not allowed. Fields
+and methods must be within a class.
+Got all that? Think of the acronym PIC (picture): package, import, and class. Fields and
+methods are easier to remember because they merely have to be inside of a class.
+You need to know one more thing about class structure for the OCA exam: multiple
+classes can be defi ned in the same fi le, but only one of them is allowed to be public. The
+public class matches the name of the fi le. For example, these two classes must be in a fi le
+named Meerkat.java:
+1: public class Meerkat { }
+2: class Paw { }
+A fi le is also allowed to have neither class be public. As long as there isn’t more than
+one public class in a fi le, it is okay. On the OCP exam, you’ll also need to understand inner
+classes, which are classes within a class.
+
+Destroying Objects
+Now that we’ve played with our objects, it is time to put them away. Luckily, Java automatically takes care of that for you. Java provides a garbage collector to automatically look
+for objects that aren’t needed anymore.
+All Java objects are stored in your program memory’s heap. The heap, which is also
+referred to as the free store, represents a large pool of unused memory allocated to your
+Java application. The heap may be quite large, depending on your environment, but there is
+always a limit to its size. If your program keeps instantiating objects and leaving them on
+the heap, eventually it will run out of memory.
+In the following sections, we’ll look at garbage collection and the finalize() method.
+Garbage Collection
+Garbage collection refers to the process of automatically freeing memory on the heap by
+deleting objects that are no longer reachable in your program. There are many different
+algorithms for garbage collection, but you don’t need to know any of them for the exam.
+You do need to know that System.gc() is not guaranteed to run, and you should be able to
+recognize when objects become eligible for garbage collection.
+Let’s start with the fi rst one. Java provides a method called System.gc(). Now you
+might think from the name that this tells Java to run garbage collection. Nope! It meekly
+suggests that now might be a good time for Java to kick off a garbage collection run. Java is
+free to ignore the request.
+The more interesting part of garbage collection is when the memory belonging to an
+object can be reclaimed. Java waits patiently until the code no longer needs that memory.
+An object will remain on the heap until it is no longer reachable. An object is no longer
+reachable when one of two situations occurs:
+■ The object no longer has any references pointing to it.
+■ All references to the object have gone out of scope.
+Realizing the difference between a reference and an object goes a long way toward
+understanding garbage collection, the new operator, and many other facets of the Java
+language. Look at this code and see if you can fi gure out when each object fi rst becomes
+eligible for garbage collection:
+1: public class Scope {
+2: public static void main(String[] args) {
+3: String one, two;
+4: one = new String("a");
+5: two = new String("b");
+6: one = two;
+7: String three = one;
+8: one = null;
+9: } }
+When you get asked a question about garbage collection on the exam, we recommend
+you draw what’s going on. There’s a lot to keep track of in your head and it’s easy to make
+a silly mistake trying to keep it all in your memory. Let’s try it together now. Really. Get a
+pencil and paper. We’ll wait.
+Got that paper? Okay, let’s get started. On line 3, we write one and two. Just the words.
+No need for boxes or arrows yet since no objects have gone on the heap yet. On line 4,
+we have our fi rst object. Draw a box with the string "a" in it and draw an arrow from the
+word one to that box. Line 5 is similar. Draw another box with the string "b" in it this time
+and an arrow from the word two. At this point, your work should look like Figure 1.2.(page38)
+On line 6, the variable one changes to point to "b". Either erase or cross out the arrow
+from one and draw a new arrow from one to "b". On line 7, we have a new variable, so
+write the word three and draw an arrow from three to "b". Notice that three points to
+what one is pointing to right now and not what it was pointing to at the beginning. This
+is why we are drawing pictures. It’s easy to forget something like that. At this point, your
+work should look like Figure 1.3.(page38)
+Finally, cross out the line between one and "b" since line 8 sets this variable to null.
+Now, we were trying to fi nd out when the objects were fi rst eligible for garbage collection.
+On line 6, we got rid of the only arrow pointing to "a", making that object eligible for
+garbage collection. "b" has arrows pointing to it until it goes out of scope. This means "b"
+doesn’t go out of scope until the end of the method on line 9.
+finalize()
+Java allows objects to implement a method called finalize() that might get called. This
+method gets called if the garbage collector tries to collect the object. If the garbage collector
+doesn’t run, the method doesn’t get called. If the garbage collector fails to collect the object
+and tries to run it again later, the method doesn’t get called a second time.
+In practice, this means you are highly unlikely to use it in real projects. Luckily, there
+isn’t much to remember about finalize() for the exam. Just keep in mind that it might not
+get called and that it defi nitely won’t be called twice.
+With that said, this call produces no output when we run it:
+public class Finalizer {
+ protected void finalize() {
+ System.out.println("Calling finalize");
+  }
+  public static void main(String[] args) {
+  Finalizer f = new Finalizer();
+  } }
+ The reason is that the program exits before there is any need to run the garbage collector. While f is eligible for garbage collection, Java has better things to do than take out the
+ trash constantly. For the exam, you need to know that this finalize() call could run zero
+ or one time. Now for a more interesting example:
+ public class Finalizer {
+  private static List objects = new ArrayList();
+  protected void finalize() {
+  objects.add(this); // Don't do this
+  } }
+ Remember, finalize() is only run when the object is eligible for garbage collection. The
+ problem here is that by the end of the method, the object is no longer eligible for garbage
+ collection because a static variable is referring to it and static variables stay in scope until
+ the program ends. Java is smart enough to realize this and aborts the attempt to throw out
+ the object. Now suppose later in the program objects is set to null. Oh, good, we can
+ fi nally remove the object from memory. Java remembers already running finalize() on
+ this object and will not do so again. The lesson is that the finalize() call could run zero
+ or one time. This is the exact same lesson as the simple example—that’s why it’s so easy to
+ remember.
+ }
