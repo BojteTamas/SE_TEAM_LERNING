@@ -158,3 +158,9 @@ ran the tests learned today, trying to understand all the code.
 --------------------------------------------------------------------------------------
 17.05.2022 - finished the test for ch3, next - to check the answers and learn what was wrong
 --------------------------------------------------------------------------------------
+18.05.2022 - played with git repositories - add new repositories on my computer, run them
+played oh my git!
+also today I will check the answers
+--------------------------------------------------------------------------------------
+19.05.2022 - working at my first automation test
+--------------------------------------------------------------------------------------
