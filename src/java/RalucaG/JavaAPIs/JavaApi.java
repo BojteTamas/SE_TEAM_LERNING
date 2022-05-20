@@ -1,9 +1,7 @@
 package JavaAPIs;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.Month;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -365,6 +363,64 @@ public class JavaApi {
      LocalTime time3 = LocalTime.of(21, 03, 45, 200);
 
      System.out.println(date1 + " ------ " + date2 + " -------" + time1 + " ----" + time2 + " -----" + time3);
+
+   //19 -20 May
+   //Manipulating Dates and Times
+
+   LocalDate date3 = LocalDate.of(2014, Month.JANUARY, 20);
+   System.out.println(date3);
+   date3 = date3.plusDays(2);
+   System.out.println(date3);
+   date3 = date3.plusWeeks(1);
+   System.out.println(date3);
+   date3 = date3.plusMonths(2);
+   System.out.println(date3);
+   date3 = date3.plusYears(5);
+   System.out.println(date3);
+
+   LocalDate date4 = LocalDate.of(2022,Month.JANUARY,24);
+   System.out.println(date4);
+
+   date4 = date4.minusDays(2);
+   System.out.println(date4);
+
+   date4= date4.minusWeeks(1);
+   System.out.println(date4);
+
+   date4 = date4.minusMonths(3);
+   System.out.println(date4);
+
+   date4 = date4.minusYears(2);
+   System.out.println(date4);
+
+
+   //Working with Periods
+
+   LocalDate start1 = LocalDate.of(2015,Month.JANUARY,1);
+   LocalDate end1 = LocalDate.of(2015,Month.MARCH,30);
+   Period period = Period.ofMonths(1); //create a period
+
+  Period annually = Period.ofYears(1); // every 1 year
+  Period quarterly = Period.ofMonths(3); //every 3 months
+
+  System.out.println(start1.plus(period));
+  System.out.println(end1.plus(annually));
+
+//Formating dates and times
+
+   System.out.println(date2.getDayOfWeek());
+   System.out.println(date2.getMonth());
+   System.out.println(date2.getYear());
+   System.out.println(date2.getDayOfYear());
+
+   LocalDate date6 = LocalDate.of(2020,Month.JANUARY,20);
+   LocalTime time6 = LocalTime.of(11,12,34);
+   LocalDateTime dateTime6 = LocalDateTime.of(date6,time6);
+   System.out.println(date6.format(DateTimeFormatter.ISO_LOCAL_DATE));
+   System.out.println(time6.format(DateTimeFormatter.ISO_LOCAL_TIME));
+
+   System.out.println(dateTime6.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+
 
 
     }
