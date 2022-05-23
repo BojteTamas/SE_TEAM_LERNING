@@ -1,3 +1,4 @@
+/*
 public class May19Dragos {
 // arrays
 int[] numbers1 = new int[3]; //size 3 array
@@ -19,3 +20,5 @@ public class ArrayType {
 
 
 }
+
+ */
