@@ -24,3 +24,7 @@ Recap for git branches - merge
 25.Mar.2022
 Recap of chapter 1-6 from Intellij
 Started reading OCA pdf
+
+23.May.2022
+Finished chapter 3 oca with date-time formats
+Started quiz for Chapter 3 OCA
