@@ -28,3 +28,7 @@ Started reading OCA pdf
 23.May.2022
 Finished chapter 3 oca with date-time formats
 Started quiz for Chapter 3 OCA
+
+
+24.May.2022
+Continuing with the quiz from chapter 3 OCA
