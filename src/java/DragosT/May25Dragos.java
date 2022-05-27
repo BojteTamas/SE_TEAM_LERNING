@@ -1,3 +1,4 @@
+/*
 public class May25Dragos {
 
 //Array List
@@ -42,3 +43,5 @@ one.add("b");
 one.equals(two); // false
 
 }
+
+ */

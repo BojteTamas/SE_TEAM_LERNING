@@ -1,3 +1,4 @@
+/*
 public class May23Dragos {
 //using and array
 // elements are indexed starting with 0.
@@ -25,3 +26,5 @@ System.out.println(Arrays.binarySearch(numbers, 9)); // -5 index
 
 
 }
+
+ */
