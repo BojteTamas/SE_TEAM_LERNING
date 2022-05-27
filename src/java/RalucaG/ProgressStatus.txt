@@ -32,3 +32,9 @@ Started quiz for Chapter 3 OCA
 
 24.May.2022
 Continuing with the quiz from chapter 3 OCA
+
+25.May.2022
+Finished quiz from chapter 3 OCA : 18/32 answered correctly -- > not great, not terrible !!
+
+26.May.2022
+Started css game
