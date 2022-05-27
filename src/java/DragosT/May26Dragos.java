@@ -1,4 +1,4 @@
-public class May26Dragos {
+/*public class May26Dragos {
 //wrapper clases Integer.valueOf is the wrapper
 int primitive = Integer.parseInt("123");
 Integer wrapper = Integer.valueOf("123");
@@ -22,3 +22,5 @@ for (String b : array) System.out.print(b + " "); //new test
 list.remove(1); // throws error, changing list size is not allowed
 
 }
+
+ */
