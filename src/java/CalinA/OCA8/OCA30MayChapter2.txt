@@ -1,0 +1,71 @@
+Understanding Java Operators
+A Java operator is a special symbol that can be applied to a set of variables, values, or
+literals—referred to as operands—and that returns a result. Three fl avors of operators are
+available in Java: unary, binary, and ternary. These types of operators can be applied to
+one, two, or three operands, respectively. For the OCA exam, you’ll need know a specifi c
+subset of Java operators, how to apply them, and the order in which they should be applied.
+Java operators are not necessarily evaluated from left-to-right order. For example, the
+following Java expression is actually evaluated from right-to-left given the specifi c operators involved:
+int y = 4;
+double x = 3 + 2 * --y;
+
+Working with Binary Arithmetic Operators
+Binary operators, by far the most common operators in
+the Java language. They can be used to perform mathematical operations on variables,
+create logical expressions, as well as perform basic variable assignments. Binary operators
+are commonly combined in complex expressions with more than two variables; therefore,
+operator precedence is very important in evaluating expressions.
+
+Arithmetic Operators
+Arithmetic operators are often encountered in early mathematics and include addition
+(+), subtraction (-), multiplication (*), division (/), and modulus (%). They also include the
+unary operators, ++ and --, although we cover them later in this chapter. As you may have
+noticed in Table 2.1, the multiplicative operators (*, /, %) have a higher order of precedence
+than the additive operators (+, -). That means when you see an expression such as this:
+int x = 2 * 5 + 3 * 4 - 8;
+you fi rst evaluate the 2 * 5 and 3 * 4, which reduces the expression to the following:
+int x = 10 + 12 - 8;
+Then, you evaluate the remaining terms in left-to-right order, resulting in a value of x of
+14. Make sure you understand why the result is 24 as you’ll likely see this kind of operator
+precedence question on the exam.
+Notice that we said “Unless overridden with parentheses…” prior to Table 2.1. That’s
+because you can change the order of operation explicitly by wrapping parentheses around
+the sections you want evaluated fi rst. Compare the previous example with the following
+one containing the same values and operators, in the same order, but with two sets of
+parentheses:
+int x = 2 * ((5 + 3) * 4 – 8);
+This time you would evaluate the addition operator 10 + 3, which reduces the expression to the following:
+int x = 2 * (8 * 4 – 8);
+You can further reduce this expression by multiplying the fi rst two values within the
+parentheses:
+int x = 2 * (32 – 8);
+Next, you subtract the values within the parentheses before applying terms outside the
+parentheses:
+int x = 2 * 24;
+Finally, you would multiply the result by 2, resulting in a value of 48 for x.
+All of the arithmetic operators may be applied to any Java primitives, except boolean
+and String. Furthermore, only the addition operators + and += may be applied to String
+values, which results in String concatenation.
+Although we are sure you have seen most of the arithmetic operators before, the modulus operator, %, may be new to you. The modulus, or remainder operator, is simply the
+remainder when two numbers are divided. For example, 9 divided by 3 divides evenly and
+has no remainder; therefore, the remainder, or 9 % 3, is 0. On the other hand, 11 divided
+by 3 does not divide evenly; therefore, the remainder, or 11 % 3, is 2.
+Be sure to understand the difference between arithmetic division and modulus. For integer values, division results in the fl oor value of the nearest integer that fulfi lls the operation,
+whereas modulus is the remainder value. The following examples illustrate this distinction:
+System.out.print(9 / 3); // Outputs 3
+System.out.print(9 % 3); // Outputs 0
+System.out.print(10 / 3); // Outputs 3
+System.out.print(10 % 3); // Outputs 1
+System.out.print(11 / 3); // Outputs 3
+System.out.print(11 % 3); // Outputs 2
+System.out.print(12 / 3); // Outputs 4
+System.out.print(12 % 3); // Outputs 0
+Note that the division results only increase when the value on the left-hand side goes
+from 9 to 12, whereas the modulus remainder value increases by 1 each time the left-hand
+side is increased until it wraps around to zero. For a given divisor y, which is 3 in these
+examples, the modulus operation results in a value between 0 and (y - 1) for positive dividends. This means that the result of a modulus operation is always 0, 1, or 2.
+The modulus operation is not limited to positive integer values in Java
+and may also be applied to negative integers and floating-point integers.
+For a given divisor y and negative dividend, the resulting modulus value
+is between and (-y + 1) and 0. For the OCA exam, though, you are not
+required to be able to take the modulus of a negative integer or a floatingpoint number.
