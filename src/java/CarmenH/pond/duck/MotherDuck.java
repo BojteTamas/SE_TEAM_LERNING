@@ -14,6 +14,7 @@ public class MotherDuck {
 
     public static void main(String[] args) {
         makeNoise();
+
     }
 }
 
