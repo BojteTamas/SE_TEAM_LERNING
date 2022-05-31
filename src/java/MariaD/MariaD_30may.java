@@ -1,6 +1,25 @@
 package MariaD;
+import java.util.List;
 
 public class MariaD_30may {
+    /* int length;
+
+ {
+     length = (7);
+ }
+*/
+    public static void main(String[] args) {
+        //int len = reference.length();
+        String string = "animals";
+        //string.length();
+
+        // System.out.println(" ".length());
+        System.out.println(string.length());
+
+
+    }
+}
+
     //start reading chapter 3
         /*
         Rules:
@@ -28,11 +47,4 @@ public class MariaD_30may {
 
     Indexing a STRING
     */
-    public static void main(String[] args) {
-   /* int length;();
-    String string = "animals";
-    System.out.println(string.length());
-*/
 
-    }
-}
