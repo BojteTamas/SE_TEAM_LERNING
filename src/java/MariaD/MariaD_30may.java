@@ -48,4 +48,3 @@ public class MariaD_30may {
     Indexing a STRING
     */
 
-
