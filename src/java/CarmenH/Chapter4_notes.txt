@@ -1,0 +1,257 @@
+Methods and Encapsulation
+
+================================================================================
+
+Designing Methods
+
+public final void nap(int minutes) throws InterruptedException {
+	// take a nap
+
+}
+
+
+public - Access modifier - not required
+final  - Optional specifier - not required
+void - Return type  - required 
+nap -  Method name - required 
+(int minutes) - Parameter list - required, but can be empty parentheses
+throws InterruptedException - Optional exception list - - not required
+{
+// take a nap  - Method body - required, but can be empty braces
+}
+
+This is how you call it : 
+nap(10);
+
+================================================================================
+Access Modifiers
+
+public The method can be called from any class.
+private The method can only be called from within the same class.
+protected The method can only be called from classes in the same package or subclasses.
+Default (Package Private) Access The method can only be called from classes in the same package. This one is tricky because there is no keyword for default access. You simply omit the access modifier.
+
+
+The exam creators like to trick you by putting method elements in the wrong order or using incorrect values.
+
+================================================================================
+Optional Specifiers
+
+
+static Covered later in this chapter. Used for class methods.
+abstract Covered in Chapter 5. Used when not providing a method body.
+final Covered in Chapter 5. Used when a method is not allowed to be overridden by a subclass.
+synchronized On the OCP but not the OCA exam.
+native Not on the OCA or OCP exam. Used when interacting with code written in
+another language such as C++.
+strictfp Not on the OCA or OCP exam. Used for making floating-point calcu- lations portable.
+
+public void walk1() {}
+public final void walk2() {}
+public static final void walk3() {}
+public final static void walk4() {}
+public modifier void walk5() {} // DOES NOT COMPILE 
+public void final walk6() {} // DOES NOT COMPILE 
+final public void walk7() {}
+
+modifier is not a valid optional specifier
+================================================================================
+Return Type
+
+Remember that a method must have a return type. If no value is returned, the return type is void. You cannot omit the return type.
+
+String walk6(int a) { if (a == 4) return ""; } // DOES NOT COMPILE
+walk6() is a little tricky. There is a return statement, but it doesn’t always get run. If a is 6, the return statement doesn’t get executed. Since the String always needs to be returned, the compiler complains.
+
+================================================================================
+Method Name
+
+Method names follow the same rules as we practiced with variable names in Chapter 1, “Java Building Blocks.” To review, an identifier may only contain letters, numbers, $, or _. Also, the first character is not allowed to be a number, and reserved words are not allowed. By convention, methods begin with a lowercase letter but are not required to. 
+================================================================================
+Parameter List
+================================================================================
+Optional Exception List
+For now, you just need to know that it is optional and where in the method signature it goes if present. In the example, InterruptedException is a type of Exception. You can list as many types of exceptions as you want in this clause separated by commas.
+================================================================================
+Method Body
+================================================================================
+Working with Varargs
+
+When calling a method with a vararg parameter, you have a choice. You can pass in an array, or you can list the elements of the array and let Java create it for you. You can even omit the vararg values in the method call and Java will create an array of length zero for you.
+
+walk(1, null); // throws a NullPointerException
+Since null isn’t an int, Java treats it as an array reference that happens to be null. It just passes on the null array object to walk. Then the walk() method throws an exception because it tries to determine the length of null.
+================================================================================
+Applying Access Modifiers
+
+You already saw that there are four access modifiers: public, private, protected, and default access. We are going to discuss them in order from most restrictive to least restrictive:
+private: Only accessible within the same class
+default (package private) access: private and other classes in the same package 
+protected: default access and child classes
+public: protected and classes in the other packages
+
+Private Access
+Private access is easy. Only code in the same class can call private methods or access private fields.
+
+Protected Access
+Protected access allows everything that default (package private) access allows and more. The protected access modifier adds the ability to access members of a parent class. We’ll cover creating subclasses in depth in Chapter 5. For now, we’ll cover the simplest possible use of a child class.
+
+Public Access
+
+Protected access was a tough concept. Luckily, the last type of access modifier is easy: pub- lic means anyone can access the member from anywhere.
+
+
+
+!!!!!!!!!!Can access
+Member in the same class
+If that member is private?  Yes
+If that member has default (package private) access?  Yes
+If that member is protected?  Yes
+If that member is public?  Yes
+
+Member in another class in same package
+
+If that member is private?  No
+If that member has default (package private) access? Yes
+If that member is protected? Yes
+If that member is public? Yes
+
+Member in a superclass in a different package
+
+If that member is private?  No
+If that member has default (package private) access?  No
+If that member is protected?  Yes
+If that member is public?  Yes
+
+Method/field in a non- superclass class in a different package
+
+If that member is private?  No
+If that member has default (package private) access?  No
+If that member is protected?  No
+If that member is public?  Yes
+
+
+================================================================================
+
+Designing Static Methods and Fields
+
+Except for the main() method, we’ve been looking at instance methods. Static methods don’t require an instance of the class. They are shared among all users of the class. You can think of statics as being a member of the single class object that exist independently of any instances of that class.
+
+
+Does Each Class Have Its Own Copy of the Code?
+Each class has a copy of the instance variables. There is only one copy of the code for the instance methods. Each instance of the class can call it as many times as it would like. However, each call of an instance method (or any method) gets space on the stack for method parameters and local variables.
+The same thing happens for static methods. There is one copy of the code. Parameters and local variables go on the stack.
+Just remember that only data gets its “own copy.” There is no need to duplicate copies of the code itself.
+
+
+In addition to main() methods, static methods have two main purposes:
+For utility or helper methods that don’t require any object state. Since there is no need to access instance variables, having static methods eliminates the need for the caller to instantiate the object just to call the method.
+For state that is shared by all instances of a class, like a counter. All instances must share the same state. Methods that merely use that state should be static as well.
+
+
+Calling a Static Variable or Method
+Usually, accessing a static member is easy. You just put the classname before the method or variable and you are done.
+System.out.println(Koala.count); 
+Koala.main(new String[0]);
+
+Java doesn’t care that k happens to be null. Since we are looking for a static, it doesn’t matter.
+
+
+!!!!!!
+Remember to look at the reference type for a variable when you see a static method or variable. The exam creators will try to trick you into think- ing a NullPointerException is thrown because the variable happens to be null. Don’t be fooled!
+
+
+!!!!!!
+One more time because this is really important: what does the following output?
+Koala.count = 4;
+Koala koala1 = new Koala(); 
+Koala koala2 = new Koala(); 
+koala1.count = 6;
+koala2.count = 5; 
+System.out.println(Koala.count);
+Hopefully, you answered 5. There is only one count variable since it is static. It is set to 4, then 6, and finally winds up as 5. All the Koala variables are just distractions.
+
+================================================================================
+Static vs. Instance
+
+!!!!Remember that “member” means field or method.
+!!!A static member cannot call an instance member. This shouldn’t be a surprise since static doesn’t require any instances of the class to be around.
+
+
+!!!!A static method or instance method can call a static method because static methods don’t require an object to use. Only an instance method can call another instance method on the same class without using a reference variable, because instance methods do require an object. Similar logic applies for the instance and static variables. 
+
+
+Static vs. instance calls
+
+Static method >>>Calling Another static method or variable>>>Legal >>> Using the classname
+Static method >>>Calling An instance method or variable >>>not Legal
+Instance method >>> Calling A static method or variable >>> Legal >>> Using the classname or a reference variable
+Instance method >>> Another instance method or variable >> Legal >>> Using a reference variable
+ 
+================================================================================
+Static Variables
+
+Some static variables are meant to change as the program runs. Counters are a common example of this. We want the count to increase over time. Just as with instance variables, you can initialize a static variable on the line it is declared:
+
+public class Initializers {
+private static int counter = 0; // initialization
+}
+
+Other static variables are meant to never change during the program. This type of variable is known as a constant. It uses the final modifier to ensure the variable never changes. static final constants use a different naming convention than other variables. They use all uppercase letters with underscores between “words.” For example:
+
+public class Initializers {
+private static final int NUM_BUCKETS = 45;
+ public static void main(String[] args) {
+NUM_BUCKETS = 5; // DOES NOT COMPILE 
+}
+}
+
+================================================================================
+Static Initialization
+
+
+private static final int NUM_SECONDS_PER_HOUR; 
+static {
+int numSecondsPerMinute = 60;
+int numMinutesPerHour = 60;
+NUM_SECONDS_PER_HOUR = numSecondsPerMinute * numMinutesPerHour;
+}
+
+Using static and instance initializers can make your code much harder to read. Everything that could be done in an instance initializer could be done in a constructor instead. The constructor approach is easier to read.
+ There is a common case to use a static initializer: when you need to initialize a static field and the code to do so requires more than one line. This often occurs when you want to initialize a collection like an ArrayList. When you do need to use a static initializer, put all the static initialization in the same block. That way, the order is obvious.
+
+================================================================================
+Static Imports
+Remember that static imports are only for importing static members.Regular imports are for importing a class
+The syntax is import static and not vice versa.
+
+
+================================================================================
+
+
+Passing Data Among Methods
+
+Java is a “pass-by-value” language. This means that a copy of the variable is made and the method receives that copy. Assignments made in the method do not affect the caller. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
