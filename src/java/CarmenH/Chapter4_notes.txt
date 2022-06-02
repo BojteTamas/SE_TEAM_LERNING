@@ -103,8 +103,10 @@ Protected access was a tough concept. Luckily, the last type of access modifier 
 
 
 !!!!!!!!!!Can access
-Member in the same class
-If that member is private?  Yes
+
+Member in the same class
+
+If that member is private?  Yes
 If that member has default (package private) access?  Yes
 If that member is protected?  Yes
 If that member is public?  Yes
@@ -234,24 +236,175 @@ Passing Data Among Methods
 Java is a “pass-by-value” language. This means that a copy of the variable is made and the method receives that copy. Assignments made in the method do not affect the caller. 
 
 
+Pass-by-Value vs. Pass-by-Reference
 
 
+To review, Java uses pass-by-value to get data into a method. Assigning a new primitive or reference to a parameter doesn’t change the caller. Calling methods on a reference to an object does affect the caller.
+
+Getting data back from a method is easier. A copy is made of the primitive or reference and returned from the method. Most of the time, this returned value is used. For example, it might be stored in a variable. If the returned value is not used, the result is ignored.
 
 
+================================================================================
+Overloading Methods
+
+Method overloading occurs when there are different method signatures with the same name but different type parameters.
+
+System.out.println and StringBuilder’s append methods provide many overloaded versions so you can pass just about anything to them without having to think about it
+
+Overloading also allows different numbers of parameters.
+
+Everything other than the method signature can vary for overloaded methods. This means there can be different access modifiers, specifiers (like static), return types, and exception lists.
+
+These are all valid overloaded methods:
+
+public void fly(int numMiles) {
+}
+
+public void fly(short numFeet) {
+ }
+
+public boolean fly() {
+return false;
+}
+
+void fly(int numMiles, short numFeet) {
+}
+
+public void fly(short numFeet, int numMiles) throws Exception {
+ }
+-------------
+!!!!Now let’s look at an example that is not valid overloading:
+
+public void fly(int numMiles) { }
+public int fly(int numMiles) { } // DOES NOT COMPILE
+
+This method doesn’t compile because it only differs from the original by return type. The parameter lists are the same so they are duplicate methods as far as Java is concerned.
+
+-------------
+public void fly(int numMiles) { }
+public static void fly(int numMiles) { } // DOES NOT COMPILE
+!!!!Again, the parameter list is the same. The only difference is that one is an instance method and one is a static method.
+
+-------------
+public void fly(int numMiles) {
+System.out.println("short");
+}
+public void fly(short numFeet) {
+System.out.println("short");
+}
+The call fly((short) 1); prints short. It looks for matching types and calls the appro- priate method. Of course, it can be more complicated than this.
 
 
+================================================================================
+Overloading and Varargs
 
 
+public void fly(int[] lengths) { }
+public void fly(int... lengths) { } // DOES NOT COMPILE
+!!!!!Trick question! Remember that Java treats varargs as if they were an array. This means that the method signature is the same for both methods. Since we are not allowed to overload methods with the same parameter list, this code doesn't compile. Even though the code doesn't look the same, it compiles to the same parameter list.
+
+Now that we’ve just gotten through explaining that they are the same, it is time to men- tion how they are not the same. It shouldn’t be a surprise that you can call either method by passing an array:
+fly(new int[] { 1, 2, 3 });
+However, you can only call the varargs version with stand-alone parameters:
+fly(1, 2, 3);
+Obviously, this means they don't compile exactly the same. The parameter list is the
+same, though, and that is what you need to know with respect to overloading for the exam.
 
 
+================================================================================
+Autoboxing
+
+public void fly(int numMiles) { }
+public void fly(Integer numMiles) { }
+Java will match the int numMiles version. Java tries to use the most specific parameter list it can find. When the primitive int version isn't present, it will autobox. However, when the primitive int version is provided, there is no reason for Java to do the extra work of autoboxing.
 
 
+================================================================================
+
+Reference Types
+Primitives
+
+Primitives work in a way similar to reference variables. Java tries to find the most specific matching overloaded method.
 
 
+The answer is int long. The first call passes an int and sees an exact match. The sec- ond call passes a long and also sees an exact match. If we comment out the overloaded method with the int parameter list, the output becomes long long. Java has no problem calling a larger primitive. However, it will not do so unless a better match is not found.
+
+Note that Java can only accept wider types. An int can be passed to a method taking a long parameter. Java will not automatically convert to a narrower type. If you want to pass a long to a method taking an int parameter, you have to add a cast to explicitly say nar- rowing is okay.
+================================================================================
+
+Putting It All Together
+
+So far, all the rules for when an overloaded method is called should be logical. Java calls the most specific method it can. When some of the types interact, the Java rules focus
+on backward compatibility. In Java 1.4 and earlier, autoboxing and varargs didn’t exist. Although that was a long time ago, old code still needs to work—which means autoboxing and varargs come last when Java looks at overloaded methods.
+
+================================================================================
+Creating Constructors
+
+a constructor is a special method that matches the name of the class and has no return type
+
+Constructors are used when creating a new object. This process is called instantiation because it creates a new instance of the class. A constructor is called when we write new followed by the name of the class we want to instantiate. For example:
+
+new Bunny()
+
+When Java sees the new keyword, it allocates memory for the new object. Java also looks for a constructor and calls it.
 
 
+!!!!A constructor is typically used to initialize instance variables. The this keyword tells Java you want to reference an instance variable. Most of the time, this is optional. The problem is that sometimes there are two variables with the same name. In a constructor, one is a parameter and one is an instance variable. If you don’t say otherwise, Java gives you the one with the most granular scope, which is the parameter. Using this.name tells Java you want the instance variable.
+
+Here’s a common way of writing a constructor:
+ public class Bunny {
+   private String color;
+   public Bunny(String color) {
+	this.color = color;
+	}
+}
 
 
+================================================================================
+
+Default Constructor
+
+The default constructor has an empty parameter list and an empty body.
+
+public class Rabbit {
+
+//In the Rabbit class, Java sees no constructor was coded and creates one. This default
+//constructor is equivalent to typing this:
+	public Rabbit() {}
+	public static void main(String[] args) {
+
+	Rabbit rabbit = new Rabbit(); // Calls default constructor
+	}
+}
+
+class Rabbit1 { }
+
+class Rabbit2 {
+	public Rabbit2() { }
+}
+
+class Rabbit3 {
+	public Rabbit3(boolean b) { }
+}
+
+class Rabbit4 {
+	private Rabbit4() { }
+}
+
+public class RabbitsMultiply {
+	public static void main(String[] args) {
+		Rabbit1 r1 = new Rabbit1();
+		Rabbit2 r2 = new Rabbit2();
+		Rabbit3 r3 = new Rabbit3(true);
+		Rabbit4 r4 = new Rabbit4(); //does not compile , explanation in text below
+	}
+}
 
 
+Having a private constructor in a class tells the compiler not to provide a default no- argument constructor. It also prevents other classes from instantiating the class. This is useful when a class only has static methods or the class wants to control all calls to create new instances of itself.
 
+
+================================================================================
+
+
+Overloading Constructors
