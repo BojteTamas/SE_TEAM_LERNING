@@ -408,3 +408,50 @@ Having a private constructor in a class tells the compiler not to provide a defa
 
 
 Overloading Constructors
+
+
+When overloading methods, the method name and parameter list needed to match. With constructors, the name is always the same since it has to be the same as the name of the class. This means construc- tors must have different parameters in order to be overloaded.
+
+
+
+!!!!!Constructors can be called only by writing new before the name of the constructor. They are not like normal methods that you can just call
+
+!!!! this() has one special rule you need to know. If you choose to call it, the this() call must be the first noncommented statement in the constructor.
+
+This is the example that shows it is wrong:
+
+public Hamster(int weight) {
+	System.out.println("in constructor");
+	// ready to call this
+	this(weight, "brown"); // DOES NOT COMPILE
+}
+
+
+
+================================================================================
+
+ Constructor Chaining
+
+Overloaded constructors often call each other. One common technique is to have each constructor add one parameter until getting to the constructor that does all the work. This approach is called constructor chaining.
+
+================================================================================
+
+Final Fields
+
+
+As you saw earlier in the chapter, final instance variables must be assigned a value exactly once. We saw this happen in the line of the declaration and in an instance initializer. There is one more location this assignment can be done: in the constructor.
+
+public class MouseHouse {
+	private final int volume;
+	private final String name = "The Mouse House";
+	public MouseHouse(int length, int width, int height) {
+		volume = length * width * height;
+	}
+}
+The constructor is part of the initialization process, so it is allowed to assign final instance variables in it. By the time the constructor completes, all final instance variables must have been set.
+
+================================================================================
+
+Order of Initialization
+
+
