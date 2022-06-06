@@ -454,4 +454,21 @@ The constructor is part of the initialization process, so it is allowed to assig
 
 Order of Initialization
 
+1. If there is a superclass, initialize it first (we’ll cover this rule in the next chapter. For now, just say “no superclass” and go on to the next rule.)
+
+2. Static variable declarations and static initializers in the order they appear in the file.
+
+3. Instance variable declarations and instance initializers in the order they appear in the file.
+
+4. The constructor.
+
+
+ Kind of difficult to understand clear right now - to search more about this - or practice more
+
+
+!!! Keep in mind that the four rules apply only if an object is instantiated.
+ If the class is referred to without a new call, only rules 1 and 2 apply.
+ The other two rules relate to instances and constructors.
+  They have to wait until there is code to instantiate the object.
+
 
