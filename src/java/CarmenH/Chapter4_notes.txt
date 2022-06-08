@@ -466,9 +466,127 @@ Order of Initialization
  Kind of difficult to understand clear right now - to search more about this - or practice more
 
 
-!!! Keep in mind that the four rules apply only if an object is instantiated.
- If the class is referred to without a new call, only rules 1 and 2 apply.
- The other two rules relate to instances and constructors.
-  They have to wait until there is code to instantiate the object.
+!!! Keep in mind that the four rules apply only if an object is instantiated. If the class is referred to without a new call, only rules 1 and 2 apply. The other two rules relate to instances and constructors. They have to wait until there is code to instantiate the object.
+
+=================================================================================================
+Encapsulating Data
+
+ Encapsulation means we set up the class so only methods in the class with the variables can refer to the instance variables. Callers are required to use these methods
 
 
+For encapsulation, remember that data (an instance variable) is private and getters/setters are public.
+
+
+Rules for JavaBeans naming conventions :
+
+Properties are private.
+   private int numEggs;
+
+
+Getter methods begin with is if the property is a boolean.
+public boolean isHappy() {
+	return happy;
+	}
+
+Getter methods begin with get if the property is not a boolean.
+public int getNumEggs() {
+	return numEggs;
+	}
+
+
+Setter methods begin with set.
+public void setHappy(boolean happy) {
+	this.happy = happy;
+	}
+
+The method name must have a prefix of set/get/is, followed by the first letter of the property in uppercase, followed by the rest of the property name.
+public void setNumEggs(int num) {
+	numEggs = num;
+	}
+
+
+12: private boolean playing;
+13: private String name;
+14: public boolean getPlaying() { return playing; }
+15: public boolean isPlaying() { return playing; }
+16: public String name() { return name; }
+17: public void updateName(String n) { name = n; }
+18: public void setname(String n) { name = n; }
+
+Lines 12 and 13 are good. They are private instance variables.
+Line 14 doesn't follow the JavaBeans naming conventions. Since playing is a boolean, the getter must begin with is.
+Line 15 is a correct getter for playing.
+Line 16 doesn't follow the JavaBeans naming con- ventions because it should be called getName.
+Lines 17 and 18 do not follow the JavaBeans naming conventions because they should be named setName.
+
+Remember that Java is case sensitive, so setname is not adequate to meet the naming convention.
+
+
+
+=================================================================================================
+Creating Immutable Classes
+
+Encapsulating data is helpful because it prevents callers from making uncontrolled changes to your class. Another common technique is making classes immutable so they cannot be changed at all.
+
+Immutable classes are helpful because you know they will always be the same. You can pass them around your application with a guarantee that the caller didn’t change anything. This helps make programs easier to maintain. It also helps with performance by limiting the number of copies, as you saw with String in Chapter 3, “Core Java APIs.”
+One step in making a class immutable is to omit the setters. But wait: we still want the caller to be able to specify the initial value—we just don’t want it to change after the object is created. Constructors to the rescue!
+
+Remember, immutable is only measured after the object is constructed. Immutable classes are allowed to have values. They just can't change after instantiation.
+
+To review, encapsulation refers to preventing callers from changing the instance variables directly. Immutability refers to preventing callers from changing the instance variables at all.
+
+
+Extra info
+
+
+A Strategy for Defining Immutable Objects
+The following rules define a simple strategy for creating immutable objects. Not all classes documented as "immutable" follow these rules. This does not necessarily mean the creators of these classes were sloppy — they may have good reason for believing that instances of their classes never change after construction. However, such strategies require sophisticated analysis and are not for beginners.
+
+1. Don't provide "setter" methods — methods that modify fields or objects referred to by fields.
+2. Make all fields final and private.
+3. Don't allow subclasses to override methods. The simplest way to do this is to declare the class as final. A more sophisticated approach is to make the constructor private and construct instances in factory methods.
+4. If the instance fields include references to mutable objects, don't allow those objects to be changed:
+	Don't provide methods that modify the mutable objects.
+	Don't share references to the mutable objects. Never store references to external, mutable objects passed to the constructor; if necessary, create copies, and store references to the copies. Similarly, create copies of your internal mutable objects when necessary to avoid returning the originals in your methods.
+
+
+
+
+
+
+=================================================================================================
+Writing Simple Lambdas
+
+
+Java is an object-oriented language at heart.
+
+Functional programming uses lambda expressions to write code. A lambda expression is a block of code that gets passed around.
+
+It has parameters and a body just like full-fledged methods do, but it doesn’t have a name like a real method. Lambda expressions are often referred to as lamb- das for short.
+
+In this section, we’ll cover an example of why lambdas are helpful, the syntax of lambdas, and how to use predicates.
+Example:  a -> a.canSwim()
+
+Deferred execution means that code is specified now but will run later. In this case, later is when the print() method calls it.
+
+
+
+Lambda Syntax
+
+One of the simplest lambda expressions you can write is the one you just saw:
+a -> a.canHop();
+
+These 2 lines do the same:
+a -> a.canHop()
+(Animal a) -> { return a.canHop(); }
+
+
+Let’s look at what is going on here. The first example has three parts:
+	Specify a single parameter with the name a
+	The arrow operator to separate the parameter and body
+	A body that calls a single method and returns the result of that method
+
+The second example also has three parts; it’s just more verbose
+	Specify a single parameter with the name a and stating the type is Animal
+	The arrow operator to separate the parameter and body
+	A body that has one or more lines of code, including a semicolon and a return statement
