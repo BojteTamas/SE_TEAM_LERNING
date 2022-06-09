@@ -1,4 +1,4 @@
-package MariaD;
+package MariaD.may_june;
 
 public class Maria_23_may {
 //reading about css selectors on: https://www.w3schools.com/cssref/css_selectors.asp

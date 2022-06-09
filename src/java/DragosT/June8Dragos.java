@@ -1,4 +1,4 @@
-public class June8Dragos {
+/*public class June8Dragos {
 //    access modifiers
 
 //public The method can be called from any class.
@@ -48,3 +48,5 @@ long long1()
 
 
 }
+
+ */

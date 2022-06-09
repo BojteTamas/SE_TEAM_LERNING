@@ -1,4 +1,4 @@
-package MariaD;
+package MariaD.may_june;
 
 public class mariad_16_may {
     ///trying to create the environement for automation project, having some issues

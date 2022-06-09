@@ -1,4 +1,4 @@
-package MariaD;
+package MariaD.may_june;
 
 //length() method returns the no. of characters in the String
 // ATTENTION --!!!JAVA USES NORMAL COUNTING WHEN DETERMINNING THE TOTAL SIZE/ LENGTH (DOESN'T START FROM 0)
