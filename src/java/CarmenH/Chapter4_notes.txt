@@ -590,3 +590,52 @@ The second example also has three parts; it’s just more verbose
 	Specify a single parameter with the name a and stating the type is Animal
 	The arrow operator to separate the parameter and body
 	A body that has one or more lines of code, including a semicolon and a return statement
+
+
+What Variables Can My Lambda Access?
+
+Lambdas are allowed to access variables. This topic isn’t on the OCA exam, but you may come across it when practicing. Lambdas are allowed to access variables. Here’s an example:
+boolean wantWhetherCanHop = true;
+print(animals, a -> a.canHop() == wantWhetherCanHop);
+The trick is that they cannot access all variables. Instance and static variables are okay. Method parameters and local variables are fine if they are not assigned new values.
+
+=================================================================================================
+Predicates
+
+
+In our earlier example, we created an interface with one method:
+boolean test(Animal a);
+
+Lambdas work with interfaces that have only one method.
+These are called functional interfaces—interfaces that can be used with functional programming.
+You can imagine that we’d have to create lots of interfaces like this to use lambdas.
+
+We want to test Animals and Strings and Plants and anything else that we come across.
+
+Luckily, Java recognizes that this is a common problem and provides such an interface for us. It’s in the
+	package java.util.function and the gist of it is as follows:
+
+
+public interface Predicate<T> {
+	boolean test(T t);
+}
+
+
+Java 8 even integrated the Predicate interface into some existing classes.
+here is only one you need to know for the exam.
+
+ArrayList declares a removeIf() method that takes a Predicate.
+=================================================================================================
+=================================================================================================
+=================================================================================================
+Summary
+
+Exam Essentials
+
+Be able to identify correct and incorrect method declarations.
+Identify when a method or field is accessible.
+Recognize valid and invalid uses of static imports.
+State the output of code involving methods.
+Evaluate code involving constructors.
+Be able to recognize when a class is properly encapsulated.
+Write simple lambda expressions.
