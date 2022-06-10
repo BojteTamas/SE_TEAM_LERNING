@@ -2,6 +2,7 @@ package CarmenH.may.may31;
 // import static java.util.Arrays; // tries to use a static import to import a class. Remember that
 // static imports are only for importing static members.Regular imports are for importing a class
 import java.util.Arrays;
+
 // static import java.util.Arrays.*; //tries to see if you are paying attention to the order of
 // keywords. The syntax is import static and not vice versa.
 
