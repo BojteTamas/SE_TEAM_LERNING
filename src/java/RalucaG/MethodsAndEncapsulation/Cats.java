@@ -24,7 +24,7 @@ public class Cats {
     public boolean iswildCat() {
         return wildCat;  }
 
-    public String getSpecies() {
+    public String toString() {
         return species;
     }
 
