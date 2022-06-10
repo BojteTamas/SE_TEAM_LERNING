@@ -1,3 +1,5 @@
 package TamasB;
 
-public class Test {}
+public class Test {
+    a
+}
