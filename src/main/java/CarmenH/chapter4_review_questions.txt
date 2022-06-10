@@ -1,0 +1,110 @@
+=========================================================================================
+1. B C correct
+=========================================================================================
+2. A D correct
+=========================================================================================
+
+3. C D - missing A - A C D
+
+Options A and C are correct because a void method is allowed to have a return statement as long as it doesn’t try to return a value.
+
+return; - does not return something, works with void
+=========================================================================================
+4. A B G correct
+=========================================================================================
+
+5. F G - D G
+
+D. howMany(true, true, true) - > Option D passes the initial parameter plus two more to turn into a vararg array of size 2
+
+G. hoMany(true, new boolean[2]); - > Option G passes the initial parameter plus an array of size 2.  
+
+
+A. howMany() ---Option A does not compile because it does not pass the initial parameter. 
+
+E. howMany(true, {true}); Options E and F do not compile because they do not declare an array properly. It should be new boolean[] {true}. 
+F. howMany(true, {true, true});
+
+B. howMany(true);   ---> Option B creates a vararg array of size 0 
+
+C. howMAny(true, true); ---> option C creates a vararg array of size 1.
+=========================================================================================
+
+6. B C - D
+
+D. Option D is correct. 
+"You can use access modifiers to allow read access to all methods, but not any instance variables."
+This is the common implementation for encapsulation by setting all fields to be private and all methods to be public. 
+Option A is incorrect because protected access allows everything that package private access allows and additionally allows subclasses access. 
+Option B is incorrect because the class is public. This means that other classes can see the class. However, they cannot call any of the methods or read any of the fields. It is essentially a useless class. 
+Option C is incorrect because package private access applies to the whole package. 
+Option E is incorrect because Java has no such capability.
+=========================================================================================
+
+
+7. D - but not sure - B C D F
+Lines 5 6 7 9 
+Only the line with public compiles
+
+
+=========================================================================================
+8. C E - B C E
+B. Encapsulation uses private instance variables
+=========================================================================================
+9. A C - C E
+
+A. Public Boolean getCanSwim() { return canSwim;) - wrong because the property is of type boolean and getters must begin with is for booleans. 
+
+Correct is E: 
+public void setCanSwim(boolean b) { canSwim = b; }
+=========================================================================================
+10. D - B
+Rope runs line 3, setting LENGTH to 5, then immediately after runs the static initial- izer, which sets it to 10. Line 5 calls the static method normally and prints swing. Line 6 also calls the static method. Java allows calling a static method through an instance variable. Line 7 uses the static import on line 2 to reference LENGTH.
+=========================================================================================
+11. C F - did not know... - B E
+
+I answered that are 2 compilers error - but it was just one
+I thought because off null that we will have a NullPointerException thrown but a null object reference variable is allowed to access a static class variable without throwing an exception either at compile or run time.
+Instead - removing the error we would got "swing swing "
+=========================================================================================
+12. E -no idea - D 
+
+
+=========================================================================================
+13. D -  E
+=========================================================================================
+14. E F - B
+=========================================================================================
+15. D - E
+=========================================================================================
+16. C or D - B
+=========================================================================================
+17. A B E  - B D E
+=========================================================================================
+18. B C - really don't know - C G 
+=========================================================================================
+19. D G - A G
+=========================================================================================
+20. A B - E
+=========================================================================================
+21. C correct
+=========================================================================================
+22. G  - E
+=========================================================================================
+23. C - A
+=========================================================================================
+24. C F - B C E
+=========================================================================================
+25. A - A E
+=========================================================================================
+26. A correct
+=========================================================================================
+27. C correct
+=========================================================================================
+28. A F - A D F
+=========================================================================================
+29. F -  A F
+=========================================================================================
+
+
+6 from 29
