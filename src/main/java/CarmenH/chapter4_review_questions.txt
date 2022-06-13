@@ -69,6 +69,10 @@ Instead - removing the error we would got "swing swing "
 =========================================================================================
 12. E -no idea - D 
 
+RopeSwing has an instance initializer and not a static initializer
+Since RopeSwing is never constructed, the instance initializer does not run
+
+The other detail is that length is static. Changes from one object update this common static variable.
 
 =========================================================================================
 13. D -  E
