@@ -73,23 +73,86 @@ RopeSwing has an instance initializer and not a static initializer
 Since RopeSwing is never constructed, the instance initializer does not run
 
 The other detail is that length is static. Changes from one object update this common static variable.
+----more search to understand the explanations too
+
+The trick is that length in class Rope is static.  That means there is only one copy per class.  So rope1 and rope2 point to the same value in Rope.
+
+This is the instance initializer: - this also is never executed
+{
+    System.out.println(rope1.length);
+}
+
+There is no contructor so Java implements default constructor:
+RopeSwing() {}
+
+RopeSwing ropeSwing = new RopeSwing(); ---this is never executed; Since no instance (object), no instance initializer.
+
+Very good explanation to understand this:
+https://coderanch.com/t/677988/certification/Static
 
 =========================================================================================
 13. D -  E
+I missed one compilation error
 =========================================================================================
 14. E F - B
+Very very bad:
+Always import, then static!!!
+
+Option A is incorrect because you can only do a static import on static members. Classes such as Collections require a regular import-- I don't understand this - searched for more details but nothing found.
+!!!!!!!!!!!!!!!!!!!!!!
+
 =========================================================================================
 15. D - E
+
+I chose float instead of object, let's see where is my mistake:
+It was double, not float. ROOKIE
+
 =========================================================================================
 16. C or D - B
+
+Got it - not paying attention on what the program was printing :(
+
 =========================================================================================
 17. A B E  - B D E
+Mistake at A = not knowing it wasn't affecting the caller
+
 =========================================================================================
-18. B C - really don't know - C G 
+18. B C - really don't know - C G
+
+this() may only be called as the first line of a constructor.
+
+this.variableName can be called from any instance method to refer to an instance variable.
+
+It cannot be called from a static method because there is no instance of the class to refer to.
+
+this() can only be called from a constructor in the same class.
+
+Which of the following are true? (Choose 2)
+A. this() can be called from anywhere in a constructor.
+B. this() can be called from any instance method in the class.
+
+C. this.variableName can be called from any instance method in the class.
+
+D. this.variableName can be called from any static method in the class.
+E. You must include a default constructor in the code if the compiler does not include one.
+F. You can call the default constructor written by the compiler using this().
+
+G. You can access a private constructor with the main() method.
+
 =========================================================================================
 19. D G - A G
+
+Wrong : public class Bird { public Bird() {} } // here is defined
+
+public class Bird { }
+public class Bird { void Bird() { }
 =========================================================================================
 20. A B - E
+Options A and B will not compile because constructors cannot be called without new. --- this was my mistake
+Options C and D will compile but will create a new object rather than setting the fields in this one.
+Option F will not compile because this() must be the first line of a constructor.
+Option E is correct. using this(2) to access the constructor with int param
+
 =========================================================================================
 21. C correct
 =========================================================================================
