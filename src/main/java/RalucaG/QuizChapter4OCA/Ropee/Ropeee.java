@@ -1,6 +1,9 @@
 package RalucaG.QuizChapter4OCA.Ropee;
 
 public class Ropeee {
+  // public boolean length;
+  public static int length = 0;
+
   public static void swingg() {
     System.out.println("swing ");
   }
