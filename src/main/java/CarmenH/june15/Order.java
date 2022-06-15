@@ -1,10 +1,17 @@
 package CarmenH.june15;
 
 public class Order {
-    static String result = "";
-    {result +="c";}
-    static
-    {result += "u";}
-    {result += "r";}
+  static String result = "";
 
+  {
+    result += "c";
+  }
+
+  static {
+    result += "u";
+  }
+
+  {
+    result += "r";
+  }
 }
