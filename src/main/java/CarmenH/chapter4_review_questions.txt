@@ -157,20 +157,50 @@ Option E is correct. using this(2) to access the constructor with int param
 21. C correct
 =========================================================================================
 22. G  - E
+That's a hard one - still not very confident
+
+In Java, the order for initialization statements is as follows:
+1. static variables and static initializers in order.
+2. instance variables and instance initializers in order.
+3. constructors.
+
+Also, the static initialization is made once
+
+
 =========================================================================================
 23. C - A
+Missed here the fact that we use the same reference for a new object and the first value is not printed
+
 =========================================================================================
 24. C F - B C E
+
+Second try C E
+
+Missed B - because not thinking outside the box. Why only 2 answers? There are 3, also value 2 was String
+
+Also if we instantiate the object we get to all values, even to those not static.
+If object is not instantiated then we get only the static blocks
+
 =========================================================================================
 25. A - A E
+
+Again - rushed to give one answer. Missed the one with we remove the one with int the it would go to the constructor with wrapper Integer parameter
+
 =========================================================================================
 26. A correct
 =========================================================================================
 27. C correct
 =========================================================================================
 28. A F - A D F
+
+s -> s.isEmpty() and (String s) -> s.isEmpty()
+Plus:
+s -> {return s.isEmpty();}
+
 =========================================================================================
 29. F -  A F
+
+Missed A : caller((e) -> "Poof");
 =========================================================================================
 
 
