@@ -1,0 +1,20 @@
+    *If the parent class has more than one constructor, the child class may use any valid
+    *parent constructor in its definition;
+    *the use of the extends => the subclasses will be able to inherit all the properties of the superclass
+    *except for the private properties of the superclass.
+    *use the instanceof operator => to determine whether Labrador is actually an Animal, and dog is actually an Animal.
+
+   * extends Object is implicit as public class Student java.lang.Object is the only class that
+   * doesn't have parent classes when Java sees you define a class that doesn’t extend another
+   * class, it immediately adds the syntax extends java.lang.Object to the class defi nition if you
+   * look at the inheritance structure of any class, it will always end with java.lang.Object on the
+   * top of the tree.
+
+     * Things cool to remember: super() -> method used to call superclass methods(parent methods),
+     * and to access the superclass constructor(parent class constructor). super() acts as immediate
+     * parent class constructor and should be first line in child class constructor. this() acts as
+     * current class constructor and can be used in parametrized constructors keyword used for
+     * inheritance is extends.
+
+    *Java compiler automatically inserts a call to the no-argument constructor super()
+    *if the first statement is not a call to the parent constructor.
