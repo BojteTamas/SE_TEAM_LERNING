@@ -1,0 +1,134 @@
+Class Design
+
+Working with Inheritance
+■ Describe inheritance and its benefits
+■ Develop code that demonstrates the use of polymorphism; including overriding and object type versus reference type
+■ Determine when casting is necessary
+■ Use super and this to access objects and constructors
+■ Use abstract classes and interfaces
+====================================================================================================
+
+Introducing Class Inheritance
+
+Inheritance is the process by which the new child subclass automatically includes any public or protected primitives, objects, or methods defined in the parent class.
+
+Inheritance is transitive :D
+
+Java supports single inheritance, by which a class may inherit from only one direct par- ent class.
+Java also supports multiple levels of inheritance
+To truly understand single inheritance, it may helpful to contrast it with multiple inheri- tance, by which a class may have multiple direct parents. 
+
+!!!! Java does allow one exception to the single inheritance rule: classes may implement multiple interfaces
+
+It is possible in Java to prevent a class from being extended by marking the class with the final modifier. 
+====================================================================================================
+Extending a Class
+
+In Java, you can extend a class by adding the parent class name in the definition using the extends keyword
+
+public abstract class ElephantSeal extends Seal {
+                // Methods and Variables defined here
+}
+
+public or default access modifier
+abstract : abstract or final keyword (optional)
+Class - required
+Class name
+Extends parent class- optional
+
+!!!Java allows only one public class per file,
+====================================================================================================
+Applying Class Access Modifiers
+
+you can apply access modifiers (public, private, protected, default) to both class methods and variables
+
+For the OCA exam, you should only be familiar with public and default package-level class access modifiers, because these are the only ones that can be applied to top-level classes within a Java file. The protected and private modifiers can only be applied to inner classes, which are classes that are defined within other classes, but this is well out of scope for the OCA exam.
+
+
+The public access modifier applied to a class indicates that it can be referenced and used in any class. 
+The default package private modifier, which is the lack of any access modifier, indicates the class can be accessed only by a subclass or class within the same package.
+
+!!!!As you know, a Java file can have many classes but at most one public class. it may have no public class at all.
+
+For simplicity, any time you see multiple public classes or interfaces defined in the same code block in this chapter, assume each class is defined in its own Java file.
+====================================================================================================
+Creating Java Objects
+
+In Java, all classes inherit from a single class, java.lang.Object.
+Furthermore, java.lang.Object is the only class that doesn’t have any parent classes.
+
+Example for what we don't see , but is done:
+
+public class Zoo { }
+public class Zoo extends java.lang.Object { }
+
+!!!!!All classes extend the java.lang.Object class
+
+====================================================================================================
+
+Defining Constructors
+
+every class has at least one constructor.
+In the case that no constructor is declared, the compiler will automatically insert a default no-argument constructor. In the case of extending a class, though, things are a bit more interesting.
+
+In Java, the first statement of every constructor is either a call to another constructor within the class, using this(), or a call to a constructor in the direct parent class, using
+super().
+
+If a parent constructor takes arguments, the super constructor would also take arguments. For simplicity in this section, we refer to the super() command as any par- ent constructor, even those that take an argument.
+
+the super() command may only be used as the first statement of the constructor
+
+====================================================================================================
+Understanding Compiler Enhancements
+
+
+the following three class and constructor definitions are equivalent, because the compiler will automatically convert them all to the last example:
+public class Donkey { }
+public class Donkey { public Donkey() {}}
+public class Donkey { public Donkey() {super();} }
+
+
+Example 1 : does not compile:
+public class Mammal { public Mammal(int age) { }} -- we do not have a no-argument constructor
+public class Elephant extends Mammal { }
+
+no constructor is defined within the Elephant class, so the compiler tries to insert a default no-argument constructor with a super() call, as it did in the Donkey example. The compiler stops, though, when it realizes there is no parent constructor that takes no arguments.
+
+
+Example 2: also does not compile:
+public class Mammal { public Mammal(int age) { }}
+public class Elephant extends Mammal { public Elephant() { }}
+
+because the compiler tries to insert the no- argument super() as the first statement of the constructor in the Elephant class, and there is no such constructor in the parent class
+
+
+This is how it is fixed:
+
+
+public class Mammal { public Mammal(int age) { }}
+public class Elephant extends Mammal { public Elephant() {super(10); }}
+
+Use a constructor super as in the parent class
+
+!!!Note that the class Elephant now has a no-argument constructor even though its parent class Mammal doesn’t. Subclasses may define no-argument constructors even if their parent classes do not, provided the constructor of the child maps to a parent constructor via an explicit call of the super() command.
+
+====================================================================================================
+
+Reviewing Constructor Rules
+
+Constructor Definition Rules:
+1. The first statement of every constructor is a call to another constructor within the class using this(), or a call to a constructor in the direct parent class using super().
+2. The super() call may not be used after the first statement of the constructor.
+3. If no super() call is declared in a constructor, Java will insert a no-argument super() as the first statement of the constructor.
+4. If the parent doesn’t have a no-argument constructor and the child doesn’t define any constructors, the compiler will throw an error and try to insert a default no-argument constructor into the child class.
+5. If the parent doesn’t have a no-argument constructor, the compiler requires an explicit call to a parent constructor in each child constructor.
+
+====================================================================================================
+
+Calling Constructors
+In Java, the parent constructor is always executed before the child con- structor.
+====================================================================================================
+
+Calling Inherited Class Members
+
+
