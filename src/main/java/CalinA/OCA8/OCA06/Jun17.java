@@ -10,5 +10,5 @@ public class Jun17 {
   }
 }
 
-//Read from OCA:
+// Read from OCA:
 //        The do-while Statement
