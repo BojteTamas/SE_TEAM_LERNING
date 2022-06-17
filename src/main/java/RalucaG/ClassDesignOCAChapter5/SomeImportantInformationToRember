@@ -15,6 +15,22 @@
      * parent class constructor and should be first line in child class constructor. this() acts as
      * current class constructor and can be used in parametrized constructors keyword used for
      * inheritance is extends.
-
+17.06.2022
     *Java compiler automatically inserts a call to the no-argument constructor super()
     *if the first statement is not a call to the parent constructor.
+
+    **Calling Inherited Class Members
+    *Java classes may use any public or protected member of the parent class, including methods, primitives, or object references.
+    *If the parent class and child class are part of the same package, the child class may also use any default members defined in the parent class.
+    *a child class may never access a private member of the parent class, at least not through any direct reference.
+    *in DrHouseExample class:we are not accessing the data members directly we are using public getter method to access the private members of parent class
+    *Inheriting a class grants us access to the public and protected members of the parent class, but also sets the stage for collisions between methods defi ned in both the parent class and the subclass.
+ **Types of Inheritance:
+    *single inheritance: child and parent class relationship, where a class extends the another class
+        **multilvl inheritance:  child and parent class relationship,where a class extends the child class
+        **hierarchical inheritance: child and parent class relationship where more than one class extends the same class (Labrador dog example)
+    *multiple inheritance: class extends more than one class, 1 child class -2 parent classes
+        **hybrid inheritance: combo of multiple types of inheritance
+  **Overriding a method:
+    *method defined in both the parent and child class->you can override a method a method by declaring a new method with the signature and return type as the method in the parent class.
+            **example dogs + wolfs (dogs also is child of AnimalPlanet)
