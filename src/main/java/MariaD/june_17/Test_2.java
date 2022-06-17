@@ -2,8 +2,7 @@ package MariaD.june_17;
 
 import java.util.*;
 
-
-///Q15
+/// Q15
 /*public class Test_2 {
     public static void main(String[] args) {
         int[][] scores = new int[5][];
@@ -23,7 +22,7 @@ import java.util.*;
 }
  */
 
-///Q14 -> A. puzzle.reverse();
+/// Q14 -> A. puzzle.reverse();
 /*public class Test_2 {
     public static void main(String[] args) {
         StringBuilder puzzle = new StringBuilder("Java");
