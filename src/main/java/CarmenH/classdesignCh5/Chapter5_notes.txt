@@ -132,3 +132,28 @@ In Java, the parent constructor is always executed before the child con- structo
 Calling Inherited Class Members
 
 
+Java classes may use any public or protected member of the parent class, including meth- ods, primitives, or object references. If the parent class and child class are part of the same package, the child class may also use any default members defined in the parent class. Finally, a child class may never access a private member of the parent class, at least not through any direct reference. As you saw in the first example in this chapter, a private member age may be accessed indirectly via a public or protected method.
+
+this() and this are unrelated in Java. Likewise, super() and super are quite different but may be used in the same methods on the exam. The first, super(), is a statement that explicitly calls a parent constructor and may only be used in the first line of a constructor of a child class. The second, super, is a keyword used to ref- erence a member defined in a parent class and may be used throughout the child class.
+
+ When you see super() or super on the exam, be sure to check that they are being used correctly.
+example: public Rabbit(int age) { super(); super.setAge(10);}
+
+====================================================================================================
+Inheriting Methods
+
+Overriding a Method
+
+The compiler performs the following checks when you override a nonprivate method:
+
+
+1. The method in the child class must have the same signature as the method in the parent class.
+2. The method in the child class must be at least as accessible or more accessible than the method in the parent class.
+3. The method in the child class may not throw a checked exception that is new or broader than the class of any exception thrown in the parent class method.
+4. If the method returns a value, it must be the same or a subclass of the method in the parent class, known as covariant return types.
+
+
+Any time you see a method on the exam with the same name as a method in the parent class, determine whether the method is being overloaded or overridden first; doing so will help you with questions about whether the code will compile.
+
+If parent class has protected - child class cannot have private- because is more restrictive: 2nd rule "the child method must be at least as accessible as the parent"
+====================================================================================================
