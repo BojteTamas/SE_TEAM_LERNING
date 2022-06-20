@@ -34,3 +34,27 @@
   **Overriding a method:
     *method defined in both the parent and child class->you can override a method a method by declaring a new method with the signature and return type as the method in the parent class.
             **example dogs + wolfs (dogs also is child of AnimalPlanet)
+
+
+ 20.06.2022
+ Redeclaring private Methods
+     ** In java it's not possible to override a private method in a parent class since the parent class is not accessible from the child class;
+      child class can define it's own version of the method that it's declared in parent class;
+    **  isBiped() returns false in the parent class and true in the child class. In the first method call, the parent method getMadagascarAnimals() is used. The
+      Madagascar class only knows about isBiped() from its own class definition, so it outputs false. In the second method call, the child executes a method of isBiped(), which hides
+      the parent method’s version and returns true;
+
+Creating final methods
+    ** final methods cannot be overridden
+    **you can create a method with the final keyword but the child class cannot override this method;
+    **cannot hide a sttic method in a parent class if it's marked as final
+    **Parrots: if we write is as public final boolean --> it wont' compile and it cannot override the parent method, if we declare it as public boolean --compiles;
+    **final is a non-access modifier applicable only to a variable, a method, or a class.
+    ** final variable => create constant variable
+    **final methods => prevent method overriding
+    **final classes => prevent inheritance
+
+Inheriting Variables and Hiding Variables
+    ** Java doesn’t allow variables to be overridden but instead hidden
+    ** when hiding a variable you just define a variable with the same name as a var in parent class;
+    **it creates 2 copies of the var within an instance of the child class:one instance for the parent reference and another for the child reference
