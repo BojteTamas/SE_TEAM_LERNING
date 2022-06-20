@@ -126,7 +126,7 @@ Constructor Definition Rules:
 ====================================================================================================
 
 Calling Constructors
-In Java, the parent constructor is always executed before the child con- structor.
+In Java, the parent constructor is always executed before the child constructor.
 ====================================================================================================
 
 Calling Inherited Class Members
@@ -157,3 +157,80 @@ Any time you see a method on the exam with the same name as a method in the pare
 
 If parent class has protected - child class cannot have private- because is more restrictive: 2nd rule "the child method must be at least as accessible as the parent"
 ====================================================================================================
+
+Redeclaring private Methods
+
+In Java, it is not possible to override a private method in a parent class since the parent method is not accessible from the child class
+
+====================================================================================================
+
+
+Hiding Static Methods
+ The rules: - same as for overriding + one more - to have static
+The method in the child class must have the same signature as the method in the parent class.
+2. The method in the child class must be at least as accessible or more accessible than the method in the parent class.
+3. The method in the child class may not throw a checked exception that is new or broader than the class of any exception thrown in the parent class method.
+4. If the method returns a value, it must be the same or a subclass of the method in the parent class, known as covariant return types.
+5. The method defined in the child class must be marked as static if it is marked as static in the parent class (method hiding). Likewise, the method must not be marked as static in the child class if it is not marked as static in the parent class (method overriding).
+
+
+Seems that is better not to use this static hiding
+====================================================================================================
+
+Overriding vs. Hiding Methods
+
+In our description of hiding of static methods, we indicated there was a distinction between overriding and hiding methods. Unlike overriding a method, in which a child method replaces the parent method in calls defined in both the parent and child, hidden methods only replace parent methods in the calls defined in the child class.
+At runtime the child version of an overridden method is always executed for an instance regardless of whether the method call is defined in a parent or child class method. In this manner, the parent method is never used unless an explicit call to the parent method is referenced, using the syntax ParentClassName.method(). Alternatively, at runtime the parent version of a hidden method is always executed if the call to the method is defined in the parent class.
+
+====================================================================================================
+
+Creating final methods
+!!!!final methods cannot be overridden.
+
+
+public class Bird {
+public final boolean hasFeathers() {
+return true; }
+}
+public class Penguin extends Bird {
+public final boolean hasFeathers() { // DOES NOT COMPILE - because in parent class the method is final
+return false; }
+}
+
+In short, the final modifier is only used on methods when the author of the parent method wants to guarantee very precise behavior.
+
+
+====================================================================================================
+Inheriting Variables
+the rules for variables with the same name in the parent and child classes are a lot simpler, because Java doesn’t allow variables to be overridden but instead hidden.
+
+
+Hiding Variables
+
+you can reference the parent value of the variable with an explicit use of the super keyword.
+
+
+Don't hide variables in practice !!! :))))
+
+public class Animal {
+public int length = 2;
+}
+public class Jellyfish extends Animal {
+public int length = 5;
+public static void main(String[] args) {
+Jellyfish jellyfish = new Jellyfish();
+Animal animal = new Jellyfish();
+System.out.println(jellyfish.length);
+System.out.println(animal.length);
+} }
+
+output:
+5
+2
+
+
+
+====================================================================================================
+
+
+Creating Abstract Classes
