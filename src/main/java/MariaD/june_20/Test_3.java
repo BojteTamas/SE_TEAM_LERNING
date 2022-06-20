@@ -11,11 +11,9 @@ public class Test_3 {
     values.add(5);
     values.set(1, 6);
     values.remove(0);
-    for (Integer v : values)
-            System.out.print(v); // 6
+    for (Integer v : values) System.out.print(v); // 6
   }
 }
-
 
 // Q20 -> Compiler error on line 9.
 /*public class Test_3 {
