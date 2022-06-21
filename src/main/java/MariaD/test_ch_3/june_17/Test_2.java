@@ -1,6 +1,4 @@
-package MariaD.june_17;
-
-import java.util.*;
+package MariaD.test_ch_3.june_17;
 
 /// Q15
 /*public class Test_2 {
