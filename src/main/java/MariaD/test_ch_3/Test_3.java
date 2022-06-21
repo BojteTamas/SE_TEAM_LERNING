@@ -1,7 +1,6 @@
-package MariaD.june_20;
+package MariaD.test_ch_3;
 
 import java.util.*;
-import java.util.ArrayList.*;
 
 // Q21
 public class Test_3 {
