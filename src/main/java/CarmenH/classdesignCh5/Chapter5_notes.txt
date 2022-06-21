@@ -234,3 +234,124 @@ output:
 
 
 Creating Abstract Classes
+
+
+Default Method Implementations in Abstract Classes
+Although you can’t provide a default implementation to an abstract method in an abstract class, you can still define a method with a body—you just can’t mark it as abstract. As long as you do not mark it as final, the subclass still has the option to override it, as explained in the previous section.
+
+By definition, an abstract class is one that must be extended by another class to be instantiated, whereas a final class can’t be extended by another class. By marking an abstract class as final, you’re saying the class can never be instantiated, so the compiler refuses to process the code.
+
+
+So abstract never goes with final!!!!
+
+Also abstract doesn't go with private!!!!
+====================================================================================================
+
+
+Creating a Concrete Class
+
+public abstract class Eel {
+public static void main(String[] args) {
+	final Eel eel = new Eel(); // DOES NOT COMPILE
+}
+}
+
+An abstract class becomes useful when it is extended by a concrete subclass.
+
+When you see a concrete class extending an abstract class on the exam, check that it implements all of the required abstract methods.
+
+The key point is that the first class to extend the nonabstract class must implement all inherited abstract methods.
+====================================================================================================
+
+Extending an Abstract Class
+
+
+There is one exception to the rule for abstract methods and concrete classes: a concrete subclass is not required to provide an implementation for an abstract method if an interme- diate abstract class provides the implementation
+
+the subclasses do not consider it an inherited abstract method because it is no longer abstract by the time it reaches the subclasses.
+
+
+
+Abstract Class Definition Rules:
+1. Abstract classes cannot be instantiated directly.
+2. Abstract classes may be defined with any number, including zero, of abstract and non-
+abstract methods.
+3. Abstract classes may not be marked as private or final.
+4. An abstract class that extends another abstract class inherits all of its abstract methods as its own abstract methods.
+5. The first concrete class that extends an abstract class must provide an implementation for all of the inherited abstract methods.
+
+Abstract Method Definition Rules:
+1. Abstract methods may only be defined in abstract classes.
+2. Abstract methods may not be declared private or final.
+3. Abstract methods must not provide a method body/implementation in the abstract class for which is it declared.
+4. Implementing an abstract method in a subclass follows the same rules for overriding a method. For example, the name and signature must be the same, and the visibility of the method in the subclass must be at least as accessible as the method in the parent class.
+
+
+
+====================================================================================================
+Implementing Interfaces
+Although Java doesn’t allow multiple inheritance, it does allow classes to implement any number of interfaces. An interface is an abstract data type that defines a list of abstract public methods that any class implementing the interface must provide. An interface can also include a list of constant variables and default methods.
+
+ In Java, an interface is defined with the interface keyword, analogous to the class keyword used when defining a class. A class invokes the interface by using the implements keyword in its class definition.
+
+public abstract interface CanBurrow {
+
+	public static final int MINIMUM_DEPTH = 2;
+
+	public abstract int getMaximumDepth();
+}
+
+
+public class FieldMouse implements CanBurrow {
+                public int getMaximumDepth() {
+                     return 10;
+} }
+A class may implement multiple interfaces, each separated by a comma, such as in the following example:
+public class Elephant implements WalksOnFourLegs, HasTrunk, Herbivore { }
+
+====================================================================================================
+
+Defining an Interface
+
+1. Interfaces cannot be instantiated directly.
+2. An interface is not required to have any methods.
+3. An interface may not be marked as final.
+4. All top-level interfaces are assumed to have public or default access, and they must include the abstract modifier in their definition. Therefore, marking an interface as private, protected, or final will trigger a compiler error, since this is incompatible with these assumptions.
+5. All nondefault methods in an interface are assumed to have the modifiers abstract and public in their definition. Therefore, marking a method as private, protected, or final will trigger compiler errors as these are incompatible with the abstract and public keywords.
+
+---without the public abstract
+public interface CanFly {
+void fly(int speed);
+abstract void takeoff();
+public abstract double dive();
+}
+
+---what compiler convert
+public abstract interface CanFly {
+public abstract void fly(int speed);
+public abstract void takeoff();
+public abstract double dive();
+}
+
+
+Adding the assumed keywords to an interface is a matter of personal preference, although it is considered good coding practice to do so. Code with the assumed keywords written out tends to be easier and clearer to read, and leads to fewer potential conflicts, as you saw in the previous examples.
+
+====================================================================================================
+
+Inheriting an Interface
+
+
+1. An interface that extends another interface, as well as an abstract class that implements an interface, inherits all of the abstract methods as its own abstract methods.
+2. The first concrete class that implements an interface, or extends an abstract class that implements an interface, must provide an implementation for all of the inherited abstract methods.
+
+
+====================================================================================================
+
+Classes, Interfaces, and Keywords
+
+!!!Make sure the only connection between a class and an interface is with the class implements interface syntax.
+
+
+====================================================================================================
+
+Abstract Methods and Multiple Inheritance
