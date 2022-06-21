@@ -58,3 +58,19 @@ Inheriting Variables and Hiding Variables
     ** Java doesn’t allow variables to be overridden but instead hidden
     ** when hiding a variable you just define a variable with the same name as a var in parent class;
     **it creates 2 copies of the var within an instance of the child class:one instance for the parent reference and another for the child reference
+21.06.2022
+Abstract classes
+    **An abstract class is a class that is marked with the abstract keyword and cannot be instantiated.
+    **An abstract method is a method marked with the abstract keyword defined in an abstract class, for which no implementation is provided in the class in which it is declared.
+    **an abstract class may include nonabstract methods and variables
+    **Although an abstract class doesn’t have to implement any abstract methods, an abstract method may only be defined in an abstract class
+    **A method-defined abstract must always be redefined in the subclass, thus making overriding compulsory or making the subclass itself abstract.
+    **Any class that contains one or more abstract methods must also be declared with an abstract keyword.
+    **There can be no object of an abstract class. That is, an abstract class can not be directly instantiated with the new operator.
+    **An abstract class can have parameterized constructors and the default constructor is always present in an abstract class.
+    **base class is geometricalShapes , each geoshape has a size,color,width and length.
+    ** from this we inherit different types like circle and rectangle that can also have different characteristics
+    **A factory method is a method that returns the instance of the class: draw method of circle and rectangle class will be invoked;
+    **the type hierarchy contains the similarities but also the differences between the geo shapes
+    **Although you can’t provide a default implementation to an abstract method in an abstract class, you can still define a method with a body—you just can’t mark it as abstract.
+    **As long as you do not mark it as final, the subclass still has the option to override it.
