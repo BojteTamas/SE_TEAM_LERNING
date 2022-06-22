@@ -1,0 +1,43 @@
+Designing Methods
+
+public final void nap(int minutes) throws InterruptedException {
+	// take a nap
+
+}
+
+4 TYPES of access modifiers:
+public - Access modifier - not required
+final  - Optional specifier - not required
+void - Return type  - required
+nap -  Method name - required
+
+eq: public void walk1(){} ///ok
+default void walk2(){} ////does not compile
+
+public The method can be called from any class.
+
+private The method can only be called from within the same class.
+Private: The private access modifier is specified using the keyword private.
+The methods or data members declared as private are accessible only within the class in which they are declared.
+Any other class of the same package will not be able to access these members.
+Top-level classes or interfaces can not be declared as private because
+private means “only visible within the enclosing class”.
+protected means “only visible within the enclosing class and any subclasses”
+
+
+protected The method can only be called from classes in the same package or subclasses. You’ll learn about subclasses in Chapter 5.
+protected: The protected access modifier is specified using the keyword protected.
+The methods or data members declared as protected are accessible within the same package or subclasses in different packages.
+
+
+
+
+
+
+Default (Package Private) Access The method can only be called from classes in the same package. This one is tricky because there is no keyword for default access. You simply omit the access modifier.
+
+The default modifier is accessible only within package. It cannot be accessed from outside the package.
+It provides more accessibility than private. But, it is more restrictive than protected, and public.
+
+
+
