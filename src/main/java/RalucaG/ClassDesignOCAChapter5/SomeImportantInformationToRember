@@ -74,3 +74,31 @@ Abstract classes
     **the type hierarchy contains the similarities but also the differences between the geo shapes
     **Although you can’t provide a default implementation to an abstract method in an abstract class, you can still define a method with a body—you just can’t mark it as abstract.
     **As long as you do not mark it as final, the subclass still has the option to override it.
+
+22.06.2022
+Implementing Interfaces
+    **java allows classes to implement multiple number of interfaces;
+    **an interface is an abstract data type that defines a list of abstract public methods that the class implementing the interface must provide;
+    **interface can include:constant variables, default methods;
+    **a class invokes the interface by using the implements keyword in its class definition
+
+Defining an Interface
+    **interfaces cannot be instantiated directly;
+    **interface not required to have any methods;
+    **interface may not be declared as final;
+    **interfaces have public or default access and they must include the abstract modifier;
+    **!!! Interfaces as private,protected or final will trigger a compiler error--this is incompatible and will trigger errors;
+    **all nondefault methods in the interface are assumed to have the modifiers abstract and public in their definition;
+
+Inheriting an Interface
+    **an interface that extends another interface as well as an abstract class that implements an interface, inherits all of the abstract methods as its own abstract methods;
+    **concrete class that implements an interface or extends an abstract class that implements an interface-->provide implementation for all the inherited abstract methods;
+
+Classes,Interfaces and Keywords
+    **a class can implement but not extend an interface;
+    **an interface can extend another interface but cannot implement another interface;
+
+Abstract Methods and Multiple Inheritance
+    **a class that inherits from two interfaces that contain the same abstract method=>if the abstract interface methods have identical behavior then creating a class that implements
+    **one of the two methods automatically implements the second methods;
+    **if the method name is the same but the input param are different then this is a method overload, the class that implements both interfaces must provide implements of both versions of the same name methods because they are considerate separate methods;
