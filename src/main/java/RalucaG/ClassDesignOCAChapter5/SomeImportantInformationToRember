@@ -102,3 +102,19 @@ Abstract Methods and Multiple Inheritance
     **a class that inherits from two interfaces that contain the same abstract method=>if the abstract interface methods have identical behavior then creating a class that implements
     **one of the two methods automatically implements the second methods;
     **if the method name is the same but the input param are different then this is a method overload, the class that implements both interfaces must provide implements of both versions of the same name methods because they are considerate separate methods;
+
+23.06.2022
+Interface variables + Default Methods + Default Methods and Multiple Inheritance
+    **interface variables are public,static and final -- no private or protected=> results error compiler;
+    **default methods withing an interface = abstract method with a default implementation; classes might be able to override the default method if needed;
+    **A default method may only be declared within an interface and not within a class or abstract class;
+    **A default method must be marked with default keyword and needs a method body;
+    **not assumed to be static,final or abstract it might be used or overridden by a class that implements that interface;
+    **default method must be public and will not comile if private or protected;
+
+Understanding Polymorphism
+    **a Java object may be accessed using a reference with the same type as the object, a reference that is a superclass of the object, or a reference that defines an interface the object implements, either directly or through a superclass
+    **Polymorphism allows us to perform a single action in different ways. In other words, polymorphism allows you to define one interface and have multiple implementations. The word “poly” means many and “morphs” means forms, So it means many forms
+    ** 2 types of polymorphism: compile-time and runtime;
+    **compile-time polymorphism: is static polymorphism; acheived by overloading a function or an operator;
+    **runtime polymorphism: dynamic method dispatch, a function call to the overriden method is resolved at runtime --> done by method overriding;
