@@ -415,3 +415,61 @@ Here are the static interface method rules you need to be familiar with:
 compile if marked as private or protected.
 2. To reference the static method, a reference to the name of the interface must be used.
 
+
+It follows, then, that a class that implements two interfaces containing static methods with the same signature will still compile at runtime, because the static methods are not inherited by the subclass and must be accessed with a reference to the interface name.!!!!!!!!!
+====================================================================================================
+
+Understanding Polymorphism
+
+
+Once the object has been assigned a new reference type, only the methods and variables available to that reference type are callable on the object without an explicit cast
+====================================================================================================
+Object vs. Reference
+
+Lemur lemur = new Lemur();
+Object lemurAsObject = lemur;
+
+Even though the Lemur object has been assigned a reference with a different type, the object itself has not changed and still exists as a Lemur object in memory. What has changed, then, is our ability to access methods within the Lemur class with the lemurAsObject refer- ence. Without an explicit cast back to Lemur, as you’ll see in the next section, we no longer have access to the Lemur properties of the object.
+
+
+We can summarize this principle with the following two rules:
+1. The type of the object determines which properties exist within the object in memory.
+2. The type of the reference to the object determines which methods and variables are accessible to the Java program.
+
+====================================================================================================
+
+Casting Objects
+
+Here are some basic rules to keep in mind when casting variables:
+1. Casting an object from a subclass to a superclass doesn’t require an explicit cast.
+2. Casting an object from a superclass to a subclass requires an explicit cast.
+3. The compiler will not allow casts to unrelated types.
+4. Even when the code compiles without issue, an exception may be thrown at runtime if the object being cast is not actually an instance of that class.
+
+
+When reviewing a question on the exam that involves casting and polymorphism, be sure to remember what the instance of the object actually is. Then, focus on whether the compiler will allow the object to be referenced with or without explicit casts.
+EASY TO SAY!!!
+
+====================================================================================================
+Virtual Methods
+
+A virtual method is a method in which the specific implementation is not determined until runtime. In fact, all non-final, non- static, and non-private Java methods are considered virtual methods, since any of them can be overridden at runtime
+
+====================================================================================================
+
+Polymorphic Parameters
+One of the most useful applications of polymorphism is the ability to pass instances of
+a subclass or interface to a method
+
+For example, you can define a method that takes an instance of an interface as a parameter. In this manner, any class that implements the inter- face can be passed to the method. Since you’re casting from a subtype to a supertype, an explicit cast is not required. This property is referred to as polymorphic parameters of a method
+
+
+Polymorphic Parameters and Code Reusability
+
+As you may remember from Chapter 3, “Core Java APIs,” the type java.util.List is an interface, not a class. Although there are many classes that implement java.util.List, such as java.util.ArrayList and java.util.Vector, when you’re passing an existing List you’re not usually interested in the particular subclass of the List. In this manner, a method that passes a List should use the interface type java.util.List as the polymor- phic parameter type, rather than a specific class that implements List, as the code will be more reusable for other types of lists.
+For example, it is common to see code such as the following that uses the interface refer- ence type over the class type for greater reusability:
+java.util.List list = new java.util.ArrayList();
+====================================================================================================
+
+
+Polymorphism and Method Overriding
