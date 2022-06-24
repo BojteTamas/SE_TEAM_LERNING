@@ -118,3 +118,22 @@ Understanding Polymorphism
     ** 2 types of polymorphism: compile-time and runtime;
     **compile-time polymorphism: is static polymorphism; acheived by overloading a function or an operator;
     **runtime polymorphism: dynamic method dispatch, a function call to the overriden method is resolved at runtime --> done by method overriding;
+
+24.06.2022
+Object vs Reference
+    **The type of the object determines which properties exist within the object in memory
+    **The type of the reference to the object determines which methods and variables are accessible to the Java program.
+    ** rules for casting variables: ***casting an object from a subclass to a superclass doesn't need an explicit cast;
+                                    ***casting an object from a superclass to a subclass requires an explicit cast;
+                                    ***compiler won't work with casts to unrelated types;[see primate primate = lemur eg]
+                                    ***compile without issue but an exception might be thrown at runtime if the object cast it's not an instance of that class
+Virtual Methods
+    **most important feature of polymorphism - to support virtual methods;
+    **virtual method = method in which the specific implementation is not determined until runtime;
+    **all non-final,static and non-private methods are considered virtual methods - because they can be overriden at runtime;
+
+Polymorphic parameters:
+    **useful applications of polymorphism is the ability to pass instances of a subclass or interface to a method.
+    **you can define a method that takes an instance of an interface as a parameter;
+    **If you’re defining a method that will be accessible outside the current class, either to subclasses of the current class or publicly to objects outside the current class
+    **it is considered good coding practice to use the superclass or interface type of input parameters whenever possible. !!!
