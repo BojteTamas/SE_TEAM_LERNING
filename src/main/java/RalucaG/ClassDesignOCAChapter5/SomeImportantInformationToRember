@@ -137,3 +137,14 @@ Polymorphic parameters:
     **you can define a method that takes an instance of an interface as a parameter;
     **If you’re defining a method that will be accessible outside the current class, either to subclasses of the current class or publicly to objects outside the current class
     **it is considered good coding practice to use the superclass or interface type of input parameters whenever possible. !!!
+
+27.06.2022
+Quiz Review:
+Q1:B-interface methods are public; Q2: E-because it doesn't use the super method;
+Q3:A,B,D,E - all of them extend either Frog or the interface; Q4:E=> incorrect it was C + E;
+Q5:A,D,F => incorrect it was A+D+E+F; Q6:D; Q7:B,C;Q8: F;
+Q9:A; Q10:B,C,E,F; Q11:A,D,E; Q12:B - it calls to isBlind from child method not interface, overrides interf method;
+Q13:A; Q14:C; Q15:B;Q16:E;Q17:B;Q18:E --cannot be public string and have a int parameter that returns a string;
+Q19:A,C => incorrect it was A+C+F; Q20:A;
+
+ Final score: 17/20
