@@ -14,6 +14,6 @@ public class Metoda_statica {
   }
 
   public static void main(String[] args) {
-//    add();//Metoda statica adauga
+    add(); // Metoda statica adauga
   }
 }
