@@ -8,7 +8,7 @@ public class Reference_type {
     System.out.println("string");
   }
 
-  public void fluture(int i) {
+  public void fluture(Object i) {
     System.out.println("int type");
   }
 
