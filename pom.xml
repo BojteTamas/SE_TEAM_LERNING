@@ -23,6 +23,12 @@
             <artifactId>google-java-format</artifactId>
             <version>${google-java-format.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
