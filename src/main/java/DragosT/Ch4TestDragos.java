@@ -2,7 +2,7 @@ package DragosT;
 
 public class Ch4TestDragos {
     // read and recap the chapter for test 4
-    public void moreG(String[] values, int[] nums) {}
+
     // 1.  Answr:B,C       Actual:
     // 2.  Answr:A,D       Actual:
     // 3.  Answr:A,C,D     Actual:
