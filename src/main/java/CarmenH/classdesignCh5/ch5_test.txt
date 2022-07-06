@@ -1,1 +1,91 @@
-1. B C
+1. B C - correct B
+All interface methods are implicitly public, so option B is correct and option A(protected) is not
+Interface methods may be declared as static or default but are never implicitly added, so options C and F are incorrect
+Option D is incorrect—void is not a modifier; it is a return type.
+Option E is a tricky one, because prior to Java 8 all interface meth- ods would be assumed to be abstract. Since Java 8 now includes default and static methods and they are never abstract, you cannot assume the abstract modifier will be implicitly applied to all methods by the compiler.
+
+2. B - correct E
+The code does not compile because the res no no-argument contractor in parent class and also no
+explicit call to super  in child class .
+
+3. B - correct A B D E
+I thought that only the one that extends the class - but also the extended class, Object class and interface that it's implemented by this class
+The blank can be filled with any class or interface that is a supertype of the class in the construction
+INHERITANCE
+
+4. C D E - correct    C E
+Option D is incorrect because the subclass defines a method that is more accessible than the method in the parent class, which is allowed.
+Options E and F are correct because variables may only be hidden, regardless of the access modifier.
+
+5. A F - correct  A D E F
+static methods, public variables also can be hidden
+static methods cannot be overridden, only hidden.
+
+6. A - correct D
+The code fails because the first concrete subclass does not implement the first abstract method from  the interface
+
+7. A B C - correct   B C
+
+ A reference to an object requires an explicit cast if referenced with a subclass,
+so option A is incorrect.
+
+8. C - correct  F
+is incorrect because the method has been marked as static but no method body has been provided
+also incorrect, since an interface method that provides a body must be marked as default or static explicitly
+
+9. F - correct  A
+I answered wrong :
+The code will not compile because the class Falcon doesn’t implement the interface
+methods.
+But being abstract it wasn't needed to be implemented
+
+10. B D E G - correct  B C E F
+true for both abstract classes and interfaces
+
+Both can contain default methods. WRONG
+Both can contain static methods. WRONG
+Both can be extended using the extend keyword.
+Neither can be instantiated directly.
+Both can contain public static final variables.
+Both can contain static methods.
+
+11. A D - correct   A D E
+
+Interface variables are assumed to be  public  static final
+variables can never be abstract.
+interface variables must be public—interfaces are implemented by classes, not inherited by interfaces
+
+12. E - correct B
+Nocturnal nocturnal = (Nocturnal)new Owl(); -- TOUGHT THAT THIS IS NOT CORRECT
+13. A
+
+14. B E - correct    C
+
+A class that implements HasVocalCords must override the makeSound() method. WRONG
+An interface cannot extend another interface. WRONG
+
+A class that implements CanBark inherits both the makeSound() and bark() methods. CORRECT
+
+15. B D - correct  B
+A concrete subclass cannot be marked as final. WRONG
+
+16. B - correct E
+Yeas - cannot override final class
+
+17. B
+Abstract methods cannot contain a body, so the code will not compile and option B is the correct answer.
+
+18. E
+Override int to string NO
+
+19. A E - correct  A C F
+
+The class String is unrelated in this example, so option E is incorrect WRONG
+Cobra is a subclass of Snake, so option A can be used
+The class Snake is not marked as abstract, so it can be instantiated and passed, so option C is correct.
+Finally, a null value can always be passed as an object value, regardless of type, so option F is correct.
+
+
+20. B - correct A
+Bird is flying NOT Pelican is flying
+The trick here is that the method fly() is marked as private in the parent class Bird, which means it may only be hidden, not overridden. With hidden methods, the specific method used depends on where it is referenced. Since it is referenced within the Bird class, the method declared on line 2 was used, and option A is correct.

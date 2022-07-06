@@ -38,6 +38,7 @@ method(String unu){}
 method(int unu){}
 
 method(“1”) sau method(1);
+
 method(by) -> eroare la compilare
 
 Raluca G: Exceptions OCA Chapter:
@@ -50,3 +51,4 @@ Exception: Exception indicates conditions that a reasonable application might tr
 
 Ce faci in cazul in care ai o eroare de genul? Iti da crash total--> how do you solve it?Cum mergi mai departe?
 Sau ma gandesc eu prea departe la conceptul de eroare?
+
