@@ -1,0 +1,41 @@
+1.Overloading constructors.
+
+public class OverloadingConstructors {
+ private String color = white;
+ private int weight = 80;
+ private String genre = “male”;
+
+ public OverloadingConstructors(int weight) {
+   this.weight = weight;
+   color = "brown";
+ }
+ // this second constructors is valid but duplicates the first but is valid to show overloading
+ public OverloadingConstructors(int weight, String color, String genre) {
+   this.weight = weight;
+   this.color = color;
+   this.genre = genre;
+ }
+ // We can build it like this (Not working ask about)
+ //    public OverloadingConstructors(int weight) {
+ //        this(weight,"brown",genre);
+ //    }
+
+public static void main(String … args){
+OverloadingConstructors male1 = new OverloadingConstructors();
+OverloadingConstructors male2 = new OverloadingConstructors();
+OverloadingConstructors male70 = new OverloadingConstructors(70);
+OverloadingConstructors female = new OverloadingConstructors(60, white, female);
+}
+}
+
+click(String text) -> click by text
+click(By selector) -> click by selector
+
+
+
+2. Care e rolul Overloading method in real life?
+method(String unu){}
+method(int unu){}
+
+method(“1”) sau method(1);
+method(by) -> eroare la compilare
