@@ -12,6 +12,9 @@ Also note that the constructor is called when the object is created.
 
 All classes have constructors by default: if you do not create a class constructor yourself, Java creates one for you.
 However, then you are not able to set initial values for object attributes.
+referințele la obiecte se inițializează cu null
+variabilele de tip numeric se inițializează cu 0
+variabilele de tip logic (boolean) se inițializează cu false
  */
 
 class Vapor {
