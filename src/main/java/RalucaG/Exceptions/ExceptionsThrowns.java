@@ -1,6 +1,6 @@
 package RalucaG.Exceptions;
 
-public class ExceptionThrown {
+public class ExceptionsThrowns {
   /**
    * public void visitPorcupine(){ try{ seeAnimal(); }catch(AnimalsOutForAWalk e){
    * System.out.println("try back later"); }catch (ExhibitClosed e){ System.out.println("not
