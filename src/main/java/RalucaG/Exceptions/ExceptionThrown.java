@@ -17,7 +17,7 @@ public class ExceptionThrown {
 
     // int a[]= new int[5];
     // a[10]=50;//ArrayIndexOutOfBoundsException
-
+    // ***********
     // Multiple catch block exception
     // A try block can be followed by one or more catch blocks. Each catch block must contain a
     // different exception handler.
