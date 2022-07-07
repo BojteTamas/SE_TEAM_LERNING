@@ -1,0 +1,10 @@
+Raluca G: Exceptions OCA Chapter:
+hierarchy splits into two branches: Error and Exception.
+Am gasit o info care nu ma lamureste complet:
+Errors are usually beyond the control of the programmer, and we should not try to handle errors.
+the differences between Error and Exception that is as follows:
+Error: An Error indicates a serious problem that a reasonable application should not try to catch.
+Exception: Exception indicates conditions that a reasonable application might try to catch.
+
+Ce faci in cazul in care ai o eroare de genul? Iti da crash total--> how do you solve it?Cum mergi mai departe?
+Sau ma gandesc eu prea departe la conceptul de eroare?

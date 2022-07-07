@@ -1,0 +1,28 @@
+**Types of exceptions:
+user-defined and built-in exception;
+Built-in exceptions:
+    checked exception ->verified at compile time by the compiler;
+        ClassNotFoundException
+        InterruptedException
+        IOException
+        InstantiationException
+        SQLException
+        FileNotFoundException
+    unchecked exception -> not verified by compiler, no compilation error;
+        ArithmeticException
+        ClassCastException
+        NullPointerException
+        ArrayIndexOutOfBoundsException
+        ArrayStoreException
+        IllegalThreadStateException
+ User-Defined exceptions:user creats exceptions to describe a certain situation;
+    Provision to Complete Program Execution
+    Easy Identification of Program Code and Error-Handling Code
+    Propagation of Errors
+    Meaningful Error Reporting
+    Identifying Error Types
+
+To Remember:
+A try block can be followed by one or more catch blocks. Each catch block must contain a different exception handler.
+At a time only one exception occurs and at a time only one catch block is executed.
+All catch blocks must be ordered from most specific to most general, i.e. catch for ArithmeticException must come before catch for Exception.
