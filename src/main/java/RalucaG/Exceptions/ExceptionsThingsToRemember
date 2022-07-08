@@ -26,3 +26,8 @@ To Remember:
 A try block can be followed by one or more catch blocks. Each catch block must contain a different exception handler.
 At a time only one exception occurs and at a time only one catch block is executed.
 All catch blocks must be ordered from most specific to most general, i.e. catch for ArithmeticException must come before catch for Exception.
+
+/***
+The reason that it’s okay to declare new runtime exceptions in a subclass method is that
+the declaration is redundant. Methods are free to throw any runtime exceptions they want
+without mentioning them in the method declaration
