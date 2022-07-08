@@ -1,0 +1,106 @@
+Exceptions
+====================================================================================================
+Handling Exceptions
+
+Differentiate among checked exceptions, unchecked exceptions and Errors
+Create a try-catch block and determine how exceptions alter normal program flow
+Describe the advantages of Exception handling
+Create and invoke a method that throws an exception
+Recognize common exception classes (such as NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException, ClassCastException)
+====================================================================================================
+
+
+The Role of Exceptions
+
+When you write a method, you can either deal with the exception or make it the calling code’s problem.
+
+In general, try to avoid return codes. Return codes are commonly used in searches, so programmers are expecting them. In other methods, you will take your callers by surprise by returning a special value. An exception forces the program to deal with them or end with the exception if left unhandled, whereas a return code could be accidentally ignored and cause problems later in the program. An exception is like shouting, “Deal with me!”
+
+====================================================================================================
+
+Understanding Exception Types
+
+@ runtime vs. at the Time the Program is Run
+
+A runtime (unchecked) exception is a specific type of exception. All exceptions occur at the time that the program is run. (The alternative is compile time, which would be a compiler error.) People don’t refer to them as run time exceptions because that would be too easy to confuse with runtime! When you see runtime, it means unchecked.
+
+A checked exception includes Exception and all subclasses that do not extend RuntimeException. Checked exceptions tend to be more anticipated—for example, trying to read a file that doesn’t exist.
+
+
+An example of a runtime exception is a NullPointerException, which happens when you try to call a member on a null reference. This can occur in any method. If you had to declare runtime exceptions everywhere, every single method would have that clutter!
+
+
+@ Checked vs. Unchecked (Runtime) Exceptions
+
+====================================================================================================
+
+Throwing an Exception
+
+throw new Exception();
+throw new Exception("Ow! I fell.");
+throw new RuntimeException();
+throw new RuntimeException("Ow! I fell.");
+
+Runtime exception. Subclass of RuntimeException. Okay for program to catch. Is program required to handle or declare? NO.
+Checked exception. Subclass of Exception but not subclass of RuntimeException. Okay for program to catch. Is program required to handle or declare? YES
+Error. Subclass of Error. Okay for program to catch NO. Is program required to handle or declare? NO
+
+
+====================================================================================================
+
+
+Using a try Statement
+
+The code in the try block is run normally
+If any of the statements throw an exception that can be caught by the exception type listed in the catch block, the try block stops running and execution goes to the catch statement.
+If none of the statements in the try block throw an exception that can be caught, the catch clause is not run.
+
+
+“Block” is correct because there are braces present.
+“Clause” is correct because they are part of a try statement.
+
+The curly braces are required for the try and catch blocks.
+
+Remember, the point of a try statement is for something to happen if an exception is thrown
+
+====================================================================================================
+
+Adding a finally Block
+
+The finally block always executes, whether or not an exception occurs in the try block.
+
+
+finally is typically used to close resources such as files or databases
+
+
+
+There is one exception to “the finally block always runs after the catch block” rule:
+Java defines a method that you call as System.exit(0);.
+The integer parameter is the error code that gets returned
+When System.exit is called in the try or catch block, finally does not run.
+
+====================================================================================================
+
+Catching Various Types of Exceptions
+
+For OCA:
+First, you must be able to recognize if the exception is a checked or an unchecked exception.
+Second, you need to determine if any of the exceptions are subclasses of the others.
+
+
+class AnimalsOutForAWalk extends RuntimeException { }
+class ExhibitClosed extends RuntimeException { }
+class ExhibitClosedForLunch extends ExhibitClosed { }
+
+In this example, there are three custom exceptions
+All are unchecked exceptions because they directly or indirectly extend RuntimeException
+
+====================================================================================================
+
+
+Throwing a Second Exception
+
+
+
+
+

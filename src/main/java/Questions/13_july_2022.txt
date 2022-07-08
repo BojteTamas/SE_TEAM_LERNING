@@ -65,3 +65,27 @@ output:
    public Chaining_2(String stilou) {
      this(3, 9); // apeleaza un constructor cu 2 parametrii
    } //// imi ia stringul declarat mai jos "roz"//output //3 9 roz, hmmm investigheaza, si de ce cand scriu this(stilou,3) -> eroare de compilare?
+
+Carmen: 8jul2022
+1.
+Nocturnal nocturnal = (Nocturnal)new Owl(); - this kind of declaration with (Nocturnal) ???
+ Didn't find an answer yet for this kind of declaration
+
+2.
+
+class AnimalsOutForAWalk extends RuntimeException { }
+class ExhibitClosed extends RuntimeException { }
+class ExhibitClosedForLunch extends ExhibitClosed { }
+
+public static void visitPorcupine() {
+    try {
+      seeAnimals();
+      // what exception - how to throw here an exception to go to catch ( first or second)
+    } catch (AnimalsOutForAWalk e) { //  I don't know how to reach here
+      // first catch block
+      System.out.print("try back later");
+    } catch (ExhibitClosed e) { //  I don't know how to reach here
+      // second catch block
+      System.out.print("not today");
+    }
+  }
