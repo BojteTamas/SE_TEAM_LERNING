@@ -1,0 +1,67 @@
+Raluca G: Exceptions OCA Chapter:
+hierarchy splits into two branches: Error and Exception.
+Am gasit o info care nu ma lamureste complet:
+Errors are usually beyond the control of the programmer, and we should not try to handle errors.
+the differences between Error and Exception that is as follows:
+Error: An Error indicates a serious problem that a reasonable application should not try to catch.
+Exception: Exception indicates conditions that a reasonable application might try to catch.
+
+Ce faci in cazul in care ai o eroare de genul? Iti da crash total--> how do you solve it?Cum mergi mai departe?
+Sau ma gandesc eu prea departe la conceptul de eroare??
+
+
+Maria Dunca:
+1. am gasit un exemplu in carte cu ordinea initializarii pe care nu l-am inteles complet:
+package MariaD.july.july_7;
+
+
+public class Initializare3 {
+  static {
+    add(2);-----asta am inteles ca se intializeaza primul, ca e regula 2 in ordinea initializarii, dar
+  }
+
+  static void add(int num) {
+    System.out.println(num + " ");
+  }
+
+  Initializare3() {------asta e constructorul, ruleaza ultimul, dar de ce ruleaza restul in ordine in care o fac?
+    add(5);
+  }
+
+  static {
+    add(4);
+  }
+
+  {
+    add(6);
+  };
+
+  static {
+    new Initializare3();
+  }
+
+  {
+    add(9);
+  };
+
+  public static void main(String... args) {}
+}
+
+output:
+/*
+2
+4
+6
+9
+5
+ */
+
+ 2.verifica cu Tomy exemplul din july_7, Chaining_2,
+ public class Chaining_2 {
+   int pix;
+   String stilou;
+   int creion;
+
+   public Chaining_2(String stilou) {
+     this(3, 9); // apeleaza un constructor cu 2 parametrii
+   } //// imi ia stringul declarat mai jos "roz"//output //3 9 roz, hmmm investigheaza, si de ce cand scriu this(stilou,3) -> eroare de compilare?
