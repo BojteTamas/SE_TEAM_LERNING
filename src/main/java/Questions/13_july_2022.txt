@@ -80,7 +80,7 @@ class ExhibitClosedForLunch extends ExhibitClosed { }
 public static void visitPorcupine() {
     try {
       seeAnimals();
-      // what exception - how to throw here an exception to go to catch ( first or second)
+      // what exception - how to throw here an exception to go to catch ( first or second) // answer: the exception is thrown inside the method - ex: seeAnimals()
     } catch (AnimalsOutForAWalk e) { //  I don't know how to reach here
       // first catch block
       System.out.print("try back later");
