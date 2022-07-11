@@ -100,6 +100,14 @@ All are unchecked exceptions because they directly or indirectly extend RuntimeE
 
 Throwing a Second Exception
 
+FileReader
+When you see such a question, you know the problem has to be about basic Java syntax or exception handling!
+
+====================================================================================================
+
+Recognizing Common Exception Types
+
+
 
 
 

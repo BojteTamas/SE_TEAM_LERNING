@@ -30,6 +30,7 @@ public class OurGirl {
 
   private static void seeAnimals() {
     System.out.println("acum priveste animalele");
+    throw new ExhibitClosedForLunch();
   }
 
   private static void getUp() {
