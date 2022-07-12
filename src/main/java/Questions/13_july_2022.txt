@@ -91,3 +91,14 @@ public static void visitPorcupine() {
       System.out.print("not today");
     }
   }
+
+Carmen 12Jul
+3.
+String name;
+public void printLength() throws NullPointerException {
+System.out.println(name.length());
+}
+tried to run this and doesn't work String name; Intellij suggests: String name = null;
+
+4. did not manage to understand this:
+create/use object so you do not need to add "static"
