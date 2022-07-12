@@ -66,6 +66,8 @@ output:
      this(3, 9); // apeleaza un constructor cu 2 parametrii
    } //// imi ia stringul declarat mai jos "roz"//output //3 9 roz, hmmm investigheaza, si de ce cand scriu this(stilou,3) -> eroare de compilare?
 
+3. creating defensive copy for immutable class, Immutable3 din july_11, nu inteleg exemplul din carte
+
 Carmen: 8jul2022
 1.
 Nocturnal nocturnal = (Nocturnal)new Owl(); - this kind of declaration with (Nocturnal) ???
