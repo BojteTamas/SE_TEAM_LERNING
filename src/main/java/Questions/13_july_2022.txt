@@ -89,3 +89,5 @@ public static void visitPorcupine() {
       System.out.print("not today");
     }
   }
+Raluca G: 12.07.2022
+cateva exemple mai concrete pentru runtime exceptions, inca nu sunt in clar cand si cum le folosim;
