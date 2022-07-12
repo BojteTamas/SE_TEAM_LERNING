@@ -1,0 +1,20 @@
+Q1:B -> runtime exceptions are unchecked exceptions; correct
+Q2: B throws + D throw new; correct
+Q3:C - no catch blocks present; correct
+Q4:B -trying to assign an integer to a string;correct
+Q5:A,B,D; correct
+Q6:C, arithmetic exception , cannot do a 24/0 --done that in an ex;correct;
+Q7:C, starts with A to print , then goes to stop method prints E, x cannot be toString cuz it's null and then goes back to finally to print C;correct
+Q8:B -> which is wrong apparently, correct answer is E;incorrect
+Q9:B -> because we have system exit and finally is  not run anymore;correct
+Q10:E -> int x=Integer.parseInt(name) throws NumberFormatException and in public static main all is good;correct
+Q11:A -> same example as Q10 but exception is not correct it should be NumberFormat Exception not NullPointerException;correct
+Q12:
+Q13:
+Q14:
+Q15:
+Q16:
+Q17:
+Q18:
+Q19:
+Q20:
