@@ -92,6 +92,12 @@ public static void visitPorcupine() {
     }
   }
 
+
+
+Raluca G: 12.07.2022
+cateva exemple mai concrete pentru runtime exceptions, inca nu sunt in clar cand si cum le folosim;
+
+
 Carmen 12Jul
 3.
 String name;

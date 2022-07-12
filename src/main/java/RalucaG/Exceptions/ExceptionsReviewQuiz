@@ -9,12 +9,14 @@ Q8:B -> which is wrong apparently, correct answer is E;incorrect
 Q9:B -> because we have system exit and finally is  not run anymore;correct
 Q10:E -> int x=Integer.parseInt(name) throws NumberFormatException and in public static main all is good;correct
 Q11:A -> same example as Q10 but exception is not correct it should be NumberFormat Exception not NullPointerException;correct
-Q12:
-Q13:
-Q14:
-Q15:
-Q16:
-Q17:
-Q18:
-Q19:
-Q20:
+Q12:A+B+D + another option: not sure between F or G, either it prints 6 or it shows the trace for NullPointer; semi-correct ; it was A,B,D,G--prints the trace for NullPointer;
+Q13:A,B,C,E -> the one with Object doesn't sound ok (D) --> correct;
+Q14: A+D definitely, not really sure about C and E but for sure not B, because it will have to be a throw new IOException not just Exception --> semi correct: it should be A,C,D,E;
+Q15:A,B,D,E --> IOException is checked except -> correct;
+Q16:B ; A not really, because if not found can return null or not found something;/ C doesn;t have anything to do, D as well, you can loop through a list without having to use an exception; not knowing to code a method doesn't mean you need to use exceptions to show you can't code:)))-->correct;
+Q17:A,C,E for sure, definitely not B cuz I don't think you can throw Exceptions; I'm not sure about D if it should be a viable option -->semi-correct D should also be included;
+Q18:A,B,C,E -->: I know error should not be handled because errors but I guess they are allowed?! D-def not;F-def not because ti's not required, it's allowed but not mandatory;-->correct;
+Q19:I think C --not really sure; --> incorrect C + E was correct answer;
+Q20:A + E --> correct;
+
+Final: 15/20 answered correctly
