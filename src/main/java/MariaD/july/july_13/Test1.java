@@ -40,3 +40,4 @@ public class Test1 {
 // Q8: C, E, correct answer: B,C,E
 // Q9: public void setCanSwim(boolean b) { canSwim = b;}, CORRECT E & C. public int getNumWings() {
 // return numberWings;}
+// q10 correct answer B swing swing 10
