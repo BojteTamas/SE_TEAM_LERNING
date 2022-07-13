@@ -47,14 +47,6 @@ public class Different_Runtime_exception {
 
     // NullPointerException
 
-    // String name = null; // why doesn't work without initializing it?
-    // printLength(name);
-
-    // public static void printLength(String name) throws NullPointerException
-    // {
-    // System.out.println(name.length());
-    // }
-
     // NumberFormatException
     // Integer.parseInt("abc");
     // Exception in thread "main" java.lang.NumberFormatException: For input string: "abc"
