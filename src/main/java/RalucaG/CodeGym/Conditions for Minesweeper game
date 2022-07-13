@@ -1,0 +1,32 @@
+1/16
+Requirements:
+•	There must be a public MinesweeperGame class.
+•	The MinesweeperGame class must inherit the Game class.
+•	The MinesweeperGame class must have a statement that imports the entire contents of the com.codegym.engine.cell package. -- well this is not imported in my case cuz Intellij
+2/16
+Requirements:
+•	The SIDE variable must be declared in the MinesweeperGame class.
+•	The SIDE variable must be private, static, and final, and must be an int.
+•	The SIDE variable must be initialized to 9 when it is declared.
+•	There should be a public void initialize() method in the MinesweeperGame class.
+•	The Game class's setScreenSize(int, int) method must be called with arguments (SIDE, SIDE) in the initialize() method. -- I think I created the setScreenSize method instead of the initialize
+3/16
+Requirements:
+•	There must be a public GameObject class.
+•	The GameObject class must have a public int x field.
+•	The GameObject class must have a public int y field.
+•	The GameObject class must have one constructor with two int parameters that are used to initialize the x and y fields, in that order.
+4/16
+Requirements:
+•	The MinesweeperGame class must have a private GameObject[][] gameField matrix (two-dimensional array) whose dimensions are SIDExSIDE.
+•	The MinesweeperGame class must have a private void createGame() method.
+•	In the createGame method(), you need to populate each cell of the gameField array with a new GameObject object with corresponding x and y coordinates.
+•	In the createGame() method, for each cell in the gameField array, you need to call the setCellColor(int, int, Color) method with the following arguments: x and y coordinates, as well as any color (for example, Color.ORANGE).
+•	The createGame() method must be called in the initialize() method.
+5/16
+Requirements:
+•	The GameObject class must have a public boolean isMine field.
+•	The GameObject class must have one constructor with (int, int, boolean) parameters that are used to initialize the x, y, and isMine fields, in that order.
+•	There must be a private int countMinesOnField variable in the MinesweeperGame class.
+•	When cells are created in the createGame() method, you should randomly determine whether each cell will have a mine. Use the Game class's getRandomNumber(int) method with the argument 10.
+•	After the createGame() method is executed, the countMinesOnField variable should be assigned the value of the number of mines in the field.
