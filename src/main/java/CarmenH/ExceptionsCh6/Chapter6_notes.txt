@@ -198,3 +198,64 @@ Subclasses
 
 Now that you have a deeper understanding of exceptions, let’s look at overriding meth- ods with exceptions in the method declaration.
 When a class overrides a method from a superclass or implements a method from an interface, it’s not allowed to add new checked exceptions to the method signature.
+
+
+class CanNotHopException extends Exception { }
+
+class Hopper {
+	public void hop() { }
+}
+
+class Bunny extends Hopper {
+	public void hop() throws CanNotHopException { } // DOES NOT COMPILE
+}
+
+Java knows hop() isn’t allowed to throw any checked exceptions because the superclass Hopper doesn’t declare any.
+
+Like this is correct:
+class Hopper {
+	public void hop() throws CanNotHopException { }
+}
+
+class Bunny extends Hopper {
+	public void hop() { }
+}
+
+====================================================================================================
+
+Printing an Exception
+
+3 types:
+Exception type + message
+Message
+Stack trace
+
+When an exception is thrown, it goes through the stack until it finds a method that can handle it or it runs out of stack.
+====================================================================================================
+Summary
+
+An exception indicates something unexpected happened.
+
+A method can handle an exception by catching it or declaring it for the caller to deal with.
+
+Many exceptions are thrown by Java libraries
+
+You can throw your own exception with code such as throw new Exception().
+
+Subclasses of java.lang.Error are exceptions that a programmer should not attempt to handle. Subclasses of java.lang.RuntimeException are runtime (unchecked) exceptions.
+Subclasses of java.lang.Exception, but not java.lang.RuntimeException are checked exceptions.
+Java requires checked exceptions to be handled or declared.
+
+ If both catch and finally throw an exception, the one from finally gets thrown.
+====================================================================================================
+Exam Essentials
+
+Differentiate between checked and unchecked exceptions.
+
+Understand the flow of a try statement.
+
+Identify whether an exception is thrown by the programmer or the JVM.
+
+Declare methods that declare exceptions.
+
+Recognize when to use throw versus throws.
