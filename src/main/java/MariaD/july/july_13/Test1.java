@@ -41,3 +41,16 @@ public class Test1 {
 // Q9: public void setCanSwim(boolean b) { canSwim = b;}, CORRECT E & C. public int getNumWings() {
 // return numberWings;}
 // q10 correct answer B swing swing 10
+// q11 corect answers are: B & E
+// Q12 : correct answer B
+// Q13 : corect 4, eu am gasit 2, mai am de lucru
+// Q14: B
+// Q15: E
+// Q16: B 9
+// Q17: B, D, E.
+// Q18: Correct C & G, I choosed only G
+// q19: corect A & G, eu am ales doar A
+// Q 20: corect E
+// Q21: corect c
+// Q22 :corect E (u u ucrcr), dar la rulare mie codul mi-a rulat ur ur urcc, vezi OrderDriver Class
+// Q23:

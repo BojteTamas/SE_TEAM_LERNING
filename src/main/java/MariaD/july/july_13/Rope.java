@@ -15,9 +15,9 @@ class Rope1 {
 // }
 public class Rope {
   public static void main(String[] args) {
-    Rope1 rope = new Rope1();
-    rope.swing();
+    Rope1 rope1 = new Rope1();
+    rope1.swing();
     new Rope1().swing();
-    System.out.println(rope.LENGTH); // swing swing 10
+    System.out.println(rope1.LENGTH); // swing swing 10
   }
 }
