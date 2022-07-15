@@ -1,2 +1,79 @@
-1. B C 
-2. 
+1. B C  CORRECT ANSWER  B
+
+B. Runtime exceptions are the same thing as unchecked exceptions.
+
+C. You can declare only checked exceptions. - WRONG
+
+EXPLANATION:
+Runtime exceptions are also known as unchecked exceptions. They are allowed
+to be declared, but they don’t have to be.
+Checked exceptions must be handled or declared.
+Legally, you can handle java.lang.Error subclasses, but it’s not a good idea.
+
+
+2. B D.  YES
+
+
+3. A YES
+
+
+4. E CORRECT ANSWER B
+
+Tries to cast Integer  to string . String does not extend Integer, not allowed
+ClassCastException is thrown
+
+E. None of the above. WRONG ANSWER
+
+5. A C D
+CORRECT A B D
+
+A. ArrayIndexOutOfBoundsException
+B. ExceptionInInitializerError
+C. java.io.IOException - WRONG
+D. NullPointerException
+
+6. C YES
+
+
+7. B
+CORRECT C
+B. AEBCD
+C. AEC
+
+UNDERSTOOD THE ORDER, BUT WHY NOT D? - because nothing is run after finally
+
+8. E YES
+
+9. B YES
+
+
+10. E YES
+
+
+11. G
+CORRECT A.
+12, followed by a stack trace for a NumberFormatException
+
+An uncaught exception is thrown. WRONG
+
+
+12. A B D E G
+
+A B D G CORRECT
+
+13. C E
+A B C E correct
+A. You can declare a method with Exception as the return type.
+B. You can declare any subclass of Error in the throws part of a method declaration.
+C. You can declare any subclass of Exception in the throws part of a method declaration.
+E. You can declare any subclass of RuntimeException in the throws part of a method
+declaration.
+
+
+14. A D E
+15.C  E
+16. A
+17. A B C
+18. B C E
+19. A
+20. F
