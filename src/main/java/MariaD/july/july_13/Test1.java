@@ -53,4 +53,10 @@ public class Test1 {
 // Q 20: corect E
 // Q21: corect c
 // Q22 :corect E (u u ucrcr), dar la rulare mie codul mi-a rulat ur ur urcc, vezi OrderDriver Class
-// Q23:
+// Q23: A: tacb
+// Q24:B. C & E
+// Q25: A
+// q26: A
+// Q27:C.Compiler error on line 7.
+// Q28:a am raspuns eu, CORECT E A, D,F
+// Q29:RASPUNS CORECT A, E, eu nu am inteles intrebarea
