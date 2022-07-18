@@ -1,0 +1,16 @@
+
+when creating a new class you can define the class to inherit from an existing class
+Inheritance is an important pillar of OOP(Object-Oriented Programming)
+inheriting = extends
+the mechanism in java by which one class is allowed to inherit the features(fields and methods) of another class
+       the process by witch the new child subclass automatically includes
+    any public/ protected primitives, objects or methods defined in parent class
+java supports single inheritance
+java allows only one public class/ file
+
+super/parent/base class: class whose features are inherited
+sub/derived/child class : the class that inherits the other class
+                            can add its own fields and metthods in addition to super class
+reusability = when we want to create a new class and there is already a class that includes a piece of code that we want
+            we can derive our new class from the existing class
+            => in this case, we reuse the fields, and methods of the existing class
