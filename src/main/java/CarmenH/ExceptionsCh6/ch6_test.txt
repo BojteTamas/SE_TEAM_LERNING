@@ -70,10 +70,65 @@ E. You can declare any subclass of RuntimeException in the throws part of a meth
 declaration.
 
 
-14. A D E
+14. A D E CORRECT  A C D E
+
+C also throw new IllegalArgumentException();
+throw new Exception(); not correct because a broader exception is not allowed.
+
 15.C  E
+CORECT A B D E
+
+Which of the following are unchecked exceptions? (Choose all that apply)
+A. ArrayIndexOutOfBoundsException CORECT
+B. IllegalArgumentException CORECT
+C. IOException
+D. NumberFormatException CORECT
+E. Any exception that extends RuntimeException CORECT
+F. Any exception that extends Exception
+
+
+
 16. A
+CORRECT B
+Which scenario is the best use of an exception?
+An unexpected parameter is passed into a method.
+IllegalArgumentException is used when an unexpected parameter is passed into a method
+
+
 17. A B C
+CORRECT A C D E
+
+B. public void roar() throws Exception{} WRONG!!
+
+
+A. public void roar(){}
+C. public void roar() throws HasSoreThroatException{}
+D. public void roar() throws IllegalArgumentException{} // runtime exceptions
+E. public void roar() throws TiredException{} // runtime exceptions
+
+
+class HasSoreThroatException extends Exception {}
+class TiredException extends RuntimeException {} interface Roar {
+	void roar() throws HasSoreThroatException;
+}
+class Lion implements Roar {
+// INSERT CODE HERE
+}
+
 18. B C E
+
+A B C E correct
+Which of the following are true? (Choose all that apply)
+
+A. Checked exceptions are allowed to be handled or declared.
+B. Checked exceptions are required to be handled or declared.
+C. Errors are allowed to be handled or declared.
+
+E. Runtime exceptions are allowed to be handled or declared.
+
+
 19. A
+CORRECT C E
+
 20. F
+CORRECT A E
