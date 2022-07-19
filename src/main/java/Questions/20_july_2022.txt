@@ -1,1 +1,19 @@
 1.Nu am inteles metoda toString().
+
+CARMEN 18JUL2022
+1.
+question 16, questions from Ch6
+16. Which scenario is the best use of an exception? // I do not understand the question and the answer
+A. An element is not found when searching a list. // ?? not an exception because it usualy returns null or -1?
+B. An unexpected parameter is passed into a method. // IllegalArgumentException
+C. The computer caught fire. // no way to think of this one
+D. You want to loop through a list. // you use for, not throwing an exception?
+E. You don’t know how to code a method. // :)) funny if not sad :))
+
+Answer:
+B. IllegalArgumentException is used when an unexpected parameter is passed into a method.
+Option A is incorrect because returning null or -1 is a common return value for this scenario.
+Option D is incorrect because a for loop is typically used for this scenario.
+Option E is incorrect because you should find out how to code the method and not leave it
+  for the unsuspecting programmer who calls your method.
+Option C is incorrect because you should run!
