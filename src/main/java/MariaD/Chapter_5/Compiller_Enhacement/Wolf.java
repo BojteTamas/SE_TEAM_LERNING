@@ -16,7 +16,7 @@ public class Wolf extends Canine {
   }
 
   public static void main(String[] args) {
-    System.out.println(new Canine().getAverageWeight());//50
-    System.out.println(new Wolf().getAverageWeight());//70
+    System.out.println(new Canine().getAverageWeight()); // 50
+    System.out.println(new Wolf().getAverageWeight()); // 70
   }
 }
