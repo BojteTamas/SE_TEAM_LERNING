@@ -16,3 +16,16 @@ super = a keyword used to reference a member defined in a parent class and may b
 
 Overriding a method
 override a method =  declaring a new method with the signature and return type as the method in the parent class
+
+the compiler performs the following checks:
+1.The method in the child class must have the same signature as the method in the parent class.
+2.The method in the child class must be at least as accessible or more accessible than the method in the parent class.
+3.The method in the child class may not throw a checked exception that is new or broader than the class
+    of any exception thrown in the parent class method.
+4.If the method returns a value, it must be the same or a subclass of the method in the parent class,
+    known as covariant return types.
+
+    overloading vs overriding
+ BOTH  redefine a method using the same name;
+ an overloading method will use a different method
+overloaded methods have more freedom in syntax than an overridden method would have.
