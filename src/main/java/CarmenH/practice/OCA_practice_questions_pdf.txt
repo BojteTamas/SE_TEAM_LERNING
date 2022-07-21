@@ -1,0 +1,30 @@
+1. D - correct
+
+public static final void main(String[] mydata) -- is a valid declaration of an entry point in Java application
+
+public void main(String[] args) - wrong - missing static
+public static void main() - wrong - missing parameter of String array or args
+public static void start(String[] mydata) - wrong - we need main
+
+=======================================================================================
+2.  A - correct
+
+Diagram - does not demonstrate platform independence in Java
+Diagram - demonstrates object-oriented design in Java
+Shows inheritance
+
+=======================================================================================
+3. What is the proper filename extension for a Java byte code compiled file?
+
+C .class - correct
+
+=======================================================================================
+4. B - correct 
+
+If we have 2 Date imports, from util and from sql, we need to specify the entire path to know which of these 2 to use.
+=======================================================================================
+5. A
+
+Option A is incorrect since an object-oriented project tends to group data and the actions related to that data into a single object.
+"Objects are grouped as procedures, separate from data they act on"
+=======================================================================================
