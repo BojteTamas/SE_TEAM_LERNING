@@ -1,4 +1,4 @@
-package CarmenH.July20th2022;
+package CarmenH.practice;
 
 import javax.swing.*; // for JOptionPane - JOptionPane makes it easy to pop up a standard dialog box
 
