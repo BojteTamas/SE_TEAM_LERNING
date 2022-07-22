@@ -28,3 +28,138 @@ If we have 2 Date imports, from util and from sql, we need to specify the entire
 Option A is incorrect since an object-oriented project tends to group data and the actions related to that data into a single object.
 "Objects are grouped as procedures, separate from data they act on"
 =======================================================================================
+
+6. Which variables have a scope limited to a method?
+A. Interface variables
+B. Class variables
+C. Instance variables
+D. Local variables
+
+I would say D - correct!
+=======================================================================================
+
+7. Which package is imported into every Java class by default?
+A. java.util - this must be imported
+B. java.lang
+C. system.lang - does not exist
+D. java.system - does not exist
+
+B - correct
+
+=======================================================================================
+
+8. Which of the following is not a valid code comment in Java?
+A. // Add 5 to the results - valid
+B. /*** TODO: Fix bug 12312 ***/ - valid
+C. # Add configuration value - no way to be correct
+D. /* Read file from the system **** /
+
+
+C - correct!
+=======================================================================================
+9. Which statement about a valid .java file is true?
+A. It can only contain one class declaration - no
+B. It contain one public class declaration and one public interface definition. - no
+C. It must define at least one public class - no
+D. It may define at most one public class - yes
+
+
+D - correct!
+=======================================================================================
+
+Given the following application, fill in the missing values in the table starting from the top and going downward.
+
+
+package competition;
+public class Robot {
+   static String weight = "A lot";
+   /* default */ double ageMonths = 5, ageDays = 2;
+
+   private static boolean success = true;
+
+   public void main(String[] args) {
+      final String retries = "1";
+      // P1
+   }
+}
+
+Variable Type        Number of Variables Accessible at P1
+Class                :
+Instance             :
+Local                :
+
+A. 2, 0, 1
+B. 2, 2, 1 this is correct
+C. 1, 0, 1
+D. 0, 2, 1
+
+In this question that main() is not a static method, therefore it can access both class and instance variables. Since there are two class variables and two instance variables defined, Option B is the correct answer.
+
+A variable provides us with named storage that our programs can manipulate. Java provides three types of variables.
+
+Class variables − Class variables also known as static variables are declared with the static keyword in a class, but outside a method, constructor or a block. There would only be one copy of each class variable per class, regardless of how many objects are created from it.
+
+Instance variables − Instance variables are declared in a class, but outside a method. When space is allocated for an object in the heap, a slot for each instance variable value is created. Instance variables hold values that must be referenced by more than one method, constructor or block, or essential parts of an object's state that must be present throughout the class.
+
+Local variables − Local variables are declared in methods, constructors, or blocks. Local variables are created when the method, constructor or block is entered and the variable will be destroyed once it exits the method, constructor, or block.
+=======================================================================================
+
+11. Which statement about import statements is true?
+A. The class will not compile if it contains unused import statement - false
+B. Unused import statements can be removed from the class without causing a class to become unable to be compiled. TRUE
+C. The class will not compile if a duplicate import statement is present. False
+D. If a class contains an import statement for a class used in the program that cannot be found, it can still compile. False
+
+B - correct!
+=======================================================================================
+12. What is the result of compiling and executing the following class?
+
+
+public class ParkRanger {
+    int birds = 10;
+    public static void main(String[] data) {
+        int trees = 5;
+        System.out.print(trees+birds);
+    }
+}
+
+A. it does not compile
+
+=======================================================================================
+13. Which statements about Java are true?
+
+I. The java command can execute .java and .class files. - no idea
+II. Java is not object oriented - false
+III. The java command compiles directly into native machine code - I would say yes, but not sure
+
+A. I only
+B. III only
+C. II and III
+D. None are true
+
+
+B? - no D
+
+The java command can only execute compiled .class files, so I is false.
+
+Java is object oriented, so II is also false.
+
+The javac command compiles into byte-code, which must be run in a Java virtual machine (JVM), and is not native machine code, so III is false as well.
+
+Option D is the correct answer.
+
+=======================================================================================
+14. Which of the following lines of code is not allowed as first line of a Java class file?
+A. Import widget.*;
+B. //Widget Manager
+C. Package sprockets;
+D. int facilityNumber
+
+D - correct!
+
+=======================================================================================
+
+
+
+
+
