@@ -12,7 +12,7 @@ public class HiddingVar_Practice extends Veverita {
   public static void main(String[] args) {
     HiddingVar_Practice ex = new HiddingVar_Practice();
     Veverita veve = new HiddingVar_Practice();
-    System.out.println(ex.lungime);//8
-    System.out.println(veve.lungime);//4
+    System.out.println(ex.lungime); // 8
+    System.out.println(veve.lungime); // 4
   }
 }
