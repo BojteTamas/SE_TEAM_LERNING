@@ -159,7 +159,114 @@ D - correct!
 
 =======================================================================================
 
+15. Which one of the following statements is true about using packages to organize your code in java?
+
+A. Every class is required to include a package declaration.
+B. To create a new package, you need to add a package.init file to the directory.
+C. Packages allow you to limit access to classes, methods, or data from classes outside the package.
+D. It is not possible to restrict access to objects and methods within a package
+
+C? - yes!
+
+Classes may be defined without a package declaration and are placed in the default package, so Option A is incorrect. Option B is a completely false statement as no such file is required in Java. Option C is correct as it is one of the primary reasons for organizing your application into packages. Option D is incorrect as package-private allows access to methods and variables to be limited to those classes within the same package.
+
+=======================================================================================
+16. Given the current directory is /user/home, with an application Java in /user/home/Manager.java that uses the default package, which are the correct commands to compile and run the application in Java?
+
+A. javac Manager
+   java Manager
+
+B. javac Manager.java
+   java Manager
+
+C. javac Manager
+   java Manager.class
+
+D. javac Manager.java
+   java Manager.class
 
 
+B - correct
+
+=======================================================================================
+
+17. Structuring a Java class such that only methods within class can access its instance variables is referred to as :
+
+A. Platform independence
+B. Object orientation
+C. Inheritance
+D. Encapsulation
+
+D. Encapsulation is the technique of removing access to a class's instance variables from processes outside the class, making Option D the correct answer.
 
 
+=======================================================================================
+18. What is the output of the following code snippet?
+
+String tree = "pine";
+int count = 0 ;
+if (tree.equals("pine")) {
+  int height = 55;
+  count = count + 1;
+}
+
+System.out.print(height + count);
+
+
+A. 1
+B. 55
+C. 56
+D. It doesn't compile
+
+D - because height is local in if
+
+
+=======================================================================================
+19. Which of the following is true of a Java byte code file?
+A. It can be run on any computer with compatible JVM.
+B. It can only be executed on the same type of computer that is was created on.
+C. It can be easily read and modified in a standard text editor
+D. It requires the corresponding .java that created it to execute.
+
+A.
+
+A Java byte code file is a binary encoded set of instructions designed to be run on any computer with a compatible JVM, making Option A the only correct answer.
+
+By compatible JVM, we mean one capable of running the class file.
+
+For example, a Java 6 JVM may have trouble executing a Java 8 compiled file.
+
+Option B is incorrect, and is more a facet of machine language compiled programming classes.
+
+Option C is incorrect as binary data is not particularly human readable.
+
+Option D is incorrect as the compiled file can be distributed without its .java source file and execute without issue.
+
+=======================================================================================
+20. What is the correct character for terminating a statement in Java?
+A. A colon (:)
+B. An end=of-line character
+C. A tab character
+D. A semicolon (;)
+
+D.
+=======================================================================================
+21. What is the result of compiling and executing the following class?
+
+Public class Tolls {
+	private static int yesterday = 1;
+	int tomorrow = 10;
+Public static void maine( Stirng[] args) {
+	Tolls tolls = new Tolls();
+	int today = 20, tomorrow = 40;
+	System.out.print(today + tolls.tomorrow + tolls.yesterday);
+}
+}
+
+A. The code does not compile due to line 6
+B. The code does not compile due to line 7
+C. 31
+D. 61
+
+C
+=======================================================================================
